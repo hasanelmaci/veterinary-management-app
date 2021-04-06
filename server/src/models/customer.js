@@ -11,9 +11,18 @@ const customerSchema = new mongoose.Schema(
             type:String,
             required:true,
             trim:true
+        },
+        vet:{
+            type:mongoose.Schema.Types.ObjectId,
+            required:true,
+            ref:'User'
         }
     },
     {
         timestamps:true
     }
 )
+
+const Customer = mongoose.model('Customer',customerSchema)
+
+module.exports = Customer;
