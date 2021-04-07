@@ -3,6 +3,7 @@ const express = require('express');
 require("./db/mongoose")
 const userRouter = require("./routers/user");
 const customerRouter = require("./routers/customer")
+const petRouter = require("./routers/pet")
 
 const app = express();
 const server = http.createServer(app);
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use(userRouter)
 app.use(customerRouter)
+app.use(petRouter)
 
 server.listen(port,()=>{
     console.log(`Server is up on port ${port} !`)

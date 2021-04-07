@@ -46,6 +46,11 @@ const customerSchema = new mongoose.Schema(
     }
 );
 
+customerSchema.virtual("pets", {
+    ref: "Pet",
+    localField: "_id",
+    foreignField: "owner",
+});
 
 customerSchema.methods.toJSON = function () {
     const customer = this;

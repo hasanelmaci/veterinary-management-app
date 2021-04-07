@@ -1,7 +1,7 @@
 const express = require("express");
 const auth = require("../middleware/auth");
 const Customer = require("../models/customer");
-const customerAuth = require("../middleware/customerAuth")
+const customerAuth = require("../middleware/customerAuth");
 
 const router = express.Router();
 
@@ -47,14 +47,13 @@ router.post("/customers/add", auth, async (req, res) => {
 
 router.post("/customer/logoutAll", customerAuth, async (req, res) => {
     try {
-      req.customer.tokens = [];
-      await req.customer.save();
-      res.send();
+        req.customer.tokens = [];
+        await req.customer.save();
+        res.send();
     } catch (e) {
-      res.status(500).send();
+        res.status(500).send();
     }
-  });
-
+});
 
 router.get("/customers", auth, async (req, res) => {
     try {
@@ -83,7 +82,7 @@ router.get("/customers/:id", auth, async (req, res) => {
 
 router.patch("/customers/:id", auth, async (req, res) => {
     const updates = Object.keys(req.body);
-    const allowedUpdates = ["username","email", "password"];
+    const allowedUpdates = ["username", "email", "password"];
 
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
