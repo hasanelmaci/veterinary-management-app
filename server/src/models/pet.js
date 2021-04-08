@@ -67,6 +67,9 @@ const petSchema = new mongoose.Schema(
             required: true,
             ref: "Customer",
         },
+        avatar:{
+            type:Buffer
+        }
     },
     {
         timestamps: true,

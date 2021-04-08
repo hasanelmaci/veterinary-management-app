@@ -2,11 +2,12 @@ const express = require("express");
 const auth = require("../middleware/auth");
 const Customer = require("../models/customer");
 const customerAuth = require("../middleware/customerAuth");
+const Pet = require("../models/pet");
 
 const router = express.Router();
 
 //login as customer
-router.post("/customers/login", async (req, res) => {
+router.post("/asCustomers/login", async (req, res) => {
     try {
         const customer = await Customer.findByCredentials(req.body.email, req.body.password);
         const token = await customer.generateAuthToken();
@@ -17,11 +18,42 @@ router.post("/customers/login", async (req, res) => {
 });
 
 //get profile as customer
-router.get("/customers/me", customerAuth, async (req, res) => {
+router.get("/asCustomers/me", customerAuth, async (req, res) => {
     res.send(req.customer);
 });
 
-router.post("/customers/logout", customerAuth, async (req, res) => {
+//get all pets as customer
+router.get("/asCustomer/pets", customerAuth, async (req, res) => {
+    try {
+        await req.customer
+            .populate({
+                path: "pets",
+            })
+            .execPopulate();
+        res.send(req.customer.pets);
+    } catch (e) {
+        res.status(500).send();
+    }
+});
+
+//Read single pet as customer
+router.get("/asCustomer/pet/:id", customerAuth, async (req, res) => {
+    const _id = req.params.id;
+
+    try {
+        const pet = await Pet.findOne({ _id, owner: req.customer._id });
+        if (!pet) {
+            return res.status(404).send();
+        }
+
+        res.send(pet);
+    } catch (e) {
+        res.status(500).send();
+    }
+});
+
+//logout as customer
+router.post("/asCustomers/logout", customerAuth, async (req, res) => {
     try {
         req.customer.tokens = req.customer.tokens.filter((token) => token.token != req.token);
         await req.customer.save();
@@ -31,7 +63,8 @@ router.post("/customers/logout", customerAuth, async (req, res) => {
     }
 });
 
-router.post("/customers/add", auth, async (req, res) => {
+//Add a new customer
+router.post("/user/addcustomer", auth, async (req, res) => {
     const customer = new Customer({
         ...req.body,
         vet: req.user._id,
@@ -45,7 +78,8 @@ router.post("/customers/add", auth, async (req, res) => {
     }
 });
 
-router.post("/customer/logoutAll", customerAuth, async (req, res) => {
+//logout from everywhere as customer
+router.post("/asCustomer/logoutAll", customerAuth, async (req, res) => {
     try {
         req.customer.tokens = [];
         await req.customer.save();
@@ -55,6 +89,7 @@ router.post("/customer/logoutAll", customerAuth, async (req, res) => {
     }
 });
 
+//Get all customers
 router.get("/customers", auth, async (req, res) => {
     try {
         await req.user
@@ -68,6 +103,7 @@ router.get("/customers", auth, async (req, res) => {
     }
 });
 
+//Read a customer
 router.get("/customers/:id", auth, async (req, res) => {
     const _id = req.params.id;
     try {
@@ -86,7 +122,7 @@ router.patch("/customers/:id", auth, async (req, res) => {
 
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
-    if (!isValidOperation) res.status(400).send({ error: "Invalid updates" });
+    if (!isValidOperation(updates, allowedUpdates)) res.status(400).send({ error: "Invalid updates" });
 
     try {
         const customer = await Customer.findOne({ _id: req.params.id, vet: req.user });

@@ -39,7 +39,7 @@ const customerSchema = new mongoose.Schema(
                     required: true,
                 },
             },
-        ],
+        ]
     },
     {
         timestamps: true,
