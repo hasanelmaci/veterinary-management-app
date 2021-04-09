@@ -1,8 +1,11 @@
 const express = require("express");
 const auth = require("../middleware/auth");
+const multer = require("multer");
+const sharp = require("sharp");
 const Customer = require("../models/customer");
-const customerAuth = require("../middleware/customerAuth");
 const Pet = require("../models/pet");
+const customerAuth = require("../middleware/customerAuth");
+
 
 const router = express.Router();
 
@@ -147,6 +150,58 @@ router.delete("/customers/:id", auth, async (req, res) => {
         res.send(customer);
     } catch (e) {
         res.status(500).send();
+    }
+});
+
+const upload = multer({
+    limits: {
+        fileSize: 3000000,
+    },
+    fileFilter(req, file, cb) {
+        if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
+            return cb(new Error("Please upload a picture"));
+        }
+        return cb(undefined, true);
+    },
+});
+
+router.post(
+    "/pets/:id/avatar",
+    auth,
+    upload.single("avatar"),
+    async (req, res) => {
+        const buffer = await sharp(req.file.buffer).resize({ width: 250, height: 250 }).png().toBuffer();
+
+        const pet = await Pet.findById(req.params.id);
+        if (!pet) {
+            throw new Error();
+        }
+        pet.avatar = buffer;
+        await pet.save();
+        res.send();
+    },
+    (error, req, res, next) => {
+        res.status(400).send("Please upload a image under 3MB");
+    }
+);
+
+router.delete("/pets/:id/avatar", auth, async (req, res) => {
+    const pet = await Pet.findById(req.params.id);
+    pet.avatar = undefined;
+    await pet.save();
+    res.send();
+});
+
+router.get("/pets/:id/avatar", async (req, res) => {
+    try {
+        const pet = await Pet.findById(req.params.id);
+        if (!pet || !pet.avatar) {
+            throw new Error();
+        }
+        res.set("Content-Type", "image/png");
+        res.send(pet.avatar);
+    } catch (e) {
+        res.status(404).send();
     }
 });
 
