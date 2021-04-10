@@ -39,7 +39,7 @@ const customerSchema = new mongoose.Schema(
                     required: true,
                 },
             },
-        ]
+        ],
     },
     {
         timestamps: true,
@@ -60,7 +60,7 @@ customerSchema.methods.toJSON = function () {
 
 customerSchema.methods.generateAuthToken = async function () {
     const customer = this;
-    const token = jwt.sign({ _id: customer._id.toString() }, process.env.JWT_SECRET);
+    const token = jwt.sign({ _id: customer._id.toString() }, process.env.JWT_SECRET, { expiresIn: "10d" });
 
     customer.tokens = customer.tokens.concat({ token });
     await customer.save();

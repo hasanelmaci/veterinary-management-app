@@ -4,8 +4,11 @@ require("./db/mongoose")
 const userRouter = require("./routers/user");
 const customerRouter = require("./routers/customer")
 const petRouter = require("./routers/pet")
+const cors = require('cors')
+
 
 const app = express();
+app.use(cors())
 const server = http.createServer(app);
 
 const port = process.env.PORT || 3000;

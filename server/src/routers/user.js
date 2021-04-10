@@ -4,6 +4,12 @@ const auth = require("../middleware/auth");
 
 const router = new express.Router();
 
+//Deneme router
+router.get("/users/deneme",async (req,res)=>{
+  res.send({message:'deneme mesajı'})
+})
+
+
 router.post("/users/signup", async (req, res) => {
     const user = new User(req.body);
     try {

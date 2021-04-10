@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const Customer = require("./customer");
 
 const userSchema = new mongoose.Schema(
     {
@@ -46,17 +45,23 @@ userSchema.virtual("customers", {
     ref: "Customer",
     localField: "_id",
     foreignField: "vet",
+    
 });
 
 userSchema.methods.toJSON = function () {
     const user = this;
     const userObject = user.toObject();
+
+    delete userObject.password;
+    delete userObject.tokens;
+    delete userObject.avatar;
+
     return userObject;
 };
 
 userSchema.methods.generateAuthToken = async function () {
     const user = this;
-    const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
+    const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET,{ expiresIn:'10d' });
 
     user.tokens = user.tokens.concat({ token });
     await user.save();
