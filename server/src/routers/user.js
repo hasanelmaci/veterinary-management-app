@@ -10,7 +10,7 @@ router.get("/users/deneme",async (req,res)=>{
 })
 
 
-router.post("/users/signup", async (req, res) => {
+router.post("/users/register", async (req, res) => {
     const user = new User(req.body);
     try {
         await user.save();
