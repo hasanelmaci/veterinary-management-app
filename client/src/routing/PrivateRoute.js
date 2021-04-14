@@ -1,10 +1,15 @@
-import { useContext} from "react";
+import { useContext,useEffect} from "react";
 import {Route,Redirect} from "react-router-dom";
 import UserAuthContext from "../context/userAuth/userAuthContext";
 
 const PrivateRoute = ({component:Component,...rest})=>{
     const userAuthContext = useContext(UserAuthContext);
-    const {isUserAuth, loading} = userAuthContext;
+    const {isUserAuth, loading,loadUser} = userAuthContext;
+    
+    useEffect(()=>{
+      loadUser()
+      console.log('LOADDD')
+    },[])
 
     return (
         <Route

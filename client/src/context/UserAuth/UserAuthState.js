@@ -41,11 +41,11 @@ const UserAuthState = (props) => {
     const register = async (formData) => {
         const config = {
             headers: {
-              "Content-Type": "application/json",
+                "Content-Type": "application/json",
             },
-          };
+        };
         try {
-            const res = await axios.post("/users/register", formData,config);
+            const res = await axios.post("/users/register", formData, config);
             dispatch({
                 type: USER_REGISTER_SUCCESS,
                 payload: res.data,
@@ -62,11 +62,11 @@ const UserAuthState = (props) => {
     const login = async (formData) => {
         const config = {
             headers: {
-              "Content-Type": "application/json",
+                "Content-Type": "application/json",
             },
-          };
+        };
         try {
-            const res = await axios.post("/users/login", formData,config);
+            const res = await axios.post("/users/login", formData, config);
             dispatch({
                 type: USER_LOGIN_SUCCESS,
                 payload: res.data,
@@ -84,27 +84,28 @@ const UserAuthState = (props) => {
         dispatch({ type: USER_LOGOUT });
     };
 
-    
     const clearErrors = () => {
         dispatch({ type: USER_CLEAR_ERRORS });
     };
 
     return (
-        <UserAuthContext.Provider value={{
-            token:state.token,
-            isUserAuth:state.isUserAuth,
-            loading:state.loading,
-            user:state.user,
-            error:state.error,
-            register,
-            loadUser,
-            login,
-            logout,
-            clearErrors,
-        }}>
+        <UserAuthContext.Provider
+            value={{
+                token: state.token,
+                isUserAuth: state.isUserAuth,
+                loading: state.loading,
+                user: state.user,
+                error: state.error,
+                register,
+                loadUser,
+                login,
+                logout,
+                clearErrors,
+            }}
+        >
             {props.children}
         </UserAuthContext.Provider>
-    )
+    );
 };
 
 export default UserAuthState;

@@ -5,14 +5,13 @@ import UserAuthContext from "../context/userAuth/userAuthContext"
 const Profile = () => {
     const userAuthContext = useContext(UserAuthContext)
 
-    const {loadUser,login,isUserAuth} = userAuthContext
+    const {loadUser,loading,login,isUserAuth,user} = userAuthContext
     
-    useEffect(()=>{
-        loadUser()
-    },[])
-
+    {console.log(user)}
     return (
         <div>
+            {/* {JSON.stringify(user)} */}
+            {!loading ? user.name : 'null'}
             Profile
         </div>
     )

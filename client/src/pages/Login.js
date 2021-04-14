@@ -5,9 +5,10 @@ const Login = (props) => {
 
     const userAuthContext = useContext(UserAuthContext)
 
-    const {login,isUserAuth} = userAuthContext
+    const {login,isUserAuth,loadUser} = userAuthContext
 
     useEffect(()=>{
+      loadUser()
         if(isUserAuth){
             props.history.push("/profile")
         }
