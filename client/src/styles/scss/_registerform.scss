@@ -1,0 +1,61 @@
+.register-container{
+    max-width: 1300px;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.register{
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+    align-self: center;
+    border:1px solid gray;
+    border-radius: 5px;
+
+    h1{
+        text-align: center;
+        margin-bottom: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+    }
+
+    form{
+        width: 100%;
+        margin:0 auto;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input{
+        padding:5px 10px;
+        margin-bottom: 7px;
+        width: 100%;
+    }
+
+    button{
+        padding:5px 10px;
+        background-color: rgb(3, 187, 3);
+        color:#fff;
+        cursor:pointer;
+    }
+    button:hover{
+        background-color:#fff;
+        color:rgb(3, 187, 3);
+    }
+    button:focus{
+        background-color: rgb(3, 187, 3);
+        color:#fff;
+    }
+    p{
+        text-align: center;
+        color:red;
+        margin-top: 10px;
+    }
+    
+}

@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.register-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.register {
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-self: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.register h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+}
+
+.register form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register input {
+  padding: 5px 10px;
+  margin-bottom: 7px;
+  width: 100%;
+}
+
+.register button {
+  padding: 5px 10px;
+  background-color: #03bb03;
+  color: #fff;
+  cursor: pointer;
+}
+
+.register button:hover {
+  background-color: #fff;
+  color: #03bb03;
+}
+
+.register button:focus {
+  background-color: #03bb03;
+  color: #fff;
+}
+
+.register p {
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+}
+
+.login-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login {
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-self: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.login h1 {
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login input {
+  padding: 5px 10px;
+  margin-bottom: 7px;
+  width: 100%;
+}
+
+.login button {
+  padding: 5px 10px;
+  background-color: #03bb03;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login button:hover {
+  background-color: #fff;
+  color: #03bb03;
+}
+
+.login button:focus {
+  background-color: #03bb03;
+  color: #fff;
+}
+
+.login p {
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=main.css.map */

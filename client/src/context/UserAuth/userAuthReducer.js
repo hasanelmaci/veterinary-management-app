@@ -5,6 +5,8 @@ import {
     USER_LOGOUT,
     USER_CLEAR_ERRORS,
     USER_AUTH_ERROR,
+    USER_REGISTER_FAIL,
+    USER_LOGIN_FAIL
 } from "./userAuthActions";
 
 export default (state, action) => {
@@ -25,6 +27,8 @@ export default (state, action) => {
                 isUserAuth: true,
                 loading: false,
             };
+        case USER_REGISTER_FAIL:
+        case USER_LOGIN_FAIL:
         case USER_AUTH_ERROR:
         case USER_LOGOUT:
             localStorage.removeItem("token");
@@ -34,7 +38,7 @@ export default (state, action) => {
                 isUserAuth: false,
                 loading: false,
                 user: null,
-                // error:action.payload
+                error:action.payload
             };
         case USER_CLEAR_ERRORS:
             return {

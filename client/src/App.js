@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link,Redirect } from "react-router-dom";
 import { useEffect, useContext } from "react";
-import "./App.css";
+import "./styles/css/main.css"
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
@@ -23,11 +23,14 @@ function App() {
             
             {isUserAuth}
             <Router>
-            <Link to='/'>Home</Link>
+            {/* <Link to='/'>Home</Link>
             <Link to='/register'>register</Link>
             <Link to='/login'>login</Link>
-            <Link to='/profile'>profile</Link>
+            <Link to='/profile'>profile</Link> */}
                 <Switch>
+                    <Route exact path="/">
+                        <Redirect to="/profile"/>
+                    </Route>
                     <PrivateRoute exact path="/profile" component={Profile} />
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/login" component={Login} />
