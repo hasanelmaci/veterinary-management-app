@@ -1,8 +1,9 @@
+import {Link} from "react-router-dom"
 import { useState, useContext, useEffect } from "react";
 import userAuthContext from "../../context/userAuth/userAuthContext";
 
 const RegisterForm = (props) => {
-    const { register, isUserAuth, loadUser,error } = useContext(userAuthContext);
+    const { register, isUserAuth, loadUser,error,clearErrors } = useContext(userAuthContext);
     const [isValid, setIsValid] = useState(null)
 
     const [user, setUser] = useState({
@@ -19,6 +20,7 @@ const RegisterForm = (props) => {
         }
         if(error){
             setIsValid(false)
+            clearErrors()
         }
     }, [isUserAuth,error,props.history]);
 
@@ -56,7 +58,10 @@ const RegisterForm = (props) => {
                 <div>
                     <input type="password" name="password" value={password} onChange={onChange} placeholder="Parola" required />
                 </div>
+                <div className='register__bottom'>
                 <button type="submit">Kayıt Ol</button>
+                <Link to='/login' >Giriş Yap</Link>
+                </div>
             </form>
                 {isValid == false && <p>Bu e-mail daha önceden kullanıldı.</p> }
         </div>

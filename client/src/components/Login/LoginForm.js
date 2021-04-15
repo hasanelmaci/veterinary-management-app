@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import {useState, useContext, useEffect} from 'react'
 import UserAuthContext from "../../context/userAuth/userAuthContext"
 
@@ -5,7 +6,7 @@ const LoginForm = (props) => {
 
     const userAuthContext = useContext(UserAuthContext)
 
-    const {login,isUserAuth,loadUser,error} = userAuthContext
+    const {login,isUserAuth,loadUser,error, clearErrors} = userAuthContext
     const [isValid, setIsValid] = useState(null)
 
     useEffect(()=>{
@@ -15,6 +16,7 @@ const LoginForm = (props) => {
         }
         if(error){
           setIsValid(false)
+          clearErrors()
       }
     },[isUserAuth,props.history,error])
 
@@ -57,7 +59,11 @@ const LoginForm = (props) => {
               onChange={onChange}
               />
           </div>
+          <div className='login__bottom'>
+
           <button>Giriş Yap</button>
+          <Link to='/register' >Kayıt ol</Link>
+          </div>
         </form>
         {isValid == false && <p>Geçersiz kullanıcı adı veya parola.</p> }
       </div>

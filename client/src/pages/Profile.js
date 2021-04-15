@@ -1,6 +1,7 @@
 import {useContext, useEffect} from 'react'
 import UserAuthContext from "../context/userAuth/userAuthContext"
-import Header from "../components/Profile/Header"
+import Navbar from "../components/Profile/Navbar"
+import Customers from "../components/Profile/Customers"
 
 
 const Profile = () => {
@@ -14,9 +15,10 @@ const Profile = () => {
 
 
     return (
-        <div>
+        <div className='profile'>
 
-            <Header />
+            <Navbar />
+            <Customers />
             {/* {JSON.stringify(user)} */}
             {/* {!loading ? user.name : 'null'}
             Profile

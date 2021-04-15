@@ -1,0 +1,20 @@
+.nav{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    border-bottom:1px solid black;
+    padding: 20px;
+    
+
+    h1{
+        flex-grow: 1;
+        letter-spacing: 5px;
+    }
+    ul{
+        display:flex;
+        position: relative;
+        width: 300px;
+        margin-top: 15px;
+        padding-right: 15px;
+        justify-content: space-between;
+    }
+}

@@ -1,4 +1,15 @@
 @import "config";
 @import "responsive";
 @import "registerform";
-@import "login"
+@import "login";
+@import "profile";
+@import "navbar";
+@import "customers";
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
