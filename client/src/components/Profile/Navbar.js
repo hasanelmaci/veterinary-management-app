@@ -15,13 +15,13 @@ function Navbar() {
         <div className="nav">
             <h1>{user.name}</h1>
             <ul>
-                <Link>
+                <Link to='#'>
                     <li>Müşteri Ekle</li>
                 </Link>
-                <Link>
+                <Link to='#'>
                     <li>Ayarlar</li>
                 </Link>
-                <Link onClick={handleLogout}>
+                <Link to='#' onClick={handleLogout}>
                     <li>Çıkış Yap</li>
                 </Link>
             </ul>

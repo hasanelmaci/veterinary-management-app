@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import PrivateRoute from "./routing/PrivateRoute";
 import UserAuthState from "./context/userAuth/UserAuthState";
 import UserAuthContext from "./context/userAuth/userAuthContext";
+import CustomerState from './context/customer/CustomerState';
 
 function App() {
     const userAuthContext = useContext(UserAuthContext);
@@ -20,13 +21,13 @@ function App() {
 
     return (
         <UserAuthState>
-            
+            <CustomerState>
             {isUserAuth}
             <Router>
             {/* <Link to='/'>Home</Link>
             <Link to='/register'>register</Link>
             <Link to='/login'>login</Link>
-            <Link to='/profile'>profile</Link> */}
+        <Link to='/profile'>profile</Link> */}
                 <Switch>
                     <Route exact path="/">
                         <Redirect to="/profile"/>
@@ -36,6 +37,7 @@ function App() {
                     <Route exact path="/login" component={Login} />
                 </Switch>
             </Router>
+        </CustomerState>
         </UserAuthState>
     );
 }
