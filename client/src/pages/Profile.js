@@ -10,7 +10,7 @@ const Profile = () => {
     return (
         <div className='profile'>
 
-            <Navbar />
+            {/* <Navbar /> */}
             <AddCustomer />
             <Customers />
         </div>

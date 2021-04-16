@@ -18,7 +18,7 @@ export default (state, action) => {
         case FETCH_CUSTOMERS_SUCCESS:
             return{
                 ...state,
-                customer:action.payload,
+                customerList:action.payload,
                 loading:false
             }
         default:

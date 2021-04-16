@@ -12,6 +12,7 @@ import {
 function CustomerState(props) {
     const initialState = {
         customer: null,
+        customerList:[],
         loading: true,
         error: null,
     };
@@ -51,6 +52,7 @@ function CustomerState(props) {
         <CustomerContext.Provider
             value={{
                 customer: state.customer,
+                customerList:state.customerList,
                 loading: state.loading,
                 error: state.error,
                 addCustomer,

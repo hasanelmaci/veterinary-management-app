@@ -1,19 +1,25 @@
-import {useContext,useState} from 'react'
+import {useContext,useEffect,useState} from 'react'
 import CustomerContext from '../../context/customer/customerContext';
+import CustomerItem from './CustomerItem'
 
 function Customers() {
 
-    const {customer,fetchCustomers} = useContext(CustomerContext);
+    const {customerList,fetchCustomers,loading,customer} = useContext(CustomerContext);
 
-    useState(()=>{
+    useEffect(()=>{
         fetchCustomers()
-    },[])
+        console.log('FETCH')
+    },[customer])
+
 
     return (
         <div>
-            {customer?.map(i=>(
-                <p>{i.username} - {i.email}</p>
-            ))}
+            <ul>
+
+            {customerList.map(item=>(
+                <CustomerItem key={item._id} customer={item}/>
+                ))}
+                </ul>
         </div>
     )
 }
