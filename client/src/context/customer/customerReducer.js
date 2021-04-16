@@ -1,4 +1,4 @@
-import { ADD_CUSTOMER_SUCCESS, ADD_CUSTOMER_FAIL,CUSTOMER_CLEAR_ERRORS,FETCH_CUSTOMERS_SUCCESS,FETCH_CUSTOMERS_FAIL } from "./customerActions";
+import { ADD_CUSTOMER_SUCCESS, ADD_CUSTOMER_FAIL,CUSTOMER_CLEAR_ERRORS,FETCH_CUSTOMERS_SUCCESS,FETCH_CUSTOMERS_FAIL,UPDATE_CUSTOMER_FAIL,UPDATE_CUSTOMER_SUCCESS,DELETE_CUSTOMER_FAIL,DELETE_CUSTOMER_SUCCESS } from "./customerActions";
 
 export default (state, action) => {
     switch (action.type) {
@@ -21,6 +21,30 @@ export default (state, action) => {
                 customerList:action.payload,
                 loading:false
             }
+        case DELETE_CUSTOMER_FAIL:    
+        case UPDATE_CUSTOMER_FAIL:    
+        case FETCH_CUSTOMERS_FAIL:
+            return{
+                ...state,
+                error:action.payload
+            }
+        case UPDATE_CUSTOMER_SUCCESS:
+            return{
+                ...state,
+                customer: state.customer.map((customer) => customer._id === action.payload._id ? action.payload : customer),
+                loading:false
+            }
+        case DELETE_CUSTOMER_SUCCESS:
+            return{
+                ...state,
+                customer: state.customerList.filter(customer => customer._id !== action.payload),
+                loading:false
+            }    
+        case CUSTOMER_CLEAR_ERRORS:
+            return{
+                ...state,
+                error:null
+            } 
         default:
             return state;
     }

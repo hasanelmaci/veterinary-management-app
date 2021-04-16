@@ -9,6 +9,7 @@ import UserAuthState from "./context/userAuth/UserAuthState";
 import UserAuthContext from "./context/userAuth/userAuthContext";
 import CustomerState from './context/customer/CustomerState';
 import Navbar from "./components/Profile/Navbar";
+import Customer from "./pages/Customer";
 
 function App() {
     const userAuthContext = useContext(UserAuthContext);
@@ -17,7 +18,6 @@ function App() {
 
     useEffect(()=>{
         loadUser()
-        console.log('LOADDD APPJS')
       },[])
 
     return (
@@ -37,6 +37,7 @@ function App() {
                     <PrivateRoute exact path="/profile" component={Profile} />
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/login" component={Login} />
+                    <PrivateRoute exact path="/customers/:id" component={Customer} />
                 </Switch>
             </Router>
         </CustomerState>

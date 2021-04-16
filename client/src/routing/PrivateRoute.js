@@ -8,7 +8,6 @@ const PrivateRoute = ({component:Component,...rest})=>{
     
     useEffect(()=>{
       loadUser()
-      console.log('LOADDD')
     },[])
 
     return (

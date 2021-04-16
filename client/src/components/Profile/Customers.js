@@ -8,7 +8,6 @@ function Customers() {
 
     useEffect(()=>{
         fetchCustomers()
-        console.log('FETCH')
     },[customer])
 
 

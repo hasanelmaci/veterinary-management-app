@@ -11,7 +11,7 @@ const Profile = () => {
         <div className='profile'>
 
             {/* <Navbar /> */}
-            <AddCustomer />
+            {/* <AddCustomer /> */}
             <Customers />
         </div>
     )

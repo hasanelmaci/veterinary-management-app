@@ -2,12 +2,7 @@ import { useReducer } from "react";
 import axios from "axios";
 import CustomerContext from "./customerContext";
 import customerReducer from "./customerReducer";
-import {
-    ADD_CUSTOMER_FAIL,
-    ADD_CUSTOMER_SUCCESS,
-    FETCH_CUSTOMERS_FAIL,
-    FETCH_CUSTOMERS_SUCCESS,
-} from "./customerActions";
+import { ADD_CUSTOMER_SUCCESS, ADD_CUSTOMER_FAIL,CUSTOMER_CLEAR_ERRORS,FETCH_CUSTOMERS_SUCCESS,FETCH_CUSTOMERS_FAIL,UPDATE_CUSTOMER_FAIL,UPDATE_CUSTOMER_SUCCESS,DELETE_CUSTOMER_FAIL,DELETE_CUSTOMER_SUCCESS } from "./customerActions";
 
 function CustomerState(props) {
     const initialState = {
@@ -48,6 +43,21 @@ function CustomerState(props) {
         }
     };
 
+    const deleteCustomer = async (id)=>{
+        try{
+            await axios.delete(`/customers/${id}`);
+            dispatch({
+                type:DELETE_CUSTOMER_SUCCESS,
+                payload:id
+            })
+        }catch(err){
+            dispatch({
+                type:DELETE_CUSTOMER_FAIL,
+                payload:err.response
+            })
+        }
+    }
+
     return (
         <CustomerContext.Provider
             value={{
@@ -57,6 +67,7 @@ function CustomerState(props) {
                 error: state.error,
                 addCustomer,
                 fetchCustomers,
+                deleteCustomer,
             }}
         >
             {props.children}
