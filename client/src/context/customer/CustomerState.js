@@ -43,6 +43,23 @@ function CustomerState(props) {
         }
     };
 
+    const updateCustomer = async (customer) =>{
+        
+        try{
+            const res = await axios.patch(`/customers/${customer._id}`,customer)
+            dispatch({
+                type:UPDATE_CUSTOMER_SUCCESS,
+                payload:res.data
+            })
+        }catch(err){
+            console.log(customer._id)
+            dispatch({
+                type:UPDATE_CUSTOMER_FAIL,
+                payload:err.response
+            })
+        }
+    }
+
     const deleteCustomer = async (id)=>{
         try{
             await axios.delete(`/customers/${id}`);
@@ -68,6 +85,7 @@ function CustomerState(props) {
                 addCustomer,
                 fetchCustomers,
                 deleteCustomer,
+                updateCustomer,
             }}
         >
             {props.children}

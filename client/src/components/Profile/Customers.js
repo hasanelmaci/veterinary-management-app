@@ -16,7 +16,7 @@ function Customers() {
             <ul>
 
             {customerList.map(item=>(
-                <CustomerItem key={item._id} customer={item}/>
+                <CustomerItem key={item._id} infos={item}/>
                 ))}
                 </ul>
         </div>

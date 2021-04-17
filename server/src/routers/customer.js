@@ -125,14 +125,14 @@ router.patch("/customers/:id", auth, async (req, res) => {
 
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
-    if (!isValidOperation(updates, allowedUpdates)) res.status(400).send({ error: "Invalid updates" });
+    if (!isValidOperation) res.status(400).send({ error: "Invalid updates" });
 
     try {
+        
         const customer = await Customer.findOne({ _id: req.params.id, vet: req.user });
 
         if (!customer) res.status(404).send();
 
-        console.log(customer);
         updates.forEach((update) => {
             customer[update] = req.body[update];
         });
