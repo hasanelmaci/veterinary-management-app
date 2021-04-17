@@ -55,6 +55,9 @@ customerSchema.virtual("pets", {
 customerSchema.methods.toJSON = function () {
     const customer = this;
     const customerObject = customer.toObject();
+
+    delete customerObject.password;
+    delete customerObject.tokens;
     return customerObject;
 };
 
