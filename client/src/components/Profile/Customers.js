@@ -4,11 +4,17 @@ import CustomerItem from './CustomerItem'
 
 function Customers() {
 
-    const {customerList,fetchCustomers,loading,customer} = useContext(CustomerContext);
+    const {customerList,fetchCustomers,clearErrors,customer,error} = useContext(CustomerContext);
 
     useEffect(()=>{
         fetchCustomers()
     },[customer])
+
+    useEffect(()=>{
+        if(error?.data === 'Invalid updates')
+        alert('FALANFİLAN')
+        clearErrors()
+    },[error])
 
 
     return (

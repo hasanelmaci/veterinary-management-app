@@ -1,10 +1,11 @@
 import React from "react";
 import Popup from "reactjs-popup";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import CustomerContext from "../../context/customer/customerContext";
 
 const AddCustomerPopup = () => {
-    const { addCustomer } = useContext(CustomerContext);
+    const { addCustomer, error, clearErrors } = useContext(CustomerContext);
+    const [isValid, setIsValid] = useState(null);
 
     const [customer, setCustomer] = useState({
         username: "",
@@ -21,7 +22,16 @@ const AddCustomerPopup = () => {
     const handleOnSubmit = (event) => {
         event.preventDefault();
         addCustomer({ username, email, password });
+        setIsValid(false);
+        clearErrors();
     };
+
+    useEffect(() => {
+        if (error) {
+            setIsValid(true);
+        }
+        clearErrors();
+    }, [error]);
 
     return (
         <Popup trigger={<button className="button"> Open Modal </button>} modal nested>
@@ -41,6 +51,7 @@ const AddCustomerPopup = () => {
                             </form>
                         </div>
                     </div>
+                    {isValid == true ? "ERROR" : null}
                     <div className="actions">
                         <button
                             className="button"

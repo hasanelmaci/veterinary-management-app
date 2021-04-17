@@ -65,7 +65,7 @@ function CustomerState(props) {
 
         try {
             const res = await axios.patch(`/customers/${customer._id}`, picks);
-            console.log(res.data)
+            console.log(res.data);
             dispatch({
                 type: UPDATE_CUSTOMER_SUCCESS,
                 payload: res.data,
@@ -94,6 +94,10 @@ function CustomerState(props) {
         }
     };
 
+    const clearErrors = () => {
+        dispatch({ type: CUSTOMER_CLEAR_ERRORS });
+      };
+
     return (
         <CustomerContext.Provider
             value={{
@@ -105,6 +109,7 @@ function CustomerState(props) {
                 fetchCustomers,
                 deleteCustomer,
                 updateCustomer,
+                clearErrors
             }}
         >
             {props.children}

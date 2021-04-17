@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { useContext,useState } from "react";
+import { useContext,useState,useEffect } from "react";
 import CustomerContext from "../../context/customer/customerContext";
 
 function CustomerItem({ infos }) {
-    const { deleteCustomer, updateCustomer } = useContext(CustomerContext);
+    const { deleteCustomer, updateCustomer,error,clearError } = useContext(CustomerContext);
 
     const [customerUpdateInfos, setCustomerUpdateInfos] = useState({
         username:"" ,
@@ -25,6 +25,7 @@ function CustomerItem({ infos }) {
     const handleDelete = (id) => {
         deleteCustomer(id);
     };
+    
     
 
     return (

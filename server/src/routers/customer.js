@@ -124,7 +124,7 @@ router.patch("/customers/:id", auth, async (req, res) => {
     const allowedUpdates = ["username","email","password"];
 
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
-    if(!isValidOperation) res.status(400).send({error: "Invalid updates!"})
+    if(!isValidOperation) res.status(400).send({error: "Invalid updates"})
 
     try {
         
@@ -138,7 +138,7 @@ router.patch("/customers/:id", auth, async (req, res) => {
         await customer.save();
         res.send(customer);
     } catch (e) {
-        res.status(400).send();
+        res.status(400).send('Invalid updates');
     }
 });
 

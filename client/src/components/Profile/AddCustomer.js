@@ -2,7 +2,7 @@ import {useContext,useState} from 'react'
 import CustomerContext from '../../context/customer/customerContext';
 
 function AddCustomer() {
-    const {addCustomer} = useContext(CustomerContext);
+    const {addCustomer,error} = useContext(CustomerContext);
 
     const [customer, setCustomer] = useState({
         username:"",
@@ -20,6 +20,8 @@ function AddCustomer() {
         event.preventDefault();
         addCustomer({username,email,password})
     }
+
+    
 
     return (
         <div className='add-customer'>

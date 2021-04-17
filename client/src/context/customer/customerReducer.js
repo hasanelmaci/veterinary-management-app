@@ -1,4 +1,14 @@
-import { ADD_CUSTOMER_SUCCESS, ADD_CUSTOMER_FAIL,CUSTOMER_CLEAR_ERRORS,FETCH_CUSTOMERS_SUCCESS,FETCH_CUSTOMERS_FAIL,UPDATE_CUSTOMER_FAIL,UPDATE_CUSTOMER_SUCCESS,DELETE_CUSTOMER_FAIL,DELETE_CUSTOMER_SUCCESS } from "./customerActions";
+import {
+    ADD_CUSTOMER_SUCCESS,
+    ADD_CUSTOMER_FAIL,
+    CUSTOMER_CLEAR_ERRORS,
+    FETCH_CUSTOMERS_SUCCESS,
+    FETCH_CUSTOMERS_FAIL,
+    UPDATE_CUSTOMER_FAIL,
+    UPDATE_CUSTOMER_SUCCESS,
+    DELETE_CUSTOMER_FAIL,
+    DELETE_CUSTOMER_SUCCESS,
+} from "./customerActions";
 
 export default (state, action) => {
     switch (action.type) {
@@ -9,42 +19,42 @@ export default (state, action) => {
                 loading: false,
             };
         case ADD_CUSTOMER_FAIL:
-            return{
+            return {
                 ...state,
-                customer:null,
-                loading:false,
-                error:action.payload
-            }
+                customer: null,
+                loading: false,
+                error: action.payload,
+            };
         case FETCH_CUSTOMERS_SUCCESS:
-            return{
+            return {
                 ...state,
-                customerList:action.payload,
-                loading:false
-            }
-        case DELETE_CUSTOMER_FAIL:    
-        case UPDATE_CUSTOMER_FAIL:    
+                customerList: action.payload,
+                loading: false,
+            };
+        case DELETE_CUSTOMER_FAIL:
+        case UPDATE_CUSTOMER_FAIL:
         case FETCH_CUSTOMERS_FAIL:
-            return{
+            return {
                 ...state,
-                error:action.payload
-            }
+                error: action.payload,
+            };
         case UPDATE_CUSTOMER_SUCCESS:
-            return{
+            return {
                 ...state,
                 customer: action.payload,
-                loading:false
-            }
+                loading: false,
+            };
         case DELETE_CUSTOMER_SUCCESS:
-            return{
+            return {
                 ...state,
-                customer: state.customerList.filter(customer => customer._id !== action.payload),
-                loading:false
-            }    
+                customer: state.customerList.filter((customer) => customer._id !== action.payload),
+                loading: false,
+            };
         case CUSTOMER_CLEAR_ERRORS:
-            return{
+            return {
                 ...state,
-                error:null
-            } 
+                error: null,
+            };
         default:
             return state;
     }
