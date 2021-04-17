@@ -2,12 +2,22 @@ import { useReducer } from "react";
 import axios from "axios";
 import CustomerContext from "./customerContext";
 import customerReducer from "./customerReducer";
-import { ADD_CUSTOMER_SUCCESS, ADD_CUSTOMER_FAIL,CUSTOMER_CLEAR_ERRORS,FETCH_CUSTOMERS_SUCCESS,FETCH_CUSTOMERS_FAIL,UPDATE_CUSTOMER_FAIL,UPDATE_CUSTOMER_SUCCESS,DELETE_CUSTOMER_FAIL,DELETE_CUSTOMER_SUCCESS } from "./customerActions";
+import {
+    ADD_CUSTOMER_SUCCESS,
+    ADD_CUSTOMER_FAIL,
+    CUSTOMER_CLEAR_ERRORS,
+    FETCH_CUSTOMERS_SUCCESS,
+    FETCH_CUSTOMERS_FAIL,
+    UPDATE_CUSTOMER_FAIL,
+    UPDATE_CUSTOMER_SUCCESS,
+    DELETE_CUSTOMER_FAIL,
+    DELETE_CUSTOMER_SUCCESS,
+} from "./customerActions";
 
 function CustomerState(props) {
     const initialState = {
         customer: null,
-        customerList:[],
+        customerList: [],
         loading: true,
         error: null,
     };
@@ -43,43 +53,52 @@ function CustomerState(props) {
         }
     };
 
-    const updateCustomer = async (customer) =>{
-        
-        try{
-            const res = await axios.patch(`/customers/${customer._id}`,customer)
-            dispatch({
-                type:UPDATE_CUSTOMER_SUCCESS,
-                payload:res.data
-            })
-        }catch(err){
-            console.log(customer._id)
-            dispatch({
-                type:UPDATE_CUSTOMER_FAIL,
-                payload:err.response
-            })
+    const updateCustomer = async (customer) => {
+        //If inputs are not empty or valid ?
+        const allowedUpdates = ["username", "email", "password"];
+        const picks = {};
+        for (const item in customer) {
+            if (customer[item] != "" && allowedUpdates.includes(item)) {
+                picks[item] = customer[item];
+            }
         }
-    }
 
-    const deleteCustomer = async (id)=>{
-        try{
+        try {
+            const res = await axios.patch(`/customers/${customer._id}`, picks);
+            console.log(res.data)
+            dispatch({
+                type: UPDATE_CUSTOMER_SUCCESS,
+                payload: res.data,
+            });
+        } catch (err) {
+            console.log(customer._id);
+            dispatch({
+                type: UPDATE_CUSTOMER_FAIL,
+                payload: err.response,
+            });
+        }
+    };
+
+    const deleteCustomer = async (id) => {
+        try {
             await axios.delete(`/customers/${id}`);
             dispatch({
-                type:DELETE_CUSTOMER_SUCCESS,
-                payload:id
-            })
-        }catch(err){
+                type: DELETE_CUSTOMER_SUCCESS,
+                payload: id,
+            });
+        } catch (err) {
             dispatch({
-                type:DELETE_CUSTOMER_FAIL,
-                payload:err.response
-            })
+                type: DELETE_CUSTOMER_FAIL,
+                payload: err.response,
+            });
         }
-    }
+    };
 
     return (
         <CustomerContext.Provider
             value={{
                 customer: state.customer,
-                customerList:state.customerList,
+                customerList: state.customerList,
                 loading: state.loading,
                 error: state.error,
                 addCustomer,

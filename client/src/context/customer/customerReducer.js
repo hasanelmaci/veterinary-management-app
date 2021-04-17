@@ -31,7 +31,7 @@ export default (state, action) => {
         case UPDATE_CUSTOMER_SUCCESS:
             return{
                 ...state,
-                customer: state.customer.map((customer) => customer._id === action.payload._id ? action.payload : customer),
+                customer: action.payload,
                 loading:false
             }
         case DELETE_CUSTOMER_SUCCESS:

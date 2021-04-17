@@ -121,11 +121,10 @@ router.get("/customers/:id", auth, async (req, res) => {
 
 router.patch("/customers/:id", auth, async (req, res) => {
     const updates = Object.keys(req.body);
-    const allowedUpdates = ["username", "email", "password"];
+    const allowedUpdates = ["username","email","password"];
 
-    const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
-
-    if (!isValidOperation) res.status(400).send({ error: "Invalid updates" });
+    const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
+    if(!isValidOperation) res.status(400).send({error: "Invalid updates!"})
 
     try {
         

@@ -14,7 +14,6 @@ function CustomerItem({ infos }) {
     const {username, email, password} = customerUpdateInfos;
     const handleUpdate = (e) =>{
         e.preventDefault()
-        console.log(customerUpdateInfos)
         updateCustomer({...infos,...customerUpdateInfos})
     }
 
