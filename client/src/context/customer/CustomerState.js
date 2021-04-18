@@ -12,6 +12,8 @@ import {
     UPDATE_CUSTOMER_SUCCESS,
     DELETE_CUSTOMER_FAIL,
     DELETE_CUSTOMER_SUCCESS,
+    FETCH_ONE_CUSTOMER_FAIL,
+    FETCH_ONE_CUSTOMER_SUCCESS,
 } from "./customerActions";
 
 function CustomerState(props) {
@@ -94,9 +96,25 @@ function CustomerState(props) {
         }
     };
 
+    const fetchOneCustomer = async (id) => {
+        ///customers/:id
+        try {
+            const res = await axios.get(`/customers/${id}`);
+            dispatch({
+                type:FETCH_ONE_CUSTOMER_SUCCESS,
+                payload:res.data
+            });
+        } catch (err) {
+            dispatch({
+                type:FETCH_ONE_CUSTOMER_FAIL,
+                payload:err.response
+            })
+        }
+    };
+
     const clearErrors = () => {
         dispatch({ type: CUSTOMER_CLEAR_ERRORS });
-      };
+    };
 
     return (
         <CustomerContext.Provider
@@ -109,7 +127,8 @@ function CustomerState(props) {
                 fetchCustomers,
                 deleteCustomer,
                 updateCustomer,
-                clearErrors
+                clearErrors,
+                fetchOneCustomer,
             }}
         >
             {props.children}

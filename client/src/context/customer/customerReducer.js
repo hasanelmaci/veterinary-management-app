@@ -8,6 +8,8 @@ import {
     UPDATE_CUSTOMER_SUCCESS,
     DELETE_CUSTOMER_FAIL,
     DELETE_CUSTOMER_SUCCESS,
+    FETCH_ONE_CUSTOMER_SUCCESS,
+    FETCH_ONE_CUSTOMER_FAIL
 } from "./customerActions";
 
 export default (state, action) => {
@@ -31,6 +33,13 @@ export default (state, action) => {
                 customerList: action.payload,
                 loading: false,
             };
+        case FETCH_ONE_CUSTOMER_SUCCESS:
+            return{
+                ...state,
+                customer:action.payload,
+                loading: 'fetched'
+            };
+        case FETCH_ONE_CUSTOMER_FAIL:
         case DELETE_CUSTOMER_FAIL:
         case UPDATE_CUSTOMER_FAIL:
         case FETCH_CUSTOMERS_FAIL:

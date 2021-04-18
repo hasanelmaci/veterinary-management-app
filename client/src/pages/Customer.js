@@ -1,14 +1,29 @@
-import {useParams} from 'react-router-dom'
+import { useParams } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
-import UserAuthContext from "../context/userAuth/userAuthContext";
+import CustomerContext from "../context/customer/customerContext";
+import CustomerHeader from "../components/Customer/CustomerHeader";
+import CustomerSettings from "../components/Customer/CustomerSettings";
 function Customer() {
+    const { fetchOneCustomer, customer, loading } = useContext(CustomerContext);
 
-    
+    let { id } = useParams();
+
+    useEffect(() => {
+        fetchOneCustomer(id);
+
+        console.log("RENDERRRRRR");
+    }, [loading]);
+
     return (
-        <div>
-             
-        </div>
-    )
+        <>
+            {loading == "fetched" ? (
+                <div>
+                    <CustomerHeader customer={customer} />
+                    <CustomerSettings customer={customer} />
+                </div>
+            ) : 'LOADING'}
+        </>
+    );
 }
 
-export default Customer
+export default Customer;

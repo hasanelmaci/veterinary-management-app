@@ -11,8 +11,8 @@ function Customers() {
     },[customer])
 
     useEffect(()=>{
-        if(error?.data === 'Invalid updates')
-        alert('FALANFİLAN')
+        if(error?.data === 'Invalid updates'){
+        }
         clearErrors()
     },[error])
 
