@@ -20,6 +20,13 @@ export default (state,action) => {
                 pet:action.payload,
                 loading:false,
             }
+        case FETCH_PETS_SUCCESS:
+            return{
+                ...state,
+                petList:action.payload,
+                loading:false
+            }
+        case FETCH_PETS_FAIL:    
         case ADD_PET_FAIL:
             return{
                 ...state,

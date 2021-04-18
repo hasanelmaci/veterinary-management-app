@@ -43,6 +43,22 @@ function PetState(props) {
         }
     }
 
+    const fetchPets = async (id) =>{
+        
+        try{
+            const res = await axios.get(`/customers/${id}/pets`)
+            dispatch({
+                type:FETCH_PETS_SUCCESS,
+                payload:res.data
+            })
+            console.log(res)
+        }catch(err){
+            dispatch({
+                type:FETCH_PETS_FAIL,
+                payload:err.response
+            })
+        }
+    }
     return (
         <PetContext.Provider
             value={{
@@ -51,6 +67,7 @@ function PetState(props) {
                 loading: state.loading,
                 error: state.error,
                 addPet,
+                fetchPets,
             }}
         >
             {props.children}

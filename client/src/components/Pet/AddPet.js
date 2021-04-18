@@ -9,7 +9,7 @@ function AddPet({ customer }) {
     const handleOnSubmit = (e) => {
         e.preventDefault();
         addPet(customer._id, {
-            name: "Max",
+            name: "Maya",
             animal: "Köpek",
             type: "Husky ",
         });
