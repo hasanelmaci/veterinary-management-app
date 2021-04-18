@@ -9,13 +9,13 @@ function PetList({customer}) {
     useEffect(()=>{
         fetchPets(customer._id)
         console.log('FETCH COMPONENT')
-    },[loading])
+    },[])
 
     console.log(petList)
     return (
         <div>
             {petList.map(pet =>(
-                <p>{pet.name}</p>
+                <p key={pet._id}>{pet.name}</p>
             ))}
         </div>
     )

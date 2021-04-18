@@ -8,19 +8,22 @@ function AddPet({ customer }) {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        addPet(customer._id, {
-            name: "Maya",
-            animal: "Köpek",
-            type: "Husky ",
-        });
+        addPet(customer._id, pet);
+    };
+
+    const handleOnChange = (e) => {
+        const inputObject = { [e.target.name]: e.target.value };
+        setPet({ ...pet, ...inputObject });
+        console.log(pet);
     };
 
     return (
         <div>
             <form onSubmit={handleOnSubmit}>
-                <input placeholder="isim" />
-                <input placeholder="tür" />
-                <input placeholder="cins" />
+                <input placeholder="isim" name="name" onChange={handleOnChange} />
+                <input placeholder="tür" name="animal" onChange={handleOnChange} />
+                <input placeholder="cins" name="type" onChange={handleOnChange} />
+                <input placeholder="gender" name="gender" onChange={handleOnChange} />
                 <button type="submit">Ekle</button>
             </form>
         </div>
