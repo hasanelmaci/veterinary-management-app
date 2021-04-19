@@ -11,6 +11,7 @@ import CustomerState from "./context/customer/CustomerState";
 import Navbar from "./components/Profile/Navbar";
 import Customer from "./pages/Customer";
 import PetState from "./context/pet/PetState";
+import AddCustomer from "./components/Profile/AddCustomer";
 
 function App() {
     const userAuthContext = useContext(UserAuthContext);
@@ -37,9 +38,10 @@ function App() {
                                 <Redirect to="/profile" />
                             </Route>
                             <PrivateRoute exact path="/profile" component={Profile} />
+                            <PrivateRoute exact path="/customers/:id" component={Customer} />
+                            <PrivateRoute exact path="/profile/addcustomer" component={AddCustomer} />
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
-                            <PrivateRoute exact path="/customers/:id" component={Customer} />
                         </Switch>
                     </Router>
                 </PetState>

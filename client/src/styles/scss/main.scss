@@ -4,7 +4,11 @@
 @import "login";
 @import "profile";
 @import "navbar";
-@import "customers";
+
+body{
+    background-color: rgb(240, 240, 240);
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 a{
     text-decoration: none;

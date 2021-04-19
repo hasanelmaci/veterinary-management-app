@@ -18,7 +18,8 @@ function Navbar() {
                 <div className="nav">
                     <h1>{user.name}</h1>
                     <ul>
-                        <AddCustomerPopup />
+                        {/* <AddCustomerPopup /> */}
+                        <Link to ="/profile/addcustomer">Müşteri ekle</Link>
                         <Link to="#">
                             <li>Ayarlar</li>
                         </Link>

@@ -21,9 +21,11 @@ function Customer() {
                 <div>
                     <CustomerHeader customer={customer} />
                     <CustomerSettings customer={customer} />
-                    <PetList customer ={customer}/>
+                    <PetList customer={customer} />
                 </div>
-            ) : 'LOADING'}
+            ) : (
+                "LOADING"
+            )}
         </>
     );
 }

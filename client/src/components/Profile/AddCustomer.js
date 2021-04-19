@@ -24,13 +24,16 @@ function AddCustomer() {
     
 
     return (
-        <div className='add-customer'>
+        <div className='addcustomer-container'>
+            <div className='addcustomer'>
+                <h1>Müşteri Ekle</h1>
             <form onSubmit={handleOnSubmit}>
             <input placeholder='isim' name='username' value={username} onChange={handleOnChange}/>
             <input placeholder='email' name='email' value={email} onChange={handleOnChange}/>
             <input placeholder='şifre' name='password' value={password} onChange={handleOnChange}/>
             <button type='submit'>Ekle</button>
             </form>
+        </div>
         </div>
     )
 }

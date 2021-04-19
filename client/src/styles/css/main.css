@@ -157,6 +157,128 @@
   font-size: 0.9rem;
 }
 
+.customer-table-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.customer-table-container a {
+  color: #ff4800;
+}
+
+.customer-table {
+  width: 50%;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+th span {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+td {
+  color: #e22545;
+}
+
+tr:hover {
+  background-color: #fdf4f4;
+}
+
+th {
+  text-align: left;
+  color: #33b400;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.addcustomer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.addcustomer {
+  width: 300px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-self: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.addcustomer h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+}
+
+.addcustomer form {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addcustomer input {
+  padding: 8px 10px;
+  margin-bottom: 7px;
+  width: 100%;
+}
+
+.addcustomer button {
+  padding: 7px 15px;
+  background-color: #03bb03;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.addcustomer button:hover {
+  background-color: #fff;
+  color: #03bb03;
+}
+
+.addcustomer button:focus {
+  background-color: #03bb03;
+  color: #fff;
+}
+
+.addcustomer p {
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+}
+
+.register__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.register__bottom a {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
 .nav {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -176,6 +298,11 @@
   margin-top: 15px;
   padding-right: 15px;
   justify-content: space-between;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 a {

@@ -1,0 +1,120 @@
+.customer-table-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+
+    a{
+        color:rgb(255, 72, 0);
+    }
+}
+
+.customer-table {
+    width: 50%;
+    margin: 0 auto;
+}
+
+th,
+td {
+    padding: 15px;
+}
+
+th span {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+td {
+    color: rgb(226, 37, 69);
+}
+
+tr:hover {
+    background-color: rgb(253, 244, 244);
+}
+
+th {
+    text-align: left;
+    color: rgb(51, 180, 0);
+}
+.avatar {
+    width: 50px;
+    height: 50px;
+}
+
+//AddCustomer
+
+.addcustomer-container{
+    max-width: 1300px;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.addcustomer{
+    width: 300px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+    align-self: center;
+    border:1px solid gray;
+    border-radius: 5px;
+
+    h1{
+        text-align: center;
+        margin-bottom: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+    }
+
+    form{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 80%;
+        margin:0 auto;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input{
+        padding:8px 10px;
+        margin-bottom: 7px;
+        width: 100%;
+    }
+
+    button{
+        padding:7px 15px;
+        background-color: rgb(3, 187, 3);
+        color:#fff;
+        border-radius: 5px;
+        cursor:pointer;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    button:hover{
+        background-color:#fff;
+        color:rgb(3, 187, 3);
+    }
+    button:focus{
+        background-color: rgb(3, 187, 3);
+        color:#fff;
+    }
+    p{
+        text-align: center;
+        color:red;
+        margin-top: 10px;
+    }
+    
+}
+
+.register__bottom{
+    width: 100%;
+    display:flex;
+    justify-content: space-evenly;
+
+    a{
+        margin-top: 5px;
+        font-size: 0.9rem;
+    }
+}
