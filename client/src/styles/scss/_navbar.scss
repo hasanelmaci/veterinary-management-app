@@ -3,9 +3,11 @@
     display: flex;
     border-bottom:1px solid black;
     padding: 20px;
+    justify-content: space-between;
     
 
-    h1{
+    a h1{
+        color:black;
         flex-grow: 1;
         letter-spacing: 5px;
     }

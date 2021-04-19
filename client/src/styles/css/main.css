@@ -157,24 +157,57 @@
   font-size: 0.9rem;
 }
 
+.profile-top {
+  max-width: 1300px;
+  flex-direction: column;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-top h1 {
+  text-align: center;
+  margin-top: 15px;
+  letter-spacing: 3px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.search-container input {
+  border: none;
+  background-color: #F0F0F0;
+  border-bottom: 1px solid black;
+  padding: 5px 10px;
+}
+
 .customer-table-container {
   max-width: 1300px;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
+  margin-top: 50px;
+}
+
+.customer-table-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ec4d68;
 }
 
 .customer-table-container a {
-  color: #ff4800;
+  color: black;
 }
 
 .customer-table {
-  width: 50%;
   margin: 0 auto;
 }
 
 th,
 td {
-  padding: 15px;
+  padding: 5px 25px;
 }
 
 th span {
@@ -211,7 +244,7 @@ th {
 
 .addcustomer {
   width: 300px;
-  height: 280px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -264,8 +297,14 @@ th {
 
 .addcustomer p {
   text-align: center;
-  color: red;
+  color: #1a9c00;
   margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.addcustomer a {
+  color: #1a9c00;
+  text-decoration: underline;
 }
 
 .register__bottom {
@@ -284,9 +323,11 @@ th {
   display: flex;
   border-bottom: 1px solid black;
   padding: 20px;
+  justify-content: space-between;
 }
 
-.nav h1 {
+.nav a h1 {
+  color: black;
   flex-grow: 1;
   letter-spacing: 5px;
 }

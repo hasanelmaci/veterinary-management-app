@@ -16,7 +16,9 @@ function Navbar() {
         <>
             {isUserAuth ? (
                 <div className="nav">
+                    <Link to="/profile" >
                     <h1>{user.name}</h1>
+                    </Link>
                     <ul>
                         {/* <AddCustomerPopup /> */}
                         <Link to ="/profile/addcustomer">Müşteri ekle</Link>

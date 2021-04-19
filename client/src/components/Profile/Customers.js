@@ -2,9 +2,8 @@ import { useContext, useEffect } from "react";
 import CustomerContext from "../../context/customer/customerContext";
 import CustomerItem from "./CustomerItem";
 
-function Customers() {
+function Customers({ searchInput }) {
     const { customerList, fetchCustomers, clearErrors, customer, error } = useContext(CustomerContext);
-
     useEffect(() => {
         fetchCustomers();
     }, [customer]);
@@ -26,9 +25,9 @@ function Customers() {
                     </tr>
                 </thead>
                 <tbody>
-                    {customerList.map((item) => (
-                        <CustomerItem key={item._id} infos={item} />
-                    ))}
+                    {customerList.map((item) =>
+                        item.username.includes(searchInput) ? <CustomerItem key={item._id} infos={item} /> : null
+                    )}
                 </tbody>
             </table>
         </div>
