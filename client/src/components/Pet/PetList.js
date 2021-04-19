@@ -8,10 +8,7 @@ function PetList({customer}) {
 
     useEffect(()=>{
         fetchPets(customer._id)
-        console.log('FETCH COMPONENT')
     },[])
-
-    console.log(petList)
     return (
         <div>
             {petList.map(pet =>(

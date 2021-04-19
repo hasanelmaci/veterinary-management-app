@@ -67,13 +67,11 @@ function CustomerState(props) {
 
         try {
             const res = await axios.patch(`/customers/${id}`, picks);
-            console.log(res.data);
             dispatch({
                 type: UPDATE_CUSTOMER_SUCCESS,
                 payload: res.data,
             });
         } catch (err) {
-            console.log(customer._id);
             dispatch({
                 type: UPDATE_CUSTOMER_FAIL,
                 payload: err.response,

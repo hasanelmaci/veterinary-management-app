@@ -27,8 +27,6 @@ function PetState(props) {
     const [state, dispatch] = useReducer(petReducer, initialState);
 
     const addPet = async (id,pet) =>{
-        console.log(id)
-        console.log(pet)
         try{
             const res = await axios.post(`/customers/${id}/pets`,pet)
             dispatch({
@@ -51,7 +49,6 @@ function PetState(props) {
                 type:FETCH_PETS_SUCCESS,
                 payload:res.data
             })
-            console.log(res)
         }catch(err){
             dispatch({
                 type:FETCH_PETS_FAIL,

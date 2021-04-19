@@ -86,7 +86,7 @@ th {
 
 .addcustomer {
     width: 300px;
-    height: 300px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -145,6 +145,8 @@ th {
     }
 }
 
+
+
 .register__bottom {
     width: 100%;
     display: flex;
@@ -153,5 +155,31 @@ th {
     a {
         margin-top: 5px;
         font-size: 0.9rem;
+    }
+}
+
+.delete-customer p,button{
+    margin-top: 50px;
+    
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+
+    button{
+        margin-top: 35px;
+        display: inline;
+    }
+    button:nth-child(1){
+        background-color: red;   
+       
+    }
+    a{
+        text-decoration: none;
+    };
+
+    a button:hover{
+        background-color: #fff;
+        color:red;
     }
 }

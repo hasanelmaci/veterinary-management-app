@@ -11,8 +11,6 @@ function Customer() {
 
     useEffect(() => {
         fetchOneCustomer(id);
-
-        console.log("RENDERRRRRR");
     }, [loading]);
 
     const newTo = {
