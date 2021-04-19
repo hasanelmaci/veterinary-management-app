@@ -1,5 +1,5 @@
 import {useParams,Link} from 'react-router-dom'
-import { useContext, useState,useEffect } from "react";
+import { useContext, useState } from "react";
 import CustomerContext from "../../context/customer/customerContext";
 
 function UpdateCustomer() {

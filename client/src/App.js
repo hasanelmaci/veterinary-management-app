@@ -1,39 +1,24 @@
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
-import { useEffect, useContext } from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import "./styles/css/main.css";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import PrivateRoute from "./routing/PrivateRoute";
 import UserAuthState from "./context/userAuth/UserAuthState";
-import UserAuthContext from "./context/userAuth/userAuthContext";
 import CustomerState from "./context/customer/CustomerState";
 import Navbar from "./components/Profile/Navbar";
 import Customer from "./pages/Customer";
 import PetState from "./context/pet/PetState";
 import AddCustomer from "./components/Profile/AddCustomer";
-import UpdateCustomer from "./components/Customer/UpdateCustomer"
+import UpdateCustomer from "./components/Customer/UpdateCustomer";
 
 function App() {
-    const userAuthContext = useContext(UserAuthContext);
-
-    const { loadUser, isUserAuth, user } = userAuthContext;
-
-    useEffect(() => {
-        loadUser();
-    }, []);
-
     return (
         <UserAuthState>
             <CustomerState>
                 <PetState>
-                    {isUserAuth}
                     <Router>
                         <Navbar />
-                        {/* <Link to='/'>Home</Link>
-            <Link to='/register'>register</Link>
-            <Link to='/login'>login</Link>
-        <Link to='/profile'>profile</Link> */}
                         <Switch>
                             <Route exact path="/">
                                 <Redirect to="/profile" />

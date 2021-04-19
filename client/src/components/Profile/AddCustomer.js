@@ -3,7 +3,7 @@ import { useContext, useState,useEffect } from "react";
 import CustomerContext from "../../context/customer/customerContext";
 
 function AddCustomer(props) {
-    const { addCustomer, error } = useContext(CustomerContext);
+    const { addCustomer } = useContext(CustomerContext);
 
     const [customer, setCustomer] = useState({
         username: "",

@@ -15,10 +15,10 @@ function Customer() {
         console.log("RENDERRRRRR");
     }, [loading]);
 
-    const newTo={
-        pathname:`customers/${id}/update`,
-        customer:customer
-    }
+    const newTo = {
+        pathname: `customers/${id}/update`,
+        customer: customer,
+    };
 
     return (
         <>
@@ -27,7 +27,6 @@ function Customer() {
                     <CustomerHeader customer={customer} />
                     <CustomerSettings customer={customer} />
                     <PetList customer={customer} />
-                    
                 </div>
             ) : (
                 "LOADING"

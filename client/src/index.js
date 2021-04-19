@@ -1,12 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import UserAuthState from "./context/userAuth/UserAuthState"
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-ReactDOM.render(
-  <UserAuthState>
-    
-    <App />
-  </UserAuthState>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById("root"));
