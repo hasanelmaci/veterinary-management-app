@@ -15,6 +15,11 @@ function Customer() {
         console.log("RENDERRRRRR");
     }, [loading]);
 
+    const newTo={
+        pathname:`customers/${id}/update`,
+        customer:customer
+    }
+
     return (
         <>
             {loading == "fetched" ? (
@@ -22,6 +27,7 @@ function Customer() {
                     <CustomerHeader customer={customer} />
                     <CustomerSettings customer={customer} />
                     <PetList customer={customer} />
+                    
                 </div>
             ) : (
                 "LOADING"

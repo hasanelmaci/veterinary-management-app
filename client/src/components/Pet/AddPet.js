@@ -14,7 +14,6 @@ function AddPet({ customer }) {
     const handleOnChange = (e) => {
         const inputObject = { [e.target.name]: e.target.value };
         setPet({ ...pet, ...inputObject });
-        console.log(pet);
     };
 
     return (

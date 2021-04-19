@@ -55,7 +55,7 @@ function CustomerState(props) {
         }
     };
 
-    const updateCustomer = async (customer) => {
+    const updateCustomer = async (id,customer) => {
         //If inputs are not empty or valid ?
         const allowedUpdates = ["username", "email", "password"];
         const picks = {};
@@ -66,7 +66,7 @@ function CustomerState(props) {
         }
 
         try {
-            const res = await axios.patch(`/customers/${customer._id}`, picks);
+            const res = await axios.patch(`/customers/${id}`, picks);
             console.log(res.data);
             dispatch({
                 type: UPDATE_CUSTOMER_SUCCESS,
