@@ -179,7 +179,7 @@
 
 .search-container input {
   border: none;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   border-bottom: 1px solid black;
   padding: 5px 10px;
 }
@@ -233,7 +233,7 @@ th {
   height: 50px;
 }
 
-.addcustomer-container {
+.addcustomer-container, .update-container, .addpet-container {
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
@@ -242,7 +242,7 @@ th {
   height: 90vh;
 }
 
-.addcustomer {
+.addcustomer, .updatecustomer, .addpet {
   width: 300px;
   height: 320px;
   display: flex;
@@ -253,14 +253,14 @@ th {
   border-radius: 5px;
 }
 
-.addcustomer h1 {
+.addcustomer h1, .updatecustomer h1, .addpet h1 {
   text-align: center;
   margin-bottom: 15px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 20px;
 }
 
-.addcustomer form {
+.addcustomer form, .updatecustomer form, .addpet form {
   font-family: Arial, Helvetica, sans-serif;
   width: 80%;
   margin: 0 auto;
@@ -269,13 +269,13 @@ th {
   align-items: center;
 }
 
-.addcustomer input {
+.addcustomer input, .updatecustomer input, .addpet input {
   padding: 8px 10px;
   margin-bottom: 7px;
   width: 100%;
 }
 
-.addcustomer button {
+.addcustomer button, .updatecustomer button, .addpet button {
   padding: 7px 15px;
   background-color: #03bb03;
   color: #fff;
@@ -285,24 +285,24 @@ th {
   margin-top: 10px;
 }
 
-.addcustomer button:hover {
+.addcustomer button:hover, .updatecustomer button:hover, .addpet button:hover {
   background-color: #fff;
   color: #03bb03;
 }
 
-.addcustomer button:focus {
+.addcustomer button:focus, .updatecustomer button:focus, .addpet button:focus {
   background-color: #03bb03;
   color: #fff;
 }
 
-.addcustomer p {
+.addcustomer p, .updatecustomer p, .addpet p {
   text-align: center;
   color: #1a9c00;
   margin-top: 10px;
   font-size: 0.9rem;
 }
 
-.addcustomer a {
+.addcustomer a, .updatecustomer a, .addpet a {
   color: #1a9c00;
   text-decoration: underline;
 }
@@ -318,7 +318,7 @@ th {
   font-size: 0.9rem;
 }
 
-.delete-customer p, button {
+.delete-customer p {
   margin-top: 50px;
 }
 
@@ -366,6 +366,90 @@ th {
   margin-top: 15px;
   padding-right: 15px;
   justify-content: space-between;
+}
+
+.customer-header {
+  text-align: center;
+  height: auto;
+}
+
+.customer-header h1 {
+  margin-bottom: 5px;
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.customer-settings {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.customer-settings a {
+  color: green;
+  font-weight: 400;
+}
+
+.pet-list-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pet-list-container h2 {
+  text-align: center;
+  color: #054292;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.pet-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.pet-card {
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 10px;
+  text-align: center;
+}
+
+.pet-card a {
+  color: green;
+}
+
+.pet-card-info-bottom {
+  margin-top: 15px;
+}
+
+.pet-card-info-bottom span {
+  color: #4c0cc2;
+}
+
+.pet-card-info-bottom p {
+  margin-top: 2px;
+}
+
+.pet-avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pet-avatar-container img {
+  width: 200px;
+  border: 1px solid gray;
+  border-radius: 15px;
+}
+
+.pet-avatar-container img:hover {
+  border: 3px solid gold;
 }
 
 body {

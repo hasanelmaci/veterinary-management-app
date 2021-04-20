@@ -11,6 +11,8 @@ import Customer from "./pages/Customer";
 import PetState from "./context/pet/PetState";
 import AddCustomer from "./components/Profile/AddCustomer";
 import UpdateCustomer from "./components/Customer/UpdateCustomer";
+import AddPet from "./components/Pet/AddPet"
+import PetProfile from "./pages/PetProfile";
 
 function App() {
     return (
@@ -27,6 +29,8 @@ function App() {
                             <PrivateRoute exact path="/customers/:id" component={Customer} />
                             <PrivateRoute exact path="/customers/:id/update" component={UpdateCustomer} />
                             <PrivateRoute exact path="/profile/addcustomer" component={AddCustomer} />
+                            <PrivateRoute exact path="/customers/:id/addpet" component={AddPet} />
+                            <PrivateRoute exact path="/customers/:id/:petid" component={PetProfile} />
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
                         </Switch>

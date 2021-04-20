@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import {useParams} from 'react-router-dom'
 import PetContext from "../../context/pet/petContext";
 
 function AddPet({ customer }) {
@@ -6,9 +7,11 @@ function AddPet({ customer }) {
 
     const [pet, setPet] = useState({});
 
+    let id = useParams()
+
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        addPet(customer._id, pet);
+        addPet(id.id, pet);
     };
 
     const handleOnChange = (e) => {
@@ -17,14 +20,17 @@ function AddPet({ customer }) {
     };
 
     return (
-        <div>
+        <div className='addpet-container'>
+        <div className='addpet'>
+            <h1>Evcil Hayvan Ekle</h1>
             <form onSubmit={handleOnSubmit}>
-                <input placeholder="isim" name="name" onChange={handleOnChange} />
-                <input placeholder="tür" name="animal" onChange={handleOnChange} />
-                <input placeholder="cins" name="type" onChange={handleOnChange} />
-                <input placeholder="gender" name="gender" onChange={handleOnChange} />
+                <input placeholder="İsim" name="name" onChange={handleOnChange} />
+                <input placeholder="Tür" name="animal" onChange={handleOnChange} />
+                <input placeholder="Cins" name="type" onChange={handleOnChange} />
+                <input placeholder="Cinsiyet" name="gender" onChange={handleOnChange} />
                 <button type="submit">Ekle</button>
             </form>
+        </div>
         </div>
     );
 }

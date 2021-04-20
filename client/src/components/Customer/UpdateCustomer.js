@@ -35,8 +35,8 @@ function UpdateCustomer() {
     }
 
     return (
-        <div className="addcustomer-container">
-        <div className="addcustomer">
+        <div className="update-container">
+        <div className="updatecustomer">
             {deleteInput ?
             <div className='delete-customer'>
                 <h1>Müşteriyi Sil</h1>

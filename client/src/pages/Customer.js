@@ -13,17 +13,12 @@ function Customer() {
         fetchOneCustomer(id);
     }, [loading]);
 
-    const newTo = {
-        pathname: `customers/${id}/update`,
-        customer: customer,
-    };
-
     return (
         <>
             {loading == "fetched" ? (
                 <div>
                     <CustomerHeader customer={customer} />
-                    <CustomerSettings customer={customer} />
+                    {/* <CustomerSettings customer={customer} /> */}
                     <PetList customer={customer} />
                 </div>
             ) : (

@@ -1,0 +1,82 @@
+.customer-header {
+    text-align: center;
+    height: auto;
+    h1 {
+        margin-bottom: 5px;
+        font-size: 2.8rem;
+        letter-spacing: 3px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+}
+
+.customer-settings {
+    max-width: 500px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    a{
+        color:green;
+        font-weight: 400;
+    }
+
+}
+
+.pet-list-container{
+    h2{
+        text-align: center;
+        color:rgb(5, 66, 146);
+        font-weight: 600;
+        margin-top: 50px;
+    }
+    max-width: 1000px;
+    margin:0 auto;
+}
+
+.pet-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pet-card{
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:25px 10px;
+    text-align: center;
+
+
+    a{
+        color:green;
+    }
+
+}
+
+.pet-card-info-bottom{
+    margin-top: 15px;
+    span{
+        color:rgb(76, 12, 194);
+    }
+    p{
+        margin-top: 2px;
+    }
+}
+
+.pet-avatar-container{
+    display: flex;
+    justify-content: center;
+
+    img{
+        width: 200px;
+        border:1px solid gray;
+        border-radius: 15px;
+    }
+
+    img:hover{
+        border:3px solid gold;
+    }
+}
