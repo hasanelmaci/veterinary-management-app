@@ -205,25 +205,25 @@
   margin: 0 auto;
 }
 
-th,
-td {
+.customer-table th,
+.customer-table td {
   padding: 5px 25px;
 }
 
-th span {
+.customer-table th span {
   font-size: 12px;
   font-weight: 400;
 }
 
-td {
+.customer-table td {
   color: #e22545;
 }
 
-tr:hover {
+.customer-table tr:hover {
   background-color: #fdf4f4;
 }
 
-th {
+.customer-table th {
   text-align: left;
   color: #33b400;
 }
@@ -450,6 +450,81 @@ th {
 
 .pet-avatar-container img:hover {
   border: 3px solid gold;
+}
+
+.pet-profile {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.pet-header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.pet-avatar {
+  display: inline-block;
+}
+
+.pet-avatar img {
+  width: 250px;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+
+.pet-profile-infos {
+  max-width: 260px;
+  text-align: center;
+}
+
+.treatment-container {
+  width: 100%;
+  margin-top: 50px;
+  margin-left: 90px;
+}
+
+.treatment-header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.treatment-header h2 {
+  cursor: pointer;
+}
+
+.treatment-header h2:hover {
+  color: red;
+}
+
+.treatment-table {
+  background-color: #e7e7e7;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.treatment-table th,
+.treatment-table td {
+  padding: 5px 25px;
+}
+
+.treatment-table th span {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.treatment-table td {
+  color: #e22545;
+}
+
+.treatment-table tr:hover {
+  background-color: #fdf4f4;
+}
+
+.treatment-table th {
+  text-align: left;
+  color: #33b400;
 }
 
 body {

@@ -1,0 +1,74 @@
+.pet-profile{
+    max-width: 1300px;
+    margin:0 auto;
+    display: flex;
+}
+
+.pet-header{
+    display:flex;
+    flex-direction: column;
+    margin-top: 50px;
+    
+}
+
+.pet-avatar{
+
+    display: inline-block;
+    
+    img{
+        width: 250px;
+        border:1px solid gray;
+        border-radius: 50%;
+    }
+}
+
+.pet-profile-infos{
+    max-width: 260px;
+    text-align: center;
+}
+
+.treatment-container{
+
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 90px;
+}
+
+.treatment-header{
+    display: flex;
+    justify-content: space-evenly;
+    h2{
+        cursor: pointer;
+    }
+    h2:hover{
+        color:red;
+    }
+}
+
+.treatment-table {
+    background-color: rgb(231, 231, 231);
+    margin: 0 auto;
+    width: 100%;
+    th,
+td {
+    padding: 5px 25px;
+}
+
+th span {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+td {
+    color: rgb(226, 37, 69);
+}
+
+tr:hover {
+    background-color: rgb(253, 244, 244);
+}
+
+th {
+    text-align: left;
+    color: rgb(51, 180, 0);
+}
+}

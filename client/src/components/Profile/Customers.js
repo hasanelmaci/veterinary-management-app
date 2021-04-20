@@ -26,7 +26,7 @@ function Customers({ searchInput }) {
                 </thead>
                 <tbody>
                     {customerList.map((item) =>
-                        item.username.includes(searchInput) ? <CustomerItem key={item._id} infos={item} /> : null
+                        item.username.toLowerCase().includes(searchInput.toLowerCase()) ? <CustomerItem key={item._id} infos={item} /> : null
                     )}
                 </tbody>
             </table>
