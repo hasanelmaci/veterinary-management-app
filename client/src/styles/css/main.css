@@ -233,7 +233,7 @@
   height: 50px;
 }
 
-.addcustomer-container, .update-container, .addpet-container {
+.addcustomer-container, .update-container, .addpet-container, .update-pet-container {
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
@@ -242,9 +242,10 @@
   height: 90vh;
 }
 
-.addcustomer, .updatecustomer, .addpet {
+.addcustomer, .updatecustomer, .addpet, .updatepet {
   width: 300px;
-  height: 320px;
+  height: auto;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -253,14 +254,14 @@
   border-radius: 5px;
 }
 
-.addcustomer h1, .updatecustomer h1, .addpet h1 {
+.addcustomer h1, .updatecustomer h1, .addpet h1, .updatepet h1 {
   text-align: center;
   margin-bottom: 15px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 20px;
 }
 
-.addcustomer form, .updatecustomer form, .addpet form {
+.addcustomer form, .updatecustomer form, .addpet form, .updatepet form {
   font-family: Arial, Helvetica, sans-serif;
   width: 80%;
   margin: 0 auto;
@@ -269,13 +270,13 @@
   align-items: center;
 }
 
-.addcustomer input, .updatecustomer input, .addpet input {
+.addcustomer input, .updatecustomer input, .addpet input, .updatepet input {
   padding: 8px 10px;
   margin-bottom: 7px;
   width: 100%;
 }
 
-.addcustomer button, .updatecustomer button, .addpet button {
+.addcustomer button, .updatecustomer button, .addpet button, .updatepet button {
   padding: 7px 15px;
   background-color: #03bb03;
   color: #fff;
@@ -285,24 +286,24 @@
   margin-top: 10px;
 }
 
-.addcustomer button:hover, .updatecustomer button:hover, .addpet button:hover {
+.addcustomer button:hover, .updatecustomer button:hover, .addpet button:hover, .updatepet button:hover {
   background-color: #fff;
   color: #03bb03;
 }
 
-.addcustomer button:focus, .updatecustomer button:focus, .addpet button:focus {
+.addcustomer button:focus, .updatecustomer button:focus, .addpet button:focus, .updatepet button:focus {
   background-color: #03bb03;
   color: #fff;
 }
 
-.addcustomer p, .updatecustomer p, .addpet p {
+.addcustomer p, .updatecustomer p, .addpet p, .updatepet p {
   text-align: center;
   color: #1a9c00;
   margin-top: 10px;
   font-size: 0.9rem;
 }
 
-.addcustomer a, .updatecustomer a, .addpet a {
+.addcustomer a, .updatecustomer a, .addpet a, .updatepet a {
   color: #1a9c00;
   text-decoration: underline;
 }
@@ -477,6 +478,24 @@
 .pet-profile-infos {
   max-width: 260px;
   text-align: center;
+}
+
+.pet-profile-infos h1 {
+  margin-bottom: 8px;
+}
+
+.pet-profile-infos p {
+  margin-bottom: 10px;
+}
+
+.pet-profile-infos a {
+  color: green;
+  font-weight: 600;
+}
+
+.pet-profile-infos a:hover {
+  color: red;
+  margin-top: 15px;
 }
 
 .treatment-container {

@@ -32,7 +32,7 @@ function App() {
                             <PrivateRoute exact path="/profile/addcustomer" component={AddCustomer} />
                             <PrivateRoute exact path="/customers/:id/addpet" component={AddPet} />
                             <PrivateRoute exact path="/customers/:id/:petid" component={PetProfile} />
-                            <PrivateRoute exact path="/customers/pets/:petid/update" component={UpdatePet} />
+                            <PrivateRoute exact path="/customers/:id/:petid/updatepet" component={UpdatePet} />
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
                         </Switch>

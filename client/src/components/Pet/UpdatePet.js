@@ -2,69 +2,49 @@ import {useParams,Link} from 'react-router-dom'
 import { useContext, useState,useEffect } from "react";
 import PetContext from "../../context/pet/petContext";
 
-function UpdateCustomer() {
+function UpdatePet() {
 
-    let {petid} = useParams()
+    let {id,petid} = useParams()
 
-    const {updatePet,deletePet} = useContext(PetContext)
+    const {updatePet} = useContext(PetContext)
 
     const [updatedPet, setUpdatedPet] = useState({})
     const [message, setMessage] = useState(false)
 
-    const [deleteInput,setDeleteInput] = useState(false)
-
-    useEffect(()=>{
-        setDeleteInput(false)
-    },[])
-
     const handleOnSubmit = (e) =>{
         e.preventDefault();
-        updatePet(petid,updatedPet)
+        updatePet(id,petid,updatedPet)
         setMessage(true)
     }
 
     const handleOnChange =(e)=>{
+        console.log(updatedPet)
         const inputObject = {[e.target.name]:e.target.value}
         setUpdatedPet({...updatedPet,...inputObject})
     }
 
 
-
-    const handleDelete = () =>{
-        deletePet(petid)
-    }
-
     return (
-        <div className="update-container">
-        <div className="updatecustomer">
-            {deleteInput ?
-            <div className='delete-customer'>
-                <h1>Müşteriyi Sil</h1>
-            <p>Müşteri silmek istediğinize emin misiniz?</p>
-            <div className='buttons'>
-            <Link to='/profile'>
-            <button onClick={()=>handleDelete()}>Evet</button>
-            </Link>
-            <button onClick={()=>setDeleteInput(false)}>Hayır</button>
-            </div>
-            </div>
-            :
-            <>
-            <h1>Müşteri Güncelle</h1>
+        <div className="update-pet-container">
+        <div className="updatepet">
+       
+            <h1>Bilgileri Güncelle</h1>
             <form  onSubmit={handleOnSubmit}>
-                <input placeholder="İsim" name="username"  onChange={handleOnChange} />
-                <input type='email' placeholder="Email" name="email" onChange={handleOnChange} />
-                <input placeholder="Parola" name="password" onChange={handleOnChange} />
+                <input placeholder="İsim" name="name"  onChange={handleOnChange} />
+                <input placeholder="Tür" name="animal" onChange={handleOnChange} />
+                <input placeholder="Cins" name="type" onChange={handleOnChange} />
+                <input placeholder="Cinsiyet" name="gender" onChange={handleOnChange} />
+                <input placeholder="Doğum Yılı" name="birthdate" onChange={handleOnChange} />
                 <button type="submit">Güncelle</button>
-                <p style={{color:'red',cursor:'pointer'}} onClick={()=>setDeleteInput(true)}>Müşteriyi Sil</p>
+
             </form>
             
-            {message && <p>Müşteri eklendi. <Link to='/profile' > Anasayfaya dön</Link></p>}
-            </>
+            {message && <p>Bilgiler güncellendi. <Link to={`/customers/${id}/${petid}`} > Profile Dön</Link></p>}
+   
             
             
             
-            }
+            
 
 
         </div>
@@ -72,5 +52,5 @@ function UpdateCustomer() {
     )
 }
 
-export default UpdateCustomer
+export default UpdatePet
 

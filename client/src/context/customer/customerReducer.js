@@ -9,7 +9,7 @@ import {
     DELETE_CUSTOMER_FAIL,
     DELETE_CUSTOMER_SUCCESS,
     FETCH_ONE_CUSTOMER_SUCCESS,
-    FETCH_ONE_CUSTOMER_FAIL
+    FETCH_ONE_CUSTOMER_FAIL,
 } from "./customerActions";
 
 export default (state, action) => {
@@ -34,10 +34,10 @@ export default (state, action) => {
                 loading: false,
             };
         case FETCH_ONE_CUSTOMER_SUCCESS:
-            return{
+            return {
                 ...state,
-                customer:action.payload,
-                loading: 'fetched'
+                customer: action.payload,
+                loading: "fetched",
             };
         case FETCH_ONE_CUSTOMER_FAIL:
         case DELETE_CUSTOMER_FAIL:

@@ -9,9 +9,9 @@ function PetHeader({pet}) {
             </div>
             <div className='pet-profile-infos'>
             <h1>{pet.name}</h1>
-                <p>{pet.animal}, {pet.type}</p>
-                <p>{pet.gender}, {pet.birthDate}</p>
-                <Link to={`/customers/pets/${pet._id}/update`}>Güncelle</Link> 
+                <p>{pet.animal} {pet.type}</p>
+                <p>{pet.gender} {pet.birthdate}</p>
+                <Link to={`/customers/${pet.owner}/${pet._id}/updatepet`}>Bilgileri güncelle</Link> 
             </div>
         </div>
     )

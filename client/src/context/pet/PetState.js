@@ -73,6 +73,29 @@ function PetState(props) {
 
     }
 
+    const updatePet = async (id,petid,pet)=>{
+        const allowedupdates = ["name","type","animal","birthdate","gender"];
+        const picks = {};
+        for(const item in pet){
+            if(pet[item] != "" && allowedupdates.includes(item)){
+                picks[item] = pet[item];
+            }
+        }
+
+        try{
+            const res= await axios.patch(`/customers/${id}/${petid}`,picks);
+            dispatch({
+                type:UPDATE_PET_SUCCESS,
+                payload:res.data
+            })
+        }catch(err){
+            dispatch({
+                type:UPDATE_PET_FAIL,
+                payload:err.response
+            })
+        }
+    }
+
     return (
         <PetContext.Provider
             value={{
@@ -83,6 +106,7 @@ function PetState(props) {
                 addPet,
                 fetchPets,
                 fetchOnePet,
+                updatePet,
             }}
         >
             {props.children}

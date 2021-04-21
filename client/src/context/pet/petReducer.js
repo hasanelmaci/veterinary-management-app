@@ -32,6 +32,20 @@ export default (state,action) => {
                 pet:action.payload,
                 loading:'pet_fetched'
             }
+        case UPDATE_PET_SUCCESS:
+            return{
+                ...state,
+                pet:action.payload,
+                loading:false,
+            }
+        case DELETE_PET_SUCCESS:
+            return{
+                ...state,
+                pet: state.petList.filter((pet)=>pet._id!==action.payload),
+                loading:false
+            }
+        case DELETE_PET_FAIL:
+        case UPDATE_PET_FAIL:    
         case FETCH_PETS_FAIL:    
         case ADD_PET_FAIL:
         case FETCH_ONE_PET_FAIL:

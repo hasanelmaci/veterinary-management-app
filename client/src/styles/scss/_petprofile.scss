@@ -25,6 +25,21 @@
 .pet-profile-infos{
     max-width: 260px;
     text-align: center;
+    h1{
+        margin-bottom: 8px;
+    }
+    p{
+        
+        margin-bottom: 10px;
+    }
+    a{
+        color:green;
+        font-weight: 600;
+    }
+    a:hover{
+        color:red;
+        margin-top: 15px;
+    }
 }
 
 .treatment-container{

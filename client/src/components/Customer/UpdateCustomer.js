@@ -4,7 +4,7 @@ import CustomerContext from "../../context/customer/customerContext";
 
 function UpdateCustomer() {
 
-    let id = useParams()
+    let {id} = useParams()
 
     const {updateCustomer,deleteCustomer} = useContext(CustomerContext)
 
@@ -19,7 +19,7 @@ function UpdateCustomer() {
 
     const handleOnSubmit = (e) =>{
         e.preventDefault();
-        updateCustomer(id.id,updatedCustomer)
+        updateCustomer(id,updatedCustomer)
         setMessage(true)
     }
 
@@ -31,7 +31,7 @@ function UpdateCustomer() {
 
 
     const handleDelete = () =>{
-        deleteCustomer(id.id)
+        deleteCustomer(id)
     }
 
     return (
@@ -59,7 +59,7 @@ function UpdateCustomer() {
                 <p style={{color:'red',cursor:'pointer'}} onClick={()=>setDeleteInput(true)}>Müşteriyi Sil</p>
             </form>
             
-            {message && <p>Müşteri eklendi. <Link to='/profile' > Anasayfaya dön</Link></p>}
+            {message && <p>Müşteri güncellendi. <Link to={`/customers/${id}`} > Profile dön.</Link></p>}
             </>
             
             
