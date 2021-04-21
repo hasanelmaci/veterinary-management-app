@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+    import { useContext, useState, useEffect } from "react";
 import {useParams} from 'react-router-dom'
 import PetContext from "../../context/pet/petContext";
 
@@ -7,11 +7,11 @@ function AddPet({ customer }) {
 
     const [pet, setPet] = useState({});
 
-    let id = useParams()
+    let {id} = useParams()
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        addPet(id.id, pet);
+        addPet(id, pet);
     };
 
     const handleOnChange = (e) => {

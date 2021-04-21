@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import UpcomingTreatments from "./UpcomingTreatments";
 import PassedTreatments from "./PassedTreatments"
+import AddTreatment from './AddTreatment';
 
 function TreatmentList({pet}) {
 
@@ -13,9 +14,10 @@ function TreatmentList({pet}) {
     return (
         <div className="treatment-container">
             <div className="treatment-header">
-            <h2 className='passed' name='passed' onClick={(e)=>handleType(e)}>Geçmiş Tedaviler</h2>
-            <h2 className='upcoming' onClick={(e)=>handleType(e)}>Gelecek Tedaviler</h2>
+            <h2 className='passed' style={{textDecoration:treatmentType==='passed' && 'underline'}} onClick={(e)=>handleType(e)}>Geçmiş Tedaviler</h2>
+            <h2 className='upcoming' style={{textDecoration:treatmentType==='upcoming' && 'underline'}} onClick={(e)=>handleType(e)}>Gelecek Tedaviler</h2>
             </div>
+            <AddTreatment treatmentType={treatmentType} pet={pet}/>
             <table className="treatment-table">
                 <thead>
                     <tr>

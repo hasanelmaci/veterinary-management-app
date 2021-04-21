@@ -511,6 +511,7 @@
 
 .treatment-header h2 {
   cursor: pointer;
+  color: #920303;
 }
 
 .treatment-header h2:hover {

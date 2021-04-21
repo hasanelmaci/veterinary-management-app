@@ -14,6 +14,10 @@ import {
     DELETE_PET_SUCCESS,
     DELETE_PET_FAIL,
     PET_CLEAR_ERRORS,
+    ADD_UPCOMING_TREATMENT_FAIL,
+    ADD_UPCOMING_TREATMENT_SUCCESS,
+    ADD_PASSED_TREATMENT_SUCCESS,
+    ADD_PASSED_TREATMENT_FAIL
 } from "./petActions";
 
 function PetState(props) {
@@ -96,6 +100,37 @@ function PetState(props) {
         }
     }
 
+    const addUpcomingTreatment = async (petid,formData) =>{
+        console.log(formData)
+        try{
+            const res = await axios.post(`/upcomingtreatments/${petid}`,formData)
+            dispatch({
+                type:ADD_UPCOMING_TREATMENT_SUCCESS,
+                payload:res.data
+            })
+        }catch(err){
+            dispatch({
+                type:ADD_UPCOMING_TREATMENT_FAIL,
+                payload:err.response
+            })
+        }
+    }
+
+    const addPassedTreatment = async (petid,formData) => {
+        try{
+            const res = await axios.post(`/passedtreatments/${petid}`,formData)
+            dispatch({
+                type:ADD_PASSED_TREATMENT_SUCCESS,
+                payload:res.data
+            })
+        }catch(err){
+            dispatch({
+                type:ADD_PASSED_TREATMENT_FAIL,
+                payload:err.response
+            })
+        }
+    }
+
     return (
         <PetContext.Provider
             value={{
@@ -107,6 +142,8 @@ function PetState(props) {
                 fetchPets,
                 fetchOnePet,
                 updatePet,
+                addUpcomingTreatment,
+                addPassedTreatment
             }}
         >
             {props.children}
