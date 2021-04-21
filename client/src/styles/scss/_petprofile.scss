@@ -41,19 +41,39 @@
 
 .treatment-container {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 90px;
-}
-
-.treatment-header {
-    display: flex;
-    justify-content: space-evenly;
     h2 {
+        margin-bottom: 15px;
+        text-align: center;
         cursor: pointer;
         color:rgb(146, 3, 3)
     }
     h2:hover {
         color: red;
+    }
+   
+}
+
+.addtreatment-container{
+    margin-bottom: 15px;
+    input{
+        padding:5px 10px;
+        margin-left:10px;
+    }
+    button{
+        padding:5px 15px;
+        background-color:rgb(18, 158, 0);
+        color:white;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-left: 15px;
+    }
+    button:hover{
+        background-color: rgb(41, 243, 58);
+    }
+    button:focus{
+        background-color:rgb(184, 6, 6);
     }
 }
 
@@ -61,6 +81,7 @@
     background-color: rgb(231, 231, 231);
     margin: 0 auto;
     width: 100%;
+    margin-bottom: 35px;
     th,
     td {
         padding: 5px 25px;
@@ -73,6 +94,19 @@
 
     td {
         color: rgb(226, 37, 69);
+        button{
+            padding:5px 15px;
+            background-color:rgb(184, 6, 6);
+            color:white;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgb(236, 44, 44);
+        }
+        button:focus{
+            background-color:rgb(184, 6, 6);
+        }
     }
 
     tr:hover {

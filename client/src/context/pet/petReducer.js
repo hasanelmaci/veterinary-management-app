@@ -14,6 +14,10 @@ import {
     ADD_UPCOMING_TREATMENT_FAIL,
     ADD_PAST_TREATMENT_SUCCESS,
     ADD_PAST_TREATMENT_FAIL,
+    DELETE_PAST_TREATMENT_FAIL,
+    DELETE_PAST_TREATMENT_SUCCESS,
+    DELETE_UPCOMING_TREATMENT_FAIL,
+    DELETE_UPCOMING_TREATMENT_SUCCESS
 } from "./petActions";
 
 export default (state,action) => {
@@ -56,6 +60,12 @@ export default (state,action) => {
                 pet: action.payload,
                 loading:false
             }
+        case DELETE_PAST_TREATMENT_SUCCESS:
+            return{
+                ...state,
+                pet: action.payload,
+                loading:false
+            }    
         case ADD_PAST_TREATMENT_FAIL:
         case ADD_UPCOMING_TREATMENT_FAIL:
         case DELETE_PET_FAIL:

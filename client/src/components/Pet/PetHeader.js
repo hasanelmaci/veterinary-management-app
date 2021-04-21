@@ -1,3 +1,4 @@
+import React from 'react'
 import {Link} from 'react-router-dom'
 import paw from '../../styles/img/paw.jpg'
 
@@ -17,4 +18,4 @@ function PetHeader({pet}) {
     )
 }
 
-export default PetHeader
+export default React.memo(PetHeader)

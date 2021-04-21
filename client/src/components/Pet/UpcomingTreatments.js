@@ -16,6 +16,9 @@ function UpcomingTreatments({upcomingtreatments}) {
                 <td>
                 {upcomingtreatments.date}
                 </td>
+                <td>
+                    <button>Sil</button>
+                </td>
             </tr>
         </>
     )

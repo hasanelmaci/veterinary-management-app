@@ -17,7 +17,11 @@ import {
     ADD_UPCOMING_TREATMENT_FAIL,
     ADD_UPCOMING_TREATMENT_SUCCESS,
     ADD_PAST_TREATMENT_SUCCESS,
-    ADD_PAST_TREATMENT_FAIL
+    ADD_PAST_TREATMENT_FAIL,
+    DELETE_PAST_TREATMENT_FAIL,
+    DELETE_PAST_TREATMENT_SUCCESS,
+    DELETE_UPCOMING_TREATMENT_FAIL,
+    DELETE_UPCOMING_TREATMENT_SUCCESS
 } from "./petActions";
 
 function PetState(props) {
@@ -131,6 +135,21 @@ function PetState(props) {
         }
     }
 
+    const deletePastTreatment = async (petid,treatmentid)=>{
+        try{
+            const res = await axios.delete(`/pastreatments/${petid}/${treatmentid}`)
+            dispatch({
+                type:DELETE_PAST_TREATMENT_SUCCESS,
+                payload:res.data
+            })
+        }catch(err){
+            dispatch({
+                type:DELETE_PAST_TREATMENT_FAIL,
+                payload:err.response
+            })
+        }
+    }
+
     return (
         <PetContext.Provider
             value={{
@@ -143,7 +162,8 @@ function PetState(props) {
                 fetchOnePet,
                 updatePet,
                 addUpcomingTreatment,
-                addPastTreatment
+                addPastTreatment,
+                deletePastTreatment
             }}
         >
             {props.children}

@@ -1,23 +1,14 @@
-import {useState} from 'react';
 import UpcomingTreatments from "./UpcomingTreatments";
-import PastTreatments from "./PastTreatments"
-import AddTreatment from './AddTreatment';
+import PastTreatments from "./PastTreatments";
+import AddTreatment from "./AddTreatment";
 
-function TreatmentList({pet}) {
-
-    const [treatmentType,setTreatmentType] = useState('upcoming')
-
-    const handleType = (e) =>{
-        setTreatmentType(e.target.className)
-    }
-
+function TreatmentList({ pet }) {
     return (
         <div className="treatment-container">
-            <div className="treatment-header">
-            <h2 className='past' style={{textDecoration:treatmentType==='past' && 'underline'}} onClick={(e)=>handleType(e)}>Geçmiş Tedaviler</h2>
-            <h2 className='upcoming' style={{textDecoration:treatmentType==='upcoming' && 'underline'}} onClick={(e)=>handleType(e)}>Gelecek Tedaviler</h2>
-            </div>
-            <AddTreatment treatmentType={treatmentType} pet={pet}/>
+            <div className="treatment-header "></div>
+
+            <h2>Gelecek Tedaviler</h2>
+            <AddTreatment treatmentType="upcoming" pet={pet} />
             <table className="treatment-table">
                 <thead>
                     <tr>
@@ -25,20 +16,31 @@ function TreatmentList({pet}) {
                         <th>Kullanılan İlaç</th>
                         <th>Adet</th>
                         <th>Tarih</th>
+                        <th>Sil</th>
                     </tr>
                 </thead>
                 <tbody>
-                  {
-                    treatmentType === 'upcoming' ? 
-                  pet.upcomingtreatments.map((item)=>(
-                     <UpcomingTreatments upcomingtreatments={item}/>
-                  ))
-                  :
-                  pet.pasttreatments.map((item)=>(
-                    <PastTreatments pasttreatments={item}/>
-                 ))
-                  
-                  }
+                    {pet.upcomingtreatments.map((item) => (
+                        <UpcomingTreatments key={item._id} upcomingtreatments={item} pet={pet} />
+                    ))}
+                </tbody>
+            </table>
+            <h2>Geçmiş Tedaviler</h2>
+            <AddTreatment treatmentType="past" pet={pet} />
+            <table className="treatment-table">
+                <thead>
+                    <tr>
+                        <th>Tedavi Türü</th>
+                        <th>Kullanılan İlaç</th>
+                        <th>Adet</th>
+                        <th>Tarih</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {pet.pasttreatments.map((item) => (
+                        <PastTreatments key={item._id} pasttreatments={item} pet={pet} />
+                    ))}
                 </tbody>
             </table>
         </div>

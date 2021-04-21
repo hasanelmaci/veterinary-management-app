@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useState,memo } from "react";
 import PetContext from "../../context/pet/petContext";
 
-function AddTreatment({ treatmentType, pet,setTreatmentType }) {
+function AddTreatment({ treatmentType, pet }) {
     const { addUpcomingTreatment, addPastTreatment } = useContext(PetContext);
 
     const [treatment, setTreatment] = useState({});
@@ -21,6 +21,8 @@ function AddTreatment({ treatmentType, pet,setTreatmentType }) {
         setTreatment({ ...treatment, ...inputObject });
     };
 
+
+
     return (
         <div className="addtreatment-container">
             <form onSubmit={handleOnSubmit}>
@@ -28,6 +30,7 @@ function AddTreatment({ treatmentType, pet,setTreatmentType }) {
                 <input placeholder="Kullanılan İlaç" name="medicine" onChange={handleOnChange} />
                 <input placeholder="Adet" name="number" onChange={handleOnChange} />
                 <input placeholder="Tarih" name="date" onChange={handleOnChange} />
+                
                 <button>Ekle</button>
             </form>
         </div>

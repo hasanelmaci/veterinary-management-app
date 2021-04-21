@@ -500,28 +500,52 @@
 
 .treatment-container {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 90px;
 }
 
-.treatment-header {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.treatment-header h2 {
+.treatment-container h2 {
+  margin-bottom: 15px;
+  text-align: center;
   cursor: pointer;
   color: #920303;
 }
 
-.treatment-header h2:hover {
+.treatment-container h2:hover {
   color: red;
+}
+
+.addtreatment-container {
+  margin-bottom: 15px;
+}
+
+.addtreatment-container input {
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.addtreatment-container button {
+  padding: 5px 15px;
+  background-color: #129e00;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.addtreatment-container button:hover {
+  background-color: #29f33a;
+}
+
+.addtreatment-container button:focus {
+  background-color: #b80606;
 }
 
 .treatment-table {
   background-color: #e7e7e7;
   margin: 0 auto;
   width: 100%;
+  margin-bottom: 35px;
 }
 
 .treatment-table th,
@@ -536,6 +560,22 @@
 
 .treatment-table td {
   color: #e22545;
+}
+
+.treatment-table td button {
+  padding: 5px 15px;
+  background-color: #b80606;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.treatment-table td button:hover {
+  background-color: #ec2c2c;
+}
+
+.treatment-table td button:focus {
+  background-color: #b80606;
 }
 
 .treatment-table tr:hover {
