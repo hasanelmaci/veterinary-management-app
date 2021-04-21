@@ -12,8 +12,8 @@ import {
     PET_CLEAR_ERRORS,
     ADD_UPCOMING_TREATMENT_SUCCESS,
     ADD_UPCOMING_TREATMENT_FAIL,
-    ADD_PASSED_TREATMENT_SUCCESS,
-    ADD_PASSED_TREATMENT_FAIL,
+    ADD_PAST_TREATMENT_SUCCESS,
+    ADD_PAST_TREATMENT_FAIL,
 } from "./petActions";
 
 export default (state,action) => {
@@ -48,7 +48,7 @@ export default (state,action) => {
                 pet: state.petList.filter((pet)=>pet._id!==action.payload),
                 loading:false
             }
-        case ADD_PASSED_TREATMENT_SUCCESS:
+        case ADD_PAST_TREATMENT_SUCCESS:
         case ADD_UPCOMING_TREATMENT_SUCCESS:
             console.log(action.payload)
             return{
@@ -56,7 +56,7 @@ export default (state,action) => {
                 pet: action.payload,
                 loading:false
             }
-        case ADD_PASSED_TREATMENT_FAIL:
+        case ADD_PAST_TREATMENT_FAIL:
         case ADD_UPCOMING_TREATMENT_FAIL:
         case DELETE_PET_FAIL:
         case UPDATE_PET_FAIL:    

@@ -1,24 +1,24 @@
 import React from 'react'
 
-function PassedTreatments({passedtreatments}) {
+function PastTreatments({pasttreatments}) {
     return (
         <>
             <tr>
                 <td>
-                    {passedtreatments.type}
+                    {pasttreatments.type}
                 </td>
                 <td>
-                {passedtreatments.medicine}
+                {pasttreatments.medicine}
                 </td>
                 <td>
-                {passedtreatments.number}
+                {pasttreatments.number}
                 </td>
                 <td>
-                {passedtreatments.date}
+                {pasttreatments.date}
                 </td>
             </tr>
         </>
     )
 }
 
-export default PassedTreatments
+export default PastTreatments

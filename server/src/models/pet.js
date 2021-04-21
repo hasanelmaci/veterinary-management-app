@@ -22,7 +22,7 @@ const petSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        passedtreatments: [
+        pasttreatments: [
             {
                 type: {
                     type: String,

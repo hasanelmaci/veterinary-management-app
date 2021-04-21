@@ -22,11 +22,11 @@ router.post("/customers/:id/pets", auth, async (req, res) => {
     }
 });
 
-//add a passed treatment
-router.post("/passedtreatments/:id", auth, async (req, res) => {
+//add a past treatment
+router.post("/pasttreatments/:id", auth, async (req, res) => {
     try {
         const pet = await Pet.findById(req.params.id);
-        pet.passedtreatments.push(req.body);
+        pet.pasttreatments.push(req.body);
         await pet.save();
         res.send(pet);
     } catch (e) {
@@ -86,7 +86,7 @@ router.get("/customers/:customerid/:id", auth, async (req, res) => {
 //update pet
 router.patch("/customers/:customerid/:id", auth, async (req, res) => {
     const updates = Object.keys(req.body);
-    const allowedUpdates = ["name", "animal", "type", "gender", "birthdate", "passedtreatments", "upcomingtreatments"];
+    const allowedUpdates = ["name", "animal", "type", "gender", "birthdate", "pasttreatments", "upcomingtreatments"];
 
     const isValidOperation = updates.every((update) => {
         return allowedUpdates.includes(update);
@@ -112,8 +112,8 @@ router.patch("/customers/:customerid/:id", auth, async (req, res) => {
     }
 });
 
-//update pet passed treatments
-router.patch("/passedtreatments/:petid/:id", auth, async (req, res) => {
+//update pet past treatments
+router.patch("/pasttreatments/:petid/:id", auth, async (req, res) => {
     const updates = Object.keys(req.body);
     const allowedUpdates = ["type", "medicine", "number", "date"];
 
@@ -125,7 +125,7 @@ router.patch("/passedtreatments/:petid/:id", auth, async (req, res) => {
 
     try {
         Pet.findById(req.params.petid, async (err, post) => {
-            const treatment = post.passedtreatments.id(req.params.id);
+            const treatment = post.pasttreatments.id(req.params.id);
             treatment.set(req.body);
             await post.save();
             res.send(treatment);
@@ -161,11 +161,11 @@ router.patch("/upcomingtreatments/:petid/:id", auth, async (req, res) => {
 });
 module.exports = router;
 
-//delete passed treatment
-router.delete("/passedtreatments/:petid/:id", auth, async (req, res) => {
+//delete past treatment
+router.delete("/pastreatments/:petid/:id", auth, async (req, res) => {
     try {
         Pet.findById(req.params.petid, async (err, post) => {
-            const treatment = post.passedtreatments.id(req.params.id);
+            const treatment = post.pasttreatments.id(req.params.id);
             if (!treatment) res.status(404).send();
             treatment.remove();
             await post.save();

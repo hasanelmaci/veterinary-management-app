@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import PetContext from "../../context/pet/petContext";
 
 function AddTreatment({ treatmentType, pet,setTreatmentType }) {
-    const { addUpcomingTreatment, addPassedTreatment } = useContext(PetContext);
+    const { addUpcomingTreatment, addPastTreatment } = useContext(PetContext);
 
     const [treatment, setTreatment] = useState({});
 
@@ -11,7 +11,7 @@ function AddTreatment({ treatmentType, pet,setTreatmentType }) {
         if (treatmentType === "upcoming") {
             addUpcomingTreatment(pet._id, treatment);
         } else {
-            addPassedTreatment(pet._id, treatment);
+            addPastTreatment(pet._id, treatment);
         }
     };
 

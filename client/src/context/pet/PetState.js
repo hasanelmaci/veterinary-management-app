@@ -16,8 +16,8 @@ import {
     PET_CLEAR_ERRORS,
     ADD_UPCOMING_TREATMENT_FAIL,
     ADD_UPCOMING_TREATMENT_SUCCESS,
-    ADD_PASSED_TREATMENT_SUCCESS,
-    ADD_PASSED_TREATMENT_FAIL
+    ADD_PAST_TREATMENT_SUCCESS,
+    ADD_PAST_TREATMENT_FAIL
 } from "./petActions";
 
 function PetState(props) {
@@ -116,16 +116,16 @@ function PetState(props) {
         }
     }
 
-    const addPassedTreatment = async (petid,formData) => {
+    const addPastTreatment = async (petid,formData) => {
         try{
-            const res = await axios.post(`/passedtreatments/${petid}`,formData)
+            const res = await axios.post(`/pasttreatments/${petid}`,formData)
             dispatch({
-                type:ADD_PASSED_TREATMENT_SUCCESS,
+                type:ADD_PAST_TREATMENT_SUCCESS,
                 payload:res.data
             })
         }catch(err){
             dispatch({
-                type:ADD_PASSED_TREATMENT_FAIL,
+                type:ADD_PAST_TREATMENT_FAIL,
                 payload:err.response
             })
         }
@@ -143,7 +143,7 @@ function PetState(props) {
                 fetchOnePet,
                 updatePet,
                 addUpcomingTreatment,
-                addPassedTreatment
+                addPastTreatment
             }}
         >
             {props.children}
