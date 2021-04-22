@@ -3,6 +3,7 @@ import PastTreatments from "./PastTreatments";
 import AddTreatment from "./AddTreatment";
 
 function TreatmentList({ pet }) {
+
     return (
         <div className="treatment-container">
             <div className="treatment-header "></div>
@@ -13,7 +14,7 @@ function TreatmentList({ pet }) {
                 <thead>
                     <tr>
                         <th>Tedavi Türü</th>
-                        <th>Kullanılan İlaç</th>
+                        <th>İlaç</th>
                         <th>Adet</th>
                         <th>Tarih</th>
                         <th>Sil</th>
@@ -31,7 +32,7 @@ function TreatmentList({ pet }) {
                 <thead>
                     <tr>
                         <th>Tedavi Türü</th>
-                        <th>Kullanılan İlaç</th>
+                        <th>İlaç</th>
                         <th>Adet</th>
                         <th>Tarih</th>
                         <th>Sil</th>

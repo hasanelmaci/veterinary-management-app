@@ -10,7 +10,7 @@ const customerAuth = require("../middleware/customerAuth");
 const router = express.Router();
 
 //login as customer
-router.post("/asCustomers/login", async (req, res) => {
+router.post("/asCustomer/login", async (req, res) => {
     try {
         const customer = await Customer.findByCredentials(req.body.email, req.body.password);
         const token = await customer.generateAuthToken();

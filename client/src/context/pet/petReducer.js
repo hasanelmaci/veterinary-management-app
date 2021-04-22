@@ -38,7 +38,7 @@ export default (state,action) => {
             return{
                 ...state,
                 pet:action.payload,
-                loading:'pet_fetched'
+                loading:'pet_data_fetched'
             }
         case UPDATE_PET_SUCCESS:
             return{
@@ -52,6 +52,7 @@ export default (state,action) => {
                 pet: state.petList.filter((pet)=>pet._id!==action.payload),
                 loading:false
             }
+        
         case ADD_PAST_TREATMENT_SUCCESS:
         case ADD_UPCOMING_TREATMENT_SUCCESS:
             console.log(action.payload)
@@ -60,12 +61,15 @@ export default (state,action) => {
                 pet: action.payload,
                 loading:false
             }
+        case DELETE_UPCOMING_TREATMENT_SUCCESS:
         case DELETE_PAST_TREATMENT_SUCCESS:
             return{
                 ...state,
                 pet: action.payload,
                 loading:false
-            }    
+            }  
+        case DELETE_PAST_TREATMENT_FAIL:
+        case DELETE_UPCOMING_TREATMENT_FAIL:
         case ADD_PAST_TREATMENT_FAIL:
         case ADD_UPCOMING_TREATMENT_FAIL:
         case DELETE_PET_FAIL:

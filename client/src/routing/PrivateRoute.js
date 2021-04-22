@@ -8,13 +8,14 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
     useEffect(() => {
         loadUser();
+        console.log('PRIVATE RENDER')
     }, []);
 
     return (
         <Route
-            {...rest}
-            render={(props) =>
-                loading ? <p>Loading...</p> : isUserAuth ? <Component {...props} /> : <Redirect to="/login" />
+        {...rest}
+        render={(props) =>
+            loading ? <p>Loading...</p> : isUserAuth ? <Component {...props} /> : <Redirect to="/login" />
             }
         />
     );

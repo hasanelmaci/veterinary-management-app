@@ -14,10 +14,15 @@ import UpdateCustomer from "./components/Customer/UpdateCustomer";
 import AddPet from "./components/Pet/AddPet"
 import PetProfile from "./pages/PetProfile";
 import UpdatePet from './components/Pet/UpdatePet'
+import CustomerLogin from './pages/CustomerLogin';
+import CustomerAuthState from './context/customerAuth/CustomerAuthState'
+import CustomerPrivateRoute from './routing/CustomerPrivateRoute'
+import CustomerProfile from './pages/CustomerProfile'
 
 function App() {
     return (
         <UserAuthState>
+                <CustomerAuthState>
             <CustomerState>
                 <PetState>
                     <Router>
@@ -35,10 +40,13 @@ function App() {
                             <PrivateRoute exact path="/customers/:id/:petid/updatepet" component={UpdatePet} />
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
+                            <Route exact path='/customerlogin' component={CustomerLogin} />
+                            <CustomerPrivateRoute exact path='/customerprofile' component={CustomerProfile} />
                         </Switch>
                     </Router>
                 </PetState>
             </CustomerState>
+                </CustomerAuthState>
         </UserAuthState>
     );
 }

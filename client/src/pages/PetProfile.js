@@ -10,13 +10,15 @@ function PetProfile() {
     const {fetchOnePet,loading,pet} = useContext(PetContext);
 
     useEffect(()=>{
-        fetchOnePet(id,petid)
-        console.log('ONE FETCH')
+        if(loading !='pet_data_fetched'){
+            fetchOnePet(id,petid)
+            console.log('FETHC????')
+        }
     },[loading])
 
     return (
         <>
-        {loading=='pet_fetched'  && 
+        {loading=='pet_data_fetched'&& 
         <div className='pet-profile'>
             <PetHeader pet={pet} />
             

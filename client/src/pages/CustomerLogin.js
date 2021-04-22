@@ -1,34 +1,35 @@
 import {Link} from "react-router-dom"
-import {useState, useContext, useEffect} from 'react'
-import UserAuthContext from "../../context/userAuth/userAuthContext"
+import {useState,useContext,useEffect} from 'react'
+import CustomerAuthContext from "../context/customerAuth/customerAuthContext"
 
-const LoginForm = (props) => {
+function CustomerLogin(props) {
 
-    const userAuthContext = useContext(UserAuthContext)
+    const customerAuthContext = useContext(CustomerAuthContext);
 
-    const {login,isUserAuth,loadUser,error, clearErrors} = userAuthContext
-    const [isValid, setIsValid] = useState(null)
+    const {login,loadCustomer,isCustomerAuth,error,clearErrors} = customerAuthContext;
+    const [isValid,setIsValid] = useState(null)
 
     useEffect(()=>{
-      loadUser()
-        if(isUserAuth){
-            props.history.push("/profile")
+        loadCustomer()
+        if(isCustomerAuth){
+            props.history.push("/customerprofile")
+            console.log('CUSTOMER IS AUTH')
         }
         if(error){
-          setIsValid(false)
-          clearErrors()
-      }
-    },[isUserAuth,props.history,error])
+            setIsValid(false)
+            clearErrors()
+        }
+    },[isCustomerAuth,props.history])
 
-    const [user,setUser] =useState({
+    const [customer,setCustomer] = useState({
         email:"",
-        password:"",
+        password:""
     })
 
-    const {email, password} = user;
+    const {email,password} = customer;
 
     const onChange = (event) =>{
-        setUser({...user,[event.target.name]: event.target.value})
+        setCustomer({...customer,[event.target.name]:event.target.value});
     }
 
     const onSubmit = (event) =>{
@@ -38,14 +39,13 @@ const LoginForm = (props) => {
             password
         })
     }
-
+    
     return (
-      <div className='login-container'>
+        <div className='login-container'>
         <div className='login'>
         <h1>
           Giriş Yap
         </h1>
-        {console.log('USER LOGIN')}
         <form onSubmit={onSubmit}>
           <div>
 
@@ -72,4 +72,4 @@ const LoginForm = (props) => {
     )
 }
 
-export default LoginForm
+export default CustomerLogin
