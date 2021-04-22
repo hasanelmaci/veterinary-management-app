@@ -25,6 +25,30 @@ export default(state,action) =>{
                 isCustomerAuth:true,
                 loading:false
             }
+        case FETCH_ALL_PETS_SUCCESS:
+            return{
+                ...state,
+                petList:action.payload,
+                loading:false
+            }
+        case FETCH_ALL_PETS_FAIL:
+            return{
+                ...state,
+                petList:[],
+                error:action.payload
+            }
+        case FETCH_ONE_PET_SUCCESS:
+            return{
+                ...state,
+                pet:action.payload,
+                loading:false
+            } 
+        case FETCH_ONE_PET_FAIL:
+            return{
+                ...state,
+                pet:null,
+                loading:false
+            }
         case CUSTOMER_LOGIN_FAIL:
         case CUSTOMER_AUTH_ERROR:
         case CUSTOMER_LOGOUT:

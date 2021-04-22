@@ -105,12 +105,15 @@ function CustomerAuthState(props) {
                 isCustomerAuth: state.isCustomerAuth,
                 loading: state.loading,
                 customer: state.customer,
+                pet:state.pet,
+                petList:state.petList,
                 error: state.error,
                 loadCustomer,
                 login,
                 logout,
                 clearErrors,
-                fetchAllPets
+                fetchAllPets,
+                fetchOnePet
             }}
         >
             {props.children}
