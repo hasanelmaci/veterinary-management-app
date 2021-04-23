@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import { useState, useContext, useEffect } from "react";
+import {useContext, useEffect } from "react";
 import CustomerContext from "../context/customer/customerContext";
 import CustomerHeader from "../components/Customer/CustomerHeader";
 import CustomerSettings from "../components/Customer/CustomerSettings";
-import PetList from "../components/Pet/PetList";
+import FetchPets from "../components/Pet/FetchPets";
 function Customer() {
     const { fetchOneCustomer, customer, loading } = useContext(CustomerContext);
 
@@ -18,8 +18,10 @@ function Customer() {
             {loading == "fetched" ? (
                 <div>
                     <CustomerHeader customer={customer} />
-                    {/* <CustomerSettings customer={customer} /> */}
-                    <PetList customer={customer} />
+                    
+                    <CustomerSettings customer={customer} />
+                    <FetchPets customer={customer} />
+
                 </div>
             ) : (
                 "LOADING"

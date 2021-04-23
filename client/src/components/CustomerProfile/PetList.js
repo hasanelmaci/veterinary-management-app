@@ -1,13 +1,12 @@
-import PetCard from "./PetCard";
-
+import React from 'react'
+import PetCard from './PetCard'
 
 function PetList({petList}) {
-
-
+   
 
     return (
         <div className='pet-list-container'>
-            <h2>Evcil hayvanları</h2>
+            <h2>Evcil hayvanlarım</h2>
         <div className='pet-list'>
             
             {petList.map(pet =>(

@@ -10,7 +10,6 @@ import {
 export default(state,action) =>{
     switch(action.type){
         case CUSTOMER_LOADED:
-            console.log('customer loadedred')
             return{
                 ...state,
                 isCustomerAuth:true,
