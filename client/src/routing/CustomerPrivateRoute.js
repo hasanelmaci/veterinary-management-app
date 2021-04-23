@@ -8,7 +8,7 @@ const CustomerPrivateRoute = ({ component: Component, ...rest }) => {
 
     useEffect(() => {
         loadCustomer();
-        console.log('PRIVATE RENDER')
+        
     }, []);
 
     return (

@@ -8,7 +8,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
     useEffect(() => {
         loadUser();
-        console.log('PRIVATE RENDER')
+        
     }, []);
 
     return (

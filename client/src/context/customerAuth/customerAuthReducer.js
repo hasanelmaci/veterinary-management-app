@@ -40,7 +40,8 @@ export default(state,action) =>{
             return{
                 ...state,
                 pet:action.payload,
-                loading:false
+                loading:false,
+                isFetched:action.payload._id
             } 
         case FETCH_ONE_PET_FAIL:
             return{

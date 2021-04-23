@@ -1,9 +1,10 @@
 import {useContext, useEffect} from 'react'
 import CustomerAuthContext from '../../context/customerAuth/customerAuthContext'
 import PetList from "../CustomerProfile/PetList"
+import TreatmentList from './TreatmentList'
 
 function FetchPets({customer}) {
-    const {fetchAllPets,petList} =useContext(CustomerAuthContext);
+    const {fetchAllPets,petList} = useContext(CustomerAuthContext);
 
     useEffect(()=>{
         fetchAllPets(customer._id)
