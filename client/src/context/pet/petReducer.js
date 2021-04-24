@@ -35,7 +35,6 @@ export default (state,action) => {
                 loading:false
             }
         case FETCH_ONE_PET_SUCCESS:
-            console.log(action.payload)
             return{
                 ...state,
                 pet:action.payload,

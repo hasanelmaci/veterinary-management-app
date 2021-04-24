@@ -7,7 +7,7 @@ function CustomerItem({ infos }) {
             <tr>
                 <td>
                     <Link className="customerlist__link" to={`/customers/${infos._id}`}>
-                        <img src={nocustomerpic} className="avatar" />{" "}
+                        <img src={nocustomerpic} className="avatar" alt='profile_avatar' />{" "}
                     </Link>
                 </td>
                 <td>

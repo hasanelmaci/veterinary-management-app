@@ -60,7 +60,7 @@ function CustomerState(props) {
         const allowedUpdates = ["username", "email", "password"];
         const picks = {};
         for (const item in customer) {
-            if (customer[item] != "" && allowedUpdates.includes(item)) {
+            if (customer[item] !== "" && allowedUpdates.includes(item)) {
                 picks[item] = customer[item];
             }
         }

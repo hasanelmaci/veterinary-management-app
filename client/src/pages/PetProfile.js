@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import PetHeader from "../components/Pet/PetHeader";
 import TreatmentList from "../components/Pet/TreatmentList";
@@ -9,16 +9,13 @@ function PetProfile() {
 
     const { loading, fetchOnePet, pet } = useContext(PetContext);
 
-    const [isLoaded, setIsLoaded] = useState();
-
     useEffect(() => {
         fetchOnePet(id, petid);
-        console.log(pet);
     }, [loading]);
 
     return (
         <>
-            {loading == petid ? (
+            {loading === petid ? (
                 <div className="pet-profile">
                     <div className="pet-profile-infos">
                         <PetHeader pet={pet} />

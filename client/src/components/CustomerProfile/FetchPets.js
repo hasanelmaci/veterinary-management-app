@@ -1,20 +1,19 @@
-import {useContext, useEffect} from 'react'
-import CustomerAuthContext from '../../context/customerAuth/customerAuthContext'
-import PetList from "../CustomerProfile/PetList"
-import TreatmentList from './TreatmentList'
+import { useContext, useEffect } from "react";
+import CustomerAuthContext from "../../context/customerAuth/customerAuthContext";
+import PetList from "../CustomerProfile/PetList";
 
-function FetchPets({customer}) {
-    const {fetchAllPets,petList} = useContext(CustomerAuthContext);
+function FetchPets({ customer }) {
+    const { fetchAllPets, petList } = useContext(CustomerAuthContext);
 
-    useEffect(()=>{
-        fetchAllPets(customer._id)
-    },[])
+    useEffect(() => {
+        fetchAllPets(customer._id);
+    }, []);
 
     return (
         <div>
-           <PetList petList={petList}/>
+            <PetList petList={petList} />
         </div>
-    )
+    );
 }
 
-export default FetchPets
+export default FetchPets;

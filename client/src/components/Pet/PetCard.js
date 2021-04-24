@@ -11,7 +11,7 @@ function PetCard({pet}) {
         <div className='pet-card'>
             <Link to={`/customers/${pet.owner}/${pet._id}`}>
             <div className='pet-avatar-container'>
-            <img  src={`/pets/${pet._id}/avatar`} onError={addDefaultSrc}/>
+            <img  src={`/pets/${pet._id}/avatar`} onError={addDefaultSrc} alt='avatar'/>
             </div>
             <div className='pet-card-info-bottom'>
 

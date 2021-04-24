@@ -15,7 +15,7 @@ function Customer() {
 
     return (
         <>
-            {loading == "fetched" ? (
+            {loading === "fetched" ? (
                 <div>
                     <CustomerHeader customer={customer} />
                     

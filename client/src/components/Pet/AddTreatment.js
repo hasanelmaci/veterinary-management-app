@@ -1,4 +1,4 @@
-import { useContext, useState,memo } from "react";
+import { useContext, useState } from "react";
 import PetContext from "../../context/pet/petContext";
 
 function AddTreatment({ treatmentType, pet }) {
@@ -16,12 +16,9 @@ function AddTreatment({ treatmentType, pet }) {
     };
 
     const handleOnChange = (e) => {
-      
         const inputObject = { [e.target.name]: e.target.value };
         setTreatment({ ...treatment, ...inputObject });
     };
-
-
 
     return (
         <div className="addtreatment-container">
@@ -30,7 +27,7 @@ function AddTreatment({ treatmentType, pet }) {
                 <input placeholder="Kullanılan İlaç" name="medicine" onChange={handleOnChange} />
                 <input placeholder="Adet" name="number" onChange={handleOnChange} />
                 <input placeholder="Tarih" name="date" onChange={handleOnChange} />
-                
+
                 <button>Ekle</button>
             </form>
         </div>

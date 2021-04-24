@@ -74,7 +74,7 @@ const RegisterForm = (props) => {
                         <Link to="/login">Giriş Yap</Link>
                     </div>
                 </form>
-                {isValid == false && <p>Bu e-mail daha önceden kullanıldı.</p>}
+                {isValid === false && <p>Bu e-mail daha önceden kullanıldı.</p>}
             </div>
         </div>
     );

@@ -95,18 +95,7 @@ function CustomerAuthState(props) {
     };
 
     const uploadAvatar = async (id, formData) => {
-        const config = {
-            headers: { "Content-Type": "multipart/form-data" },
-        };
-        console.log(id);
-        console.log(formData.getAll("avatar"));
         try {
-            // const res = await axios({
-            //     method: "post",
-            //     url: `/pets/${id}/avatar`,
-            //     data: formData,
-            //     headers: { "Content-Type": "multipart/form-data" },
-            //   })
             const res = await axios.post(`/pets/${id}/avatar`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
@@ -117,7 +106,6 @@ function CustomerAuthState(props) {
                 payload: res.data,
             });
         } catch (err) {
-            console.log(err.response);
             dispatch({
                 type: UPLOAD_AVATAR_FAIL,
                 payload: err.response,

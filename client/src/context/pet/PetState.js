@@ -11,9 +11,6 @@ import {
     FETCH_ONE_PET_FAIL,
     UPDATE_PET_SUCCESS,
     UPDATE_PET_FAIL,
-    DELETE_PET_SUCCESS,
-    DELETE_PET_FAIL,
-    PET_CLEAR_ERRORS,
     ADD_UPCOMING_TREATMENT_FAIL,
     ADD_UPCOMING_TREATMENT_SUCCESS,
     ADD_PAST_TREATMENT_SUCCESS,
@@ -84,7 +81,7 @@ function PetState(props) {
         const allowedupdates = ["name", "type", "animal", "birthdate", "gender"];
         const picks = {};
         for (const item in pet) {
-            if (pet[item] != "" && allowedupdates.includes(item)) {
+            if (pet[item] !== "" && allowedupdates.includes(item)) {
                 picks[item] = pet[item];
             }
         }

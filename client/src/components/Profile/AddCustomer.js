@@ -1,5 +1,5 @@
-import {Link} from 'react-router-dom'
-import { useContext, useState,useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import CustomerContext from "../../context/customer/customerContext";
 
 function AddCustomer(props) {
@@ -11,7 +11,7 @@ function AddCustomer(props) {
         password: "",
     });
 
-    const [message, setMessage] = useState(false)
+    const [message, setMessage] = useState(false);
 
     const { username, email, password } = customer;
 
@@ -22,13 +22,12 @@ function AddCustomer(props) {
     const handleOnSubmit = (event) => {
         event.preventDefault();
         addCustomer({ username, email, password });
-        setMessage(true)
+        setMessage(true);
     };
 
-
-    const toHomePage = () =>{
-        setMessage(false)
-    }
+    const toHomePage = () => {
+        setMessage(false);
+    };
 
     return (
         <div className="addcustomer-container">
@@ -36,11 +35,19 @@ function AddCustomer(props) {
                 <h1>Müşteri Ekle</h1>
                 <form onSubmit={handleOnSubmit}>
                     <input placeholder="isim" name="username" value={username} onChange={handleOnChange} />
-                    <input type='email' placeholder="email" name="email" value={email} onChange={handleOnChange} />
+                    <input type="email" placeholder="email" name="email" value={email} onChange={handleOnChange} />
                     <input placeholder="şifre" name="password" value={password} onChange={handleOnChange} />
                     <button type="submit">Ekle</button>
                 </form>
-                {message && <p>Müşteri eklendi. <Link to='/profile' onClick={toHomePage}> Anasayfaya dön</Link></p>}
+                {message && (
+                    <p>
+                        Müşteri eklendi.{" "}
+                        <Link to="/profile" onClick={toHomePage}>
+                            {" "}
+                            Anasayfaya dön
+                        </Link>
+                    </p>
+                )}
             </div>
         </div>
     );

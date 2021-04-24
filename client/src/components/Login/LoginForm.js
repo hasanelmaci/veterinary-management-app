@@ -66,7 +66,7 @@ const LoginForm = (props) => {
           <Link to='/register' >Kayıt ol</Link>
           </div>
         </form>
-        {isValid == false && <p>Geçersiz kullanıcı adı veya parola.</p> }
+        {isValid === false && <p>Geçersiz kullanıcı adı veya parola.</p> }
       </div>
               </div>
     )
