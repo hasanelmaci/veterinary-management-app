@@ -19,7 +19,7 @@ function TreatmentList({pet}) {
                 </tr>
             </thead>
             <tbody>
-                {pet.upcomingtreatments.map((item) => (
+                {pet.upcomingtreatments?.map((item) => (
                     <UpcomingTreatments key={item._id} upcomingtreatments={item} pet={pet} />
                 ))}
             </tbody>
@@ -37,7 +37,7 @@ function TreatmentList({pet}) {
                 </tr>
             </thead>
             <tbody>
-                {pet.pasttreatments.map((item) => (
+                {pet.pasttreatments?.map((item) => (
                     <PastTreatments key={item._id} pasttreatments={item} pet={pet} />
                 ))}
             </tbody>

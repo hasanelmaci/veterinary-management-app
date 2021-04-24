@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import CustomerAuthContext from '../context/customerAuth/customerAuthContext'
 import PetHeader from '../components/Pet/PetHeader'
 import TreatmentList from '../components/CustomerProfile/TreatmentList'
+import UploadAvatar from '../components/CustomerProfile/UploadAvatar'
 
 function CustomerPetProfile() {
 
@@ -22,6 +23,7 @@ function CustomerPetProfile() {
         <div>
             
             <PetHeader pet={pet}/>
+            <UploadAvatar pet={pet} />
             <TreatmentList pet={pet} />
         </div>:null}
         </>

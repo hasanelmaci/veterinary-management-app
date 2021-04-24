@@ -1,12 +1,18 @@
-import React from 'react'
+import {useContext} from 'react'
 import {Link} from 'react-router-dom'
 import paw from '../../styles/img/paw.jpg'
+import PetState from '../../context/pet/PetState'
 
 function PetHeader({pet}) {
+
+
+
+console.log(pet)
     return (
         <div className='pet-header'>
+            
             <div className='pet-avatar'>
-                <img src={paw}/>
+                <img src={`/pets/${pet._id}/avatar`}/>
             </div>
             <div className='pet-profile-infos'>
             <h1>{pet.name}</h1>
@@ -17,4 +23,4 @@ function PetHeader({pet}) {
     )
 }
 
-export default React.memo(PetHeader)
+export default PetHeader

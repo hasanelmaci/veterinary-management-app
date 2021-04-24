@@ -45,7 +45,7 @@ const LoginForm = (props) => {
         <h1>
           Giriş Yap
         </h1>
-        {console.log('USER LOGIN')}
+        
         <form onSubmit={onSubmit}>
           <div>
 

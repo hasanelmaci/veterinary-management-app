@@ -12,7 +12,7 @@ function PetProfile() {
     useEffect(()=>{
         if(loading !='pet_data_fetched'){
             fetchOnePet(id,petid)
-            console.log('FETHC????')
+          
         }
     },[loading])
 

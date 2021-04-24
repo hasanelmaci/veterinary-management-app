@@ -18,7 +18,7 @@ function UpdatePet() {
     }
 
     const handleOnChange =(e)=>{
-        console.log(updatedPet)
+        
         const inputObject = {[e.target.name]:e.target.value}
         setUpdatedPet({...updatedPet,...inputObject})
     }

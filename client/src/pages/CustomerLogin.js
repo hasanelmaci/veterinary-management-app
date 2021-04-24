@@ -13,7 +13,7 @@ function CustomerLogin(props) {
         loadCustomer()
         if(isCustomerAuth){
             props.history.push("/customerprofile")
-            console.log('CUSTOMER IS AUTH')
+           
         }
         if(error){
             setIsValid(false)

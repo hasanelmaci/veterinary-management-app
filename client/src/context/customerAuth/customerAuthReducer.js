@@ -4,7 +4,8 @@ import {
     CUSTOMER_LOGOUT,
     CUSTOMER_CLEAR_ERRORS,
     CUSTOMER_AUTH_ERROR,
-    CUSTOMER_LOGIN_FAIL,FETCH_ALL_PETS_FAIL,FETCH_ALL_PETS_SUCCESS,FETCH_ONE_PET_FAIL,FETCH_ONE_PET_SUCCESS
+    CUSTOMER_LOGIN_FAIL,FETCH_ALL_PETS_FAIL,FETCH_ALL_PETS_SUCCESS,FETCH_ONE_PET_FAIL,FETCH_ONE_PET_SUCCESS,
+    UPLOAD_AVATAR_SUCCESS,UPLOAD_AVATAR_FAIL
 } from "./customerAuthActions";
 
 export default(state,action) =>{
@@ -48,6 +49,18 @@ export default(state,action) =>{
                 ...state,
                 pet:null,
                 loading:false
+            }
+        case UPLOAD_AVATAR_SUCCESS:
+            return{
+                ...state,
+                pet:action.payload,
+                loading:false,
+                isFetched:action.payload._id
+            }
+        case UPLOAD_AVATAR_FAIL:
+            return{
+                ...state,
+                error:action.payload
             }
         case CUSTOMER_LOGIN_FAIL:
         case CUSTOMER_AUTH_ERROR:

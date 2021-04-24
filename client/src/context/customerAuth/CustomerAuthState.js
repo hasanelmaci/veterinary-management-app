@@ -8,8 +8,13 @@ import {
     CUSTOMER_LOGOUT,
     CUSTOMER_CLEAR_ERRORS,
     CUSTOMER_AUTH_ERROR,
-    CUSTOMER_LOGIN_FAIL,FETCH_ALL_PETS_FAIL,FETCH_ALL_PETS_SUCCESS,FETCH_ONE_PET_FAIL,FETCH_ONE_PET_SUCCESS
-   
+    CUSTOMER_LOGIN_FAIL,
+    FETCH_ALL_PETS_FAIL,
+    FETCH_ALL_PETS_SUCCESS,
+    FETCH_ONE_PET_FAIL,
+    FETCH_ONE_PET_SUCCESS,
+    UPLOAD_AVATAR_FAIL,
+    UPLOAD_AVATAR_SUCCESS,
 } from "./customerAuthActions";
 import setUserAuthToken from "../../utils/setUserAuthToken";
 
@@ -18,10 +23,10 @@ function CustomerAuthState(props) {
         token: localStorage.getItem("ctoken"),
         isCustomerAuth: null,
         loading: true,
-        isFetched:false,
+        isFetched: false,
         customer: null,
-        pet:null,
-        petList:[],
+        pet: null,
+        petList: [],
         error: null,
     };
 
@@ -31,69 +36,98 @@ function CustomerAuthState(props) {
         setUserAuthToken(localStorage.getItem("ctoken"));
         try {
             const res = await axios.get("/asCustomers/me");
-            console.log(res)
+
             dispatch({
                 type: CUSTOMER_LOADED,
                 payload: res.data,
             });
         } catch (err) {
-            console.log('load error')
             dispatch({
                 type: CUSTOMER_AUTH_ERROR,
             });
         }
     };
 
-    const login = async (formData) =>{
-        
-        try{
-            const res = await axios.post("/asCustomer/login",formData);
+    const login = async (formData) => {
+        try {
+            const res = await axios.post("/asCustomer/login", formData);
             dispatch({
-                type:CUSTOMER_LOGIN_SUCCESS,
-                payload:res.data
-            })
-            loadCustomer()
-        }catch(err){
+                type: CUSTOMER_LOGIN_SUCCESS,
+                payload: res.data,
+            });
+            loadCustomer();
+        } catch (err) {
             dispatch({
-                type:CUSTOMER_LOGIN_FAIL,
-                payload:err.response.statusText
-            })
+                type: CUSTOMER_LOGIN_FAIL,
+                payload: err.response.statusText,
+            });
         }
-    }
+    };
 
-    const fetchAllPets = async () =>{
-        try{
-            const res = await axios.get("/asCustomer/pets")
+    const fetchAllPets = async () => {
+        try {
+            const res = await axios.get("/asCustomer/pets");
             dispatch({
-                type:FETCH_ALL_PETS_SUCCESS,
-                payload:res.data
-            })
-        }catch(err){
+                type: FETCH_ALL_PETS_SUCCESS,
+                payload: res.data,
+            });
+        } catch (err) {
             dispatch({
-                type:FETCH_ALL_PETS_FAIL,
-                payload:err.response
-            })
+                type: FETCH_ALL_PETS_FAIL,
+                payload: err.response,
+            });
         }
-    }
+    };
 
-    const fetchOnePet = async (id) =>{
-        try{
-            const res = await axios.get(`/asCustomer/pet/${id}`)
+    const fetchOnePet = async (id) => {
+        try {
+            const res = await axios.get(`/asCustomer/pet/${id}`);
             dispatch({
-                type:FETCH_ONE_PET_SUCCESS,
-                payload:res.data
-            })
-        }catch(err){
+                type: FETCH_ONE_PET_SUCCESS,
+                payload: res.data,
+            });
+        } catch (err) {
             dispatch({
-                type:FETCH_ONE_PET_FAIL,
-                payload:err.response
-            })
+                type: FETCH_ONE_PET_FAIL,
+                payload: err.response,
+            });
         }
-    }
+    };
 
-    const logout = () =>{
-        dispatch({type:CUSTOMER_LOGOUT})
-    }
+    const uploadAvatar = async (id, formData) => {
+        const config = {
+            headers: { "Content-Type": "multipart/form-data" },
+        };
+        console.log(id);
+        console.log(formData.getAll("avatar"));
+        try {
+            // const res = await axios({
+            //     method: "post",
+            //     url: `/pets/${id}/avatar`,
+            //     data: formData,
+            //     headers: { "Content-Type": "multipart/form-data" },
+            //   })
+            const res = await axios.post(`/pets/${id}/avatar`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
+            dispatch({
+                type: UPLOAD_AVATAR_SUCCESS,
+                payload: res.data,
+            });
+        } catch (err) {
+            console.log(err.response);
+            dispatch({
+                type: UPLOAD_AVATAR_FAIL,
+                payload: err.response,
+            });
+        }
+    };
+
+    const logout = () => {
+        dispatch({ type: CUSTOMER_LOGOUT });
+    };
 
     const clearErrors = () => {
         dispatch({ type: CUSTOMER_CLEAR_ERRORS });
@@ -105,17 +139,18 @@ function CustomerAuthState(props) {
                 token: state.token,
                 isCustomerAuth: state.isCustomerAuth,
                 loading: state.loading,
-                isFetched:state.isFetched,
+                isFetched: state.isFetched,
                 customer: state.customer,
-                pet:state.pet,
-                petList:state.petList,
+                pet: state.pet,
+                petList: state.petList,
                 error: state.error,
                 loadCustomer,
                 login,
                 logout,
                 clearErrors,
                 fetchAllPets,
-                fetchOnePet
+                fetchOnePet,
+                uploadAvatar,
             }}
         >
             {props.children}

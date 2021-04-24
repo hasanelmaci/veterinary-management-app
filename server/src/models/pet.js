@@ -76,6 +76,15 @@ const petSchema = new mongoose.Schema(
     }
 );
 
+petSchema.methods.toJSON = function () {
+    const pet = this;
+    const petObject = pet.toObject();
+
+    delete petObject.avatar
+    return petObject;
+};
+
+
 const Pet = mongoose.model("Pet", petSchema);
 
 module.exports = Pet;

@@ -55,7 +55,7 @@ export default (state,action) => {
         
         case ADD_PAST_TREATMENT_SUCCESS:
         case ADD_UPCOMING_TREATMENT_SUCCESS:
-            console.log(action.payload)
+            
             return{
                 ...state,
                 pet: action.payload,

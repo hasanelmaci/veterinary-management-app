@@ -105,7 +105,7 @@ function PetState(props) {
     }
 
     const addUpcomingTreatment = async (petid,formData) =>{
-        console.log(formData)
+       
         try{
             const res = await axios.post(`/upcomingtreatments/${petid}`,formData)
             dispatch({
@@ -164,6 +164,12 @@ function PetState(props) {
             })
         }
     }
+
+    // const fetchAvatar = async (id) =>{
+    //     try{
+    //         const res= await axios.get(`/pets/${id}/avatar`);
+    //     }
+    // } 
 
     return (
         <PetContext.Provider

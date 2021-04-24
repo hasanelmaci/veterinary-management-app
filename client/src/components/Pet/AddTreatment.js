@@ -16,7 +16,7 @@ function AddTreatment({ treatmentType, pet }) {
     };
 
     const handleOnChange = (e) => {
-        console.log(treatment);
+      
         const inputObject = { [e.target.name]: e.target.value };
         setTreatment({ ...treatment, ...inputObject });
     };
