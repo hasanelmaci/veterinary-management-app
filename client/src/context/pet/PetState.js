@@ -28,6 +28,7 @@ function PetState(props) {
     const initialState = {
         pet: null,
         petList: [],
+        isDataFetched:null,
         loading: true,
         error: null,
     };
@@ -176,6 +177,7 @@ function PetState(props) {
             value={{
                 pet: state.pet,
                 petList: state.petList,
+                isDataFetched:state.isDataFetched,
                 loading: state.loading,
                 error: state.error,
                 addPet,

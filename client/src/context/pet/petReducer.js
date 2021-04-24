@@ -35,10 +35,12 @@ export default (state,action) => {
                 loading:false
             }
         case FETCH_ONE_PET_SUCCESS:
+            console.log(action.payload)
             return{
                 ...state,
                 pet:action.payload,
-                loading:'pet_data_fetched'
+                isDataFetched:action.payload._id,
+                loading:false
             }
         case UPDATE_PET_SUCCESS:
             return{
