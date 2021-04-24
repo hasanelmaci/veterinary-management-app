@@ -39,8 +39,7 @@ export default (state,action) => {
             return{
                 ...state,
                 pet:action.payload,
-                isDataFetched:action.payload._id,
-                loading:false
+                loading:action.payload._id
             }
         case UPDATE_PET_SUCCESS:
             return{

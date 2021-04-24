@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import PetHeader from "../components/Pet/PetHeader";
 import TreatmentList from "../components/Pet/TreatmentList";
@@ -7,26 +7,26 @@ import PetContext from "../context/pet/petContext";
 function PetProfile() {
     let { id, petid } = useParams();
 
-    const { fetchOnePet, isDataFetched, pet } = useContext(PetContext);
+    const { loading, fetchOnePet, pet } = useContext(PetContext);
+
+    const [isLoaded, setIsLoaded] = useState();
 
     useEffect(() => {
-       
-            fetchOnePet(id, petid);
-        
-    }, []);
+        fetchOnePet(id, petid);
+        console.log(pet);
+    }, [loading]);
 
     return (
         <>
-            {isDataFetched == petid && (
+            {loading == petid ? (
                 <div className="pet-profile">
-                    ,
                     <div className="pet-profile-infos">
                         <PetHeader pet={pet} />
                         <Link to={`/customers/${pet.owner}/${pet._id}/updatepet`}>Bilgileri güncelle</Link>
                     </div>
                     <TreatmentList pet={pet} />
                 </div>
-            )}
+            ) : null}
         </>
     );
 }

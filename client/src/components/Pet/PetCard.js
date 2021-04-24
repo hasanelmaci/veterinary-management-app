@@ -4,6 +4,7 @@ import paw from '../../styles/img/paw.jpg'
 function PetCard({pet}) {
 
     const addDefaultSrc = (ev) =>  {
+        ev.target.onError =null
         ev.target.src = paw
       }
     return (

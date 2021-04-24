@@ -7,7 +7,6 @@ function TreatmentList({ pet }) {
     return (
         <div className="treatment-container">
             <div className="treatment-header "></div>
-
             <h2>Gelecek Tedaviler</h2>
             <AddTreatment treatmentType="upcoming" pet={pet} />
             <table className="treatment-table">

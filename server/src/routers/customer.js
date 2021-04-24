@@ -166,7 +166,7 @@ const upload = multer({
 
 router.post(
     "/pets/:id/avatar",
-    auth,
+    customerAuth,
     upload.single("avatar"),
     async (req, res) => {
         const buffer = await sharp(req.file.buffer).resize({ width: 250, height: 250 }).png().toBuffer();
@@ -184,7 +184,7 @@ router.post(
     }
 );
 
-router.delete("/pets/:id/avatar", auth, async (req, res) => {
+router.delete("/pets/:id/avatar", customerAuth, async (req, res) => {
     const pet = await Pet.findById(req.params.id);
     pet.avatar = undefined;
     await pet.save();

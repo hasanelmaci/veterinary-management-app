@@ -12,7 +12,7 @@ console.log(pet)
         <div className='pet-header'>
             
             <div className='pet-avatar'>
-                <img src={`/pets/${pet._id}/avatar`}/>
+                <img src={pet.avatar}/>
             </div>
             <div className='pet-profile-infos'>
             <h1>{pet.name}</h1>

@@ -80,7 +80,7 @@ petSchema.methods.toJSON = function () {
     const pet = this;
     const petObject = pet.toObject();
 
-    delete petObject.avatar
+    petObject.avatar = `/pets/${this._id}/avatar`
     return petObject;
 };
 

@@ -11,11 +11,13 @@ function CustomerPetProfile() {
     const {fetchOnePet,pet,loading,isFetched} = useContext(CustomerAuthContext)
 
     useEffect(()=>{
- 
-            fetchOnePet(id)
-            
+        if(isFetched != id ){
 
-    },[loading])
+            fetchOnePet(id)
+            console.log('ASD')
+        }
+
+    },[loading,isFetched])
 
     return (
         <>
