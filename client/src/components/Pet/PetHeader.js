@@ -1,12 +1,8 @@
-import paw from "../../styles/img/paw.jpg";
-
 function PetHeader({ pet }) {
-
-
     return (
         <div className="pet-header">
             <div className="pet-avatar">
-                <img src={pet.avatar}  alt="avatar" />
+                <img src={pet.avatarPath} alt="avatar" />
             </div>
             <div className="pet-profile-infos">
                 <h1>{pet.name}</h1>

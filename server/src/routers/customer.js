@@ -175,6 +175,7 @@ router.post(
             throw new Error();
         }
         pet.avatar = buffer;
+        pet.avatarPath=`/pets/${req.params.id}/avatar`
         await pet.save();
         res.send();
     },

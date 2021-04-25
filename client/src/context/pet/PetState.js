@@ -50,7 +50,6 @@ function PetState(props) {
     const fetchPets = async (id) => {
         try {
             const res = await axios.get(`/customers/${id}/pets`);
-            console.log(res)
             dispatch({
                 type: FETCH_PETS_SUCCESS,
                 payload: res.data,

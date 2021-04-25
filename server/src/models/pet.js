@@ -68,8 +68,11 @@ const petSchema = new mongoose.Schema(
             ref: "Customer",
         },
         avatar:{
-            type:Buffer,
-            default:'https://icon-library.com/images/paw-print-icon/paw-print-icon-1.jpg'
+            type:Buffer
+        },
+        avatarPath:{
+            type:String,
+            default: 'https://icon-library.com/images/paw-print-icon/paw-print-icon-1.jpg'
         }
     },
     {
@@ -80,8 +83,8 @@ const petSchema = new mongoose.Schema(
 petSchema.methods.toJSON = function () {
     const pet = this;
     const petObject = pet.toObject();
-
-    petObject.avatar = `/pets/${this._id}/avatar`
+    delete petObject.avatar
+    
     return petObject;
 };
 

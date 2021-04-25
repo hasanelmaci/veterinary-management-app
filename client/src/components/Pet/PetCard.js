@@ -1,26 +1,21 @@
-import {Link} from 'react-router-dom'
-import paw from '../../styles/img/paw.jpg'
+import { Link } from "react-router-dom";
 
-function PetCard({pet}) {
-
-    const addDefaultSrc = (ev) =>  {
-        ev.target.onError =null
-        ev.target.src = paw
-      }
+function PetCard({ pet }) {
     return (
-        <div className='pet-card'>
+        <div className="pet-card">
             <Link to={`/customers/${pet.owner}/${pet._id}`}>
-            <div className='pet-avatar-container'>
-            <img  src={pet.avatar} onError={addDefaultSrc} alt='avatar'/>
-            </div>
-            <div className='pet-card-info-bottom'>
-
-        <p>{pet.name}</p>
-        <p><span>{pet.type}</span></p>
-            </div>
+                <div className="pet-avatar-container">
+                    <img src={pet.avatarPath} alt="avatar" />
+                </div>
+                <div className="pet-card-info-bottom">
+                    <p>{pet.name}</p>
+                    <p>
+                        <span>{pet.type}</span>
+                    </p>
+                </div>
             </Link>
         </div>
-    )
+    );
 }
 
-export default PetCard
+export default PetCard;

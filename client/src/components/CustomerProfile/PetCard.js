@@ -1,23 +1,21 @@
-import {Link} from 'react-router-dom'
-import paw from '../../styles/img/paw.jpg'
+import { Link } from "react-router-dom";
 
-function PetCard({pet}) {
-
-   
+function PetCard({ pet }) {
     return (
-        <div className='pet-card'>
+        <div className="pet-card">
             <Link to={`/customerprofile/${pet._id}`}>
-            <div className='pet-avatar-container'>
-            <img  src={pet.avatar}  alt='avatar'/>
-            </div>
-            <div className='pet-card-info-bottom'>
-
-        <p>{pet.name}</p>
-        <p><span>{pet.type}</span></p>
-            </div>
+                <div className="pet-avatar-container">
+                    <img src={pet.avatarPath} alt="avatar" />
+                </div>
+                <div className="pet-card-info-bottom">
+                    <p>{pet.name}</p>
+                    <p>
+                        <span>{pet.type}</span>
+                    </p>
+                </div>
             </Link>
         </div>
-    )
+    );
 }
 
-export default PetCard
+export default PetCard;
