@@ -6,6 +6,7 @@ function FetchPets({ customer }) {
     const { fetchPets, petList } = useContext(PetContext);
     useEffect(() => {
         fetchPets(customer._id);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <div>

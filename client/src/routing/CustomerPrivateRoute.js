@@ -8,7 +8,8 @@ const CustomerPrivateRoute = ({ component: Component, ...rest }) => {
 
     useEffect(() => {
         loadCustomer();
-        
+        console.log('loadcustomer')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

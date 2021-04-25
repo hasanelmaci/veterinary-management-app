@@ -8,7 +8,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
     useEffect(() => {
         loadUser();
-        
+        console.log('loadUser')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

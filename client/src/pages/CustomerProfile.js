@@ -7,6 +7,8 @@ function CustomerProfile() {
     const { fetchAllPets, customer } = useContext(CustomerAuthContext);
     useEffect(() => {
         fetchAllPets();
+        console.log('fetchallpets')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

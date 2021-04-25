@@ -19,6 +19,8 @@ function CustomerLogin(props) {
             setIsValid(false)
             clearErrors()
         }
+        console.log('customerloginj')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[isCustomerAuth,props.history])
 
     const [customer,setCustomer] = useState({

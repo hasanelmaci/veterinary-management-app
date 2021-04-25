@@ -11,6 +11,8 @@ function PetProfile() {
 
     useEffect(() => {
         fetchOnePet(id, petid);
+        console.log('fetchonepet')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loading]);
 
     return (

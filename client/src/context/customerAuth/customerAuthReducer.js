@@ -8,7 +8,7 @@ import {
     UPLOAD_AVATAR_SUCCESS,UPLOAD_AVATAR_FAIL
 } from "./customerAuthActions";
 
-export default(state,action) =>{
+const customerAuthReducer = (state,action) =>{
     switch(action.type){
         case CUSTOMER_LOADED:
             return{
@@ -82,3 +82,5 @@ export default(state,action) =>{
             return state;
     }
 }
+
+export default customerAuthReducer;

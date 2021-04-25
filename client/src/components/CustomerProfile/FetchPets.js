@@ -7,6 +7,8 @@ function FetchPets({ customer }) {
 
     useEffect(() => {
         fetchAllPets(customer._id);
+        console.log('fetchallpets')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

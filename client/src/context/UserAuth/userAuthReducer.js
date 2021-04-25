@@ -9,7 +9,7 @@ import {
     USER_LOGIN_FAIL
 } from "./userAuthActions";
 
-export default (state, action) => {
+const userAuthReducer = (state, action) => {
     switch (action.type) {
         case USER_LOADED:
             return {
@@ -49,3 +49,5 @@ export default (state, action) => {
             return state;
     }
 };
+
+export default userAuthReducer;

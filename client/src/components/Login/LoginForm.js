@@ -18,6 +18,8 @@ const LoginForm = (props) => {
           setIsValid(false)
           clearErrors()
       }
+      console.log('loaduser')
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     },[isUserAuth,props.history,error])
 
     const [user,setUser] =useState({

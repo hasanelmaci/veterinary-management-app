@@ -13,6 +13,8 @@ function CustomerPetProfile() {
         if (isFetched !== id) {
             fetchOnePet(id);
         }
+        console.log('customerpetprofile')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loading, isFetched]);
 
     return (

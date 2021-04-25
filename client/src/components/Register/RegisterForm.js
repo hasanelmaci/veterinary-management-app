@@ -13,6 +13,7 @@ const RegisterForm = (props) => {
     });
 
     useEffect(() => {
+        
         loadUser();
         if (isUserAuth) {
             props.history.push("/profile");
@@ -21,8 +22,13 @@ const RegisterForm = (props) => {
             setIsValid(false);
             clearErrors();
         }
+        console.log('registerform')
+        // eslint-disable-next-line 
     }, [isUserAuth, error, props.history]);
 
+
+
+    
     const { name, email, password } = user;
 
     const onChange = (event) => {

@@ -20,7 +20,7 @@ import {
     DELETE_UPCOMING_TREATMENT_SUCCESS
 } from "./petActions";
 
-export default (state,action) => {
+const petReducer =  (state,action) => {
     switch(action.type){
         case ADD_PET_SUCCESS:
             return{
@@ -90,3 +90,4 @@ export default (state,action) => {
             return state
     }
 }
+export default petReducer;

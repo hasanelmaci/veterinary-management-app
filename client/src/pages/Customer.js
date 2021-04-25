@@ -11,6 +11,8 @@ function Customer() {
 
     useEffect(() => {
         fetchOneCustomer(id);
+        console.log('fetchonecustomer')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loading]);
 
     return (

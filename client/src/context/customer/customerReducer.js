@@ -12,7 +12,7 @@ import {
     FETCH_ONE_CUSTOMER_FAIL,
 } from "./customerActions";
 
-export default (state, action) => {
+const customerReducer = (state, action) => {
     switch (action.type) {
         case ADD_CUSTOMER_SUCCESS:
             return {
@@ -68,3 +68,4 @@ export default (state, action) => {
             return state;
     }
 };
+export default customerReducer;
