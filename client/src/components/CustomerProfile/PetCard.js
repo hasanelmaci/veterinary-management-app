@@ -3,15 +3,12 @@ import paw from '../../styles/img/paw.jpg'
 
 function PetCard({pet}) {
 
-    const addDefaultSrc = (ev) =>  {
-        ev.target.onError =null
-        ev.target.src = paw
-      }
+   
     return (
         <div className='pet-card'>
             <Link to={`/customerprofile/${pet._id}`}>
             <div className='pet-avatar-container'>
-            <img  src={`/pets/${pet._id}/avatar`} onError={addDefaultSrc} alt='avatar'/>
+            <img  src={pet.avatar}  alt='avatar'/>
             </div>
             <div className='pet-card-info-bottom'>
 

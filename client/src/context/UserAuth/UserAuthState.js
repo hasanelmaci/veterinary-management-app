@@ -88,7 +88,8 @@ const UserAuthState = (props) => {
         }
     };
 
-    const logout = () => {
+    const logout = async () => {
+        await axios.post("/users/logout")
         dispatch({ type: USER_LOGOUT });
     };
 

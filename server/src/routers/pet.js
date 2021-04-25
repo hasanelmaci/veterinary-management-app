@@ -51,7 +51,6 @@ router.get("/customers/:id/pets", auth, async (req, res) => {
     try {
         const _id = req.params.id;
         const customer = await Customer.findById(_id);
-        console.log(customer);
 
         if (!customer) throw new Error();
 

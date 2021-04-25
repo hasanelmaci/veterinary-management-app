@@ -111,7 +111,6 @@ router.get("/customers/:id", auth, async (req, res) => {
     const _id = req.params.id;
     try {
         const customer = await Customer.findOne({ _id, vet: req.user._id });
-        console.log(customer);
         if (!customer) res.status(400).send();
         res.send(customer);
     } catch (e) {
@@ -183,6 +182,11 @@ router.post(
         res.status(400).send("Please upload a image under 3MB");
     }
 );
+
+router.get("pets/defaultavatar",async(req,res) =>{
+    res.set({'Content-Type': 'avatar/png'});
+
+})
 
 router.delete("/pets/:id/avatar", customerAuth, async (req, res) => {
     const pet = await Pet.findById(req.params.id);

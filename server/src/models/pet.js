@@ -68,7 +68,8 @@ const petSchema = new mongoose.Schema(
             ref: "Customer",
         },
         avatar:{
-            type:Buffer
+            type:Buffer,
+            default:'https://icon-library.com/images/paw-print-icon/paw-print-icon-1.jpg'
         }
     },
     {
