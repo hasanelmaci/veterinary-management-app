@@ -66,6 +66,7 @@ const LoginForm = (props) => {
 
           <button>Giriş Yap</button>
           <Link to='/register' >Kayıt ol</Link>
+          <Link to='/customerlogin' >Müşteri olarak giriş yap</Link>
           </div>
         </form>
         {isValid === false && <p>Geçersiz kullanıcı adı veya parola.</p> }

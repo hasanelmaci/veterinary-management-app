@@ -19,9 +19,8 @@ function CustomerLogin(props) {
             setIsValid(false)
             clearErrors()
         }
-        console.log('customerloginj')
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[isCustomerAuth,props.history])
+    },[isCustomerAuth,props.history,error])
 
     const [customer,setCustomer] = useState({
         email:"",
@@ -66,6 +65,7 @@ function CustomerLogin(props) {
 
           <button>Giriş Yap</button>
           <Link to='/register' >Kayıt ol</Link>
+          <Link to='/login' >Klinik olarak giriş yap</Link>
           </div>
         </form>
         {isValid === false && <p>Geçersiz kullanıcı adı veya parola.</p> }

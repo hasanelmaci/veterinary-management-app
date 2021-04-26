@@ -68,6 +68,7 @@ const customerAuthReducer = (state,action) =>{
             localStorage.removeItem("ctoken")
             return{
                 ...state,
+                token:null,
                 isCustomerAuth:false,
                 loading:false,
                 customer:null,

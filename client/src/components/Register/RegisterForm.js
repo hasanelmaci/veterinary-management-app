@@ -78,7 +78,7 @@ const RegisterForm = (props) => {
                         <button type="submit">Kayıt Ol</button>
                         <div className="register__bottom">
                         <Link to="/login">Giriş Yap</Link>
-                        <Link to="/customerlogin">Müşteri olarak giriş yap</Link>
+                        {/* <Link to="/customerlogin">Müşteri olarak giriş yap</Link> */}
                     </div>
                
                 </form>
