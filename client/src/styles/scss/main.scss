@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
 @import "config";
 @import "responsive";
 @import "registerform";
@@ -8,11 +10,16 @@
 @import "petprofile";
 
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
 
 body{
-    background-color: rgb(245, 244, 244);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 a{

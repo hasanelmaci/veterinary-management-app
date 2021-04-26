@@ -15,18 +15,18 @@ function Navbar() {
         <>
             {isUserAuth ? (
                 <div className="nav">
+                    <div className='nav-container'>
                     <Link to="/profile">
                         <h1>{user.name}</h1>
                     </Link>
                     <ul>
                         <Link to="/profile/addcustomer">Müşteri ekle</Link>
-                        <Link to="#">
-                            <li>Ayarlar</li>
-                        </Link>
+                       
                         <Link to="#" onClick={handleLogout}>
                             <li>Çıkış Yap</li>
                         </Link>
                     </ul>
+                    </div>
                 </div>
             ) : null}
         </>

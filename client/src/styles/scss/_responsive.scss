@@ -1,0 +1,68 @@
+//mobile
+@media only screen and (max-width: 500px) {
+
+   
+    .nav {
+        margin: 0 auto;
+        width: 100%;
+        h1 {
+            font-size: 26px;
+        }
+    }
+
+    .nav-container {
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    ul {
+        width: 200px;
+        padding:0  !important;
+        margin: 0 auto;
+    }
+
+    .customer-table {
+        width: 100% !important;
+        th,
+        td {
+            font-size: 12px !important;
+            padding: 5px  !important;
+        }
+
+    }
+    
+
+    .search-container {
+        input{
+
+            width: 100px;
+        }
+    }
+    .avatar{
+        width: 30px !important;
+    }
+    
+
+}
+
+
+
+//tablet
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+    .nav {
+        margin: 0 auto;
+    }
+
+    .nav-container {
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    ul {
+        margin: 0 auto;
+    }
+}

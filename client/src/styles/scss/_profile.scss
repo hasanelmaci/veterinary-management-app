@@ -9,18 +9,34 @@
         text-align: center;
         margin-top: 15px;
         letter-spacing: 3px;
+        color:#36a5a3;
+
     }
 }
 
 .search-container {
+    max-width: 1300px;
+    margin:0 auto;
     display: flex;
     justify-content: center;
     margin-top: 15px;
     input {
-        border: none;
-        background-color: #f0f0f0;
-        border-bottom: 1px solid black;
-        padding: 5px 10px;
+        display: block;
+        background-color: #fff;
+        width: 250px;
+        border:none;
+        border-bottom:1px solid black;
+        border-radius: 3px;
+        padding: 5px 12px;
+        margin: 0 auto ;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+
+        color: #09c074;;
+
+        font-weight: 300;
+
     }
 }
 
@@ -41,10 +57,11 @@
 }
 
 .customer-table {
+    width: 70%;
     margin: 0 auto;
     th,
 td {
-    padding: 5px 25px;
+    padding: 10px 25px;
 }
 
 th span {
@@ -57,20 +74,23 @@ td {
 }
 
 tr:hover {
-    background-color: rgb(253, 244, 244);
+    background-color: #01faf628;
 }
 
 th {
     text-align: left;
     color: rgb(51, 180, 0);
+    background-color: #01faf628;
 }
+tr:nth-child(even){background-color: #f2f2f2;}
+tr:nth-child(even):hover{background-color:#01faf628;}
+}
+
+.avatar{
+    width: 40px;
 }
 
 
-.avatar {
-    width: 50px;
-    height: 50px;
-}
 
 //AddCustomer
 
