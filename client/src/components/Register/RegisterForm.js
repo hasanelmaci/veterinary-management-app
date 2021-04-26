@@ -51,7 +51,7 @@ const RegisterForm = (props) => {
                             name="name"
                             value={name}
                             onChange={onChange}
-                            placeholder="Veteriner Kliğinin Adı"
+                            placeholder="Veteriner Klinik Adı"
                             required
                         />
                     </div>
@@ -75,11 +75,14 @@ const RegisterForm = (props) => {
                             required
                         />
                     </div>
-                    <div className="register__bottom">
                         <button type="submit">Kayıt Ol</button>
+                        <div className="register__bottom">
                         <Link to="/login">Giriş Yap</Link>
+                        <Link to="/customerlogin">Müşteri olarak giriş yap</Link>
                     </div>
+               
                 </form>
+              
                 {isValid === false && <p>Bu e-mail daha önceden kullanıldı.</p>}
             </div>
         </div>
