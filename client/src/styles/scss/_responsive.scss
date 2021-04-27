@@ -1,7 +1,5 @@
 //mobile
 @media only screen and (max-width: 500px) {
-
-   
     .nav {
         margin: 0 auto;
         width: 100%;
@@ -19,7 +17,7 @@
 
     ul {
         width: 200px;
-        padding:0  !important;
+        padding: 0 !important;
         margin: 0 auto;
     }
 
@@ -28,26 +26,19 @@
         th,
         td {
             font-size: 12px !important;
-            padding: 5px  !important;
+            padding: 5px !important;
         }
-
     }
-    
 
     .search-container {
-        input{
-
+        input {
             width: 100px;
         }
     }
-    .avatar{
+    .avatar {
         width: 30px !important;
     }
-    
-
 }
-
-
 
 //tablet
 @media only screen and (min-width: 500px) and (max-width: 768px) {

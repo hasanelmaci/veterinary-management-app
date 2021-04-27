@@ -1,82 +1,92 @@
 .customer-header {
     text-align: center;
     height: auto;
+    color:#0d4c6e;
     h1 {
         margin-bottom: 5px;
         font-size: 2.8rem;
         letter-spacing: 3px;
         margin-top: 15px;
         margin-bottom: 5px;
+        color:#1590d3;
     }
-
 }
 
 .customer-settings {
     max-width: 500px;
-    margin:0 auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
-    a{
-        color:green;
+    a {
+        color: green;
         font-weight: 400;
     }
-
 }
 
-.pet-list-container{
-    h2{
+.pet-list-container {
+    h2 {
         text-align: center;
-        color:rgb(5, 66, 146);
+        color: rgb(5, 66, 146);
         font-weight: 600;
         margin-top: 50px;
     }
     max-width: 1000px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-.pet-list{
+.pet-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-.pet-card{
-    max-width: 250px;
+.card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: auto;
+    margin: 1rem;
+    width: 250px;
+    word-wrap: break-word;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+}
+
+.pet-card {
+    // max-width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin:25px 10px;
+    // margin:25px 10px;
     text-align: center;
 
-
-    a{
-        color:green;
-    }
-
+    // a{
+    //     color:green;
+    // }
 }
 
-.pet-card-info-bottom{
-    margin-top: 15px;
-    span{
-        color:rgb(76, 12, 194);
+.pet-card-info-bottom {
+    //margin-top: 15px;
+    width: 250px;
+    background-color: rgba(241, 238, 238, 0.26);
+    span {
+        color: rgb(76, 12, 194);
     }
-    p{
+    p {
+        font-size: 1.2rem;
         margin-top: 2px;
     }
 }
 
-.pet-avatar-container{
+.pet-avatar-container {
     display: flex;
     justify-content: center;
 
-    img{
-        width: 200px;
-        border:1px solid gray;
-        border-radius: 15px;
-    }
-
-    img:hover{
-        border:3px solid gold;
+    img {
+        width: 250px;
+        border-bottom: 1px solid gray;
     }
 }

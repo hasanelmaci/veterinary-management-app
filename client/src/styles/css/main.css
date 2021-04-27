@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@
   }
   ul {
     width: 200px;
-    padding: 0  !important;
+    padding: 0 !important;
     margin: 0 auto;
   }
   .customer-table {
@@ -30,7 +31,7 @@
   .customer-table th,
   .customer-table td {
     font-size: 12px !important;
-    padding: 5px  !important;
+    padding: 5px !important;
   }
   .search-container input {
     width: 100px;
@@ -474,6 +475,7 @@
   border-bottom: 1px solid #50a3a2a6;
   width: 100%;
   margin: 0 auto;
+  background-color: #faf9f8;
 }
 
 .nav div {
@@ -505,6 +507,7 @@
 .customer-header {
   text-align: center;
   height: auto;
+  color: #0d4c6e;
 }
 
 .customer-header h1 {
@@ -513,6 +516,7 @@
   letter-spacing: 3px;
   margin-top: 15px;
   margin-bottom: 5px;
+  color: #1590d3;
 }
 
 .customer-settings {
@@ -542,25 +546,35 @@
 
 .pet-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: auto;
+  margin: 1rem;
+  width: 250px;
+  word-wrap: break-word;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
 .pet-card {
-  max-width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 25px 10px;
   text-align: center;
 }
 
-.pet-card a {
-  color: green;
-}
-
 .pet-card-info-bottom {
-  margin-top: 15px;
+  width: 250px;
+  background-color: rgba(241, 238, 238, 0.26);
 }
 
 .pet-card-info-bottom span {
@@ -568,6 +582,7 @@
 }
 
 .pet-card-info-bottom p {
+  font-size: 1.2rem;
   margin-top: 2px;
 }
 
@@ -577,13 +592,8 @@
 }
 
 .pet-avatar-container img {
-  width: 200px;
-  border: 1px solid gray;
-  border-radius: 15px;
-}
-
-.pet-avatar-container img:hover {
-  border: 3px solid gold;
+  width: 250px;
+  border-bottom: 1px solid gray;
 }
 
 .pet-profile {
@@ -727,7 +737,8 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #F3F2EF;
 }
 
 a {
