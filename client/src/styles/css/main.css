@@ -272,7 +272,7 @@
   text-align: center;
   margin-top: 15px;
   letter-spacing: 3px;
-  color: #36a5a3;
+  font-weight: 600;
 }
 
 .search-container {
@@ -285,7 +285,7 @@
 
 .search-container input {
   display: block;
-  background-color: #fff;
+  background-color: #4bc4a7;
   width: 250px;
   border: none;
   border-bottom: 1px solid black;
@@ -295,7 +295,7 @@
   display: block;
   text-align: center;
   font-size: 18px;
-  color: #09c074;
+  color: #fff;
   font-weight: 300;
 }
 
@@ -324,29 +324,34 @@
 .customer-table th,
 .customer-table td {
   padding: 10px 25px;
+  color: white;
 }
 
 .customer-table th span {
   font-size: 12px;
   font-weight: 400;
+  color: white;
 }
 
 .customer-table td {
   color: #e22545;
+  color: white;
 }
 
 .customer-table tr:hover {
   background-color: #01faf628;
+  color: white;
 }
 
 .customer-table th {
   text-align: left;
   color: #33b400;
-  background-color: #01faf628;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .customer-table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #3c948456;
 }
 
 .customer-table tr:nth-child(even):hover {
@@ -541,7 +546,7 @@
   text-align: center;
   color: #054292;
   font-weight: 600;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .pet-list {
@@ -738,7 +743,8 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #F3F2EF;
+  height: 100vh;
+  background-color: #fff;
 }
 
 a {

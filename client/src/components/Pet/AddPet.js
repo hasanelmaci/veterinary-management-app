@@ -1,17 +1,19 @@
 import { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import PetContext from "../../context/pet/petContext";
 
 function AddPet() {
     const { addPet } = useContext(PetContext);
 
     const [pet, setPet] = useState({});
+    const [message, setMessage] = useState(false)
 
     let { id } = useParams();
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
         addPet(id, pet);
+        setMessage(true)
     };
 
     const handleOnChange = (e) => {
@@ -30,6 +32,15 @@ function AddPet() {
                     <input placeholder="Cinsiyet" name="gender" onChange={handleOnChange} />
                     <button type="submit">Ekle</button>
                 </form>
+                {message && (
+                    <p>
+                        Yeni evcil hayvan eklendi.{" "}
+                        <Link to={`/customers/${id}`} onClick={()=>setMessage(false)}>
+                            {" "}
+                            Profile dön.
+                        </Link>
+                    </p>
+                )}
             </div>
         </div>
     );
