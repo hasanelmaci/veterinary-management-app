@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 
 function PetCard({ pet }) {
     return (
-        <div className="pet-card">
+        <div className="card">
             <Link to={`/customerprofile/${pet._id}`}>
+            <div className="pet-card">
                 <div className="pet-avatar-container">
                     <img src={pet.avatarPath} alt="avatar" />
                 </div>
@@ -12,6 +13,7 @@ function PetCard({ pet }) {
                     <p>
                         <span>{pet.type}</span>
                     </p>
+                </div>
                 </div>
             </Link>
         </div>

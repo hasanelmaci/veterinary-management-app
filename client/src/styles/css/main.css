@@ -39,6 +39,52 @@
   .avatar {
     width: 30px !important;
   }
+  .pet-profile {
+    flex-direction: column;
+  }
+  .pet-profile-infos {
+    margin: 0 auto;
+  }
+  .treatment-container {
+    margin: 0 auto !important;
+  }
+  .pet-header {
+    margin-top: 10px !important;
+  }
+  .pet-avatar {
+    display: inline-block;
+  }
+  .pet-avatar img {
+    width: 200px !important;
+    border: 1px solid gray;
+    border-radius: 50%;
+  }
+  .treatment-table th,
+  td {
+    font-size: 12px !important;
+    padding: 0px !important;
+  }
+  .addtreatment-container {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 50%;
+    margin: 0 auto;
+    margin-left: 0 i !important;
+  }
+  .addtreatment-container form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 !important;
+  }
+  .addtreatment-container form input {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .addtreatment-container form button {
+    width: 100%;
+    margin: 0 !important;
+  }
 }
 
 @media only screen and (min-width: 500px) and (max-width: 768px) {
@@ -53,6 +99,33 @@
   }
   ul {
     margin: 0 auto;
+  }
+  .pet-profile {
+    flex-direction: column;
+  }
+  .pet-profile-infos {
+    margin: 0 auto;
+  }
+  .treatment-container {
+    margin: 0 auto !important;
+  }
+  .pet-header {
+    margin-top: 10px !important;
+  }
+  .pet-avatar {
+    display: inline-block;
+  }
+  .pet-avatar img {
+    width: 200px !important;
+    border: 1px solid gray;
+    border-radius: 50%;
+  }
+  .addtreatment-container {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .addtreatment-container input {
+    width: 100px !important;
   }
 }
 
@@ -670,6 +743,7 @@
 .addtreatment-container input {
   padding: 5px 10px;
   margin-left: 10px;
+  width: 150px;
 }
 
 .addtreatment-container button {
@@ -694,11 +768,6 @@
   margin: 0 auto;
   width: 100%;
   margin-bottom: 35px;
-}
-
-.treatment-table th,
-.treatment-table td {
-  padding: 5px 25px;
 }
 
 .treatment-table th span {

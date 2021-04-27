@@ -38,6 +38,67 @@
     .avatar {
         width: 30px !important;
     }
+
+    .pet-profile {
+        flex-direction: column;
+    }
+
+    .pet-profile-infos {
+        margin: 0 auto;
+    }
+
+    .treatment-container {
+        margin: 0 auto !important;
+    }
+
+    .pet-header {
+        margin-top: 10px !important;
+    }
+
+    .pet-avatar {
+        display: inline-block;
+
+        img {
+            width: 200px !important;
+            border: 1px solid gray;
+            border-radius: 50%;
+        }
+    }
+
+    .treatment-table th,
+    td {
+        font-size: 12px !important;
+        padding: 0px !important;
+    }
+
+    .addtreatment-container{
+
+        display: flex !important;
+        flex-direction: column !important;
+        width: 50%;
+        margin:0 auto;
+        margin-left: 0 i !important;
+        form{
+
+            display: flex;
+            flex-direction: column;
+            margin:0 auto;
+
+            padding:0 !important;
+        
+            input{
+                width: 100% !important;
+                margin:0 !important;
+            }
+            button{
+                width: 100%;
+                margin:0 !important;
+
+            }
+
+        }
+        
+    }
 }
 
 //tablet
@@ -55,5 +116,41 @@
 
     ul {
         margin: 0 auto;
+    }
+
+    .pet-profile {
+        flex-direction: column;
+    }
+
+    .pet-profile-infos {
+        margin: 0 auto;
+    }
+
+    .treatment-container {
+        margin: 0 auto !important;
+    }
+
+    .pet-header {
+        margin-top: 10px !important;
+    }
+
+    .pet-avatar {
+        display: inline-block;
+
+        img {
+            width: 200px !important;
+            border: 1px solid gray;
+            border-radius: 50%;
+        }
+    }
+
+    .addtreatment-container{
+
+        display: flex !important;
+        flex-direction: column !important;
+       
+     input{
+         width: 100px !important;
+     }   
     }
 }
