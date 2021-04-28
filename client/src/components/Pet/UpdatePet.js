@@ -31,7 +31,7 @@ function UpdatePet() {
                     <input placeholder="Cins" name="type" onChange={handleOnChange} />
                     <input placeholder="Cinsiyet" name="gender" onChange={handleOnChange} />
                     <input placeholder="Doğum Yılı" name="birthdate" onChange={handleOnChange} />
-                    <button type="submit">Güncelle</button>
+                    <button type="submit" className='btn'>Güncelle</button>
                 </form>
 
                 {message && (

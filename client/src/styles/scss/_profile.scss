@@ -10,40 +10,37 @@
         margin-top: 15px;
         letter-spacing: 3px;
         font-weight: 600;
-
     }
 }
 
 .search-container {
     max-width: 1300px;
-    margin:0 auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     margin-top: 15px;
     input {
         display: block;
-        background-color:#4bc4a7;
+        background-color: #fff;
         width: 250px;
-        border:none;
-        border-bottom:1px solid black;
+        border: none;
+        border-bottom: 1px solid black;
         border-radius: 3px;
         padding: 5px 12px;
-        margin: 0 auto ;
+        margin: 0 auto;
         display: block;
         text-align: center;
         font-size: 18px;
 
-        color: #fff;;
+        color: #4bc4a7;
 
         font-weight: 300;
-
     }
 }
 
 .customer-table-container {
     max-width: 1300px;
     margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
     margin-top: 50px;
     h1 {
         text-align: center;
@@ -60,48 +57,51 @@
     width: 70%;
     margin: 0 auto;
     th,
-td {
-    padding: 10px 25px;
-    color:white;
+    td {
+        padding: 10px 25px;
+        color: white;
+    }
+
+    th span {
+        font-size: 12px;
+        font-weight: 400;
+        color: white;
+    }
+
+    td {
+        color: rgb(226, 37, 69);
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #01faf628;
+        color: white;
+    }
+
+    th {
+        text-align: left;
+        color: rgb(51, 180, 0);
+        color: black;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    tr:nth-child(even) {
+        background-color: #3c948456;
+    }
+    tr:nth-child(even):hover {
+        background-color: #01faf628;
+    }
 }
 
-th span {
-    font-size: 12px;
-    font-weight: 400;
-    color:white;
-}
-
-td {
-    color: rgb(226, 37, 69);
-    color:white;
-}
-
-tr:hover {
-    background-color: #01faf628;
-    color:white;
-    
-}
-
-th {
-    text-align: left;
-    color: rgb(51, 180, 0);
-    color:black;
-    background-color: rgba(255,255,255,0.3);
-
-}
-tr:nth-child(even){background-color: #3c948456;}
-tr:nth-child(even):hover{background-color:#01faf628;}
-}
-
-.avatar{
+.avatar {
     width: 40px;
 }
 
-
-
 //AddCustomer
 
-.addcustomer-container, .update-container, .addpet-container,.update-pet-container {
+.addcustomer-container,
+.update-container,
+.addpet-container,
+.update-pet-container {
     max-width: 1300px;
     margin: 0 auto;
     display: flex;
@@ -110,7 +110,10 @@ tr:nth-child(even):hover{background-color:#01faf628;}
     height: 90vh;
 }
 
-.addcustomer, .updatecustomer, .addpet,.updatepet{
+.addcustomer,
+.updatecustomer,
+.addpet,
+.updatepet {
     width: 300px;
     height: auto;
     padding-bottom: 50px;
@@ -143,23 +146,23 @@ tr:nth-child(even):hover{background-color:#01faf628;}
         width: 100%;
     }
 
-    button {
-        padding: 7px 15px;
-        background-color: rgb(3, 187, 3);
-        color: #fff;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        margin-top: 10px;
-    }
-    button:hover {
-        background-color: #fff;
-        color: rgb(3, 187, 3);
-    }
-    button:focus {
-        background-color: rgb(3, 187, 3);
-        color: #fff;
-    }
+    // button {
+    //     padding: 7px 15px;
+    //     background-color: rgb(3, 187, 3);
+    //     color: #fff;
+    //     border-radius: 5px;
+    //     cursor: pointer;
+    //     font-size: 1rem;
+    //     margin-top: 10px;
+    // }
+    // button:hover {
+    //     background-color: #fff;
+    //     color: rgb(3, 187, 3);
+    // }
+    // button:focus {
+    //     background-color: rgb(3, 187, 3);
+    //     color: #fff;
+    // }
     p {
         text-align: center;
         color: rgb(26, 156, 0);
@@ -171,7 +174,6 @@ tr:nth-child(even):hover{background-color:#01faf628;}
         text-decoration: underline;
     }
 }
-
 
 .register__bottom {
     width: 100%;
@@ -187,8 +189,6 @@ tr:nth-child(even):hover{background-color:#01faf628;}
 .delete-customer p {
     margin-top: 50px;
 }
-
-
 
 .buttons {
     display: flex;

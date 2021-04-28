@@ -24,7 +24,7 @@ function PastTreatments({pasttreatments,pet}) {
                 {pasttreatments.date}
                 </td>
                 <td>
-                    <button onClick={()=>handleDelete()} >Sil</button>
+                    <button onClick={()=>handleDelete()} >X</button>
                 </td>
             </tr>
         </>

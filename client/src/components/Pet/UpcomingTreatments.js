@@ -24,7 +24,7 @@ function UpcomingTreatments({upcomingtreatments,pet}) {
                 {upcomingtreatments.date}
                 </td>
                 <td>
-                <button onClick={()=>handleDelete()} >Sil</button>
+                <button onClick={()=>handleDelete()} >X</button>
                 </td>
             </tr>
         </>

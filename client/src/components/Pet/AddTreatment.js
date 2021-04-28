@@ -28,7 +28,7 @@ function AddTreatment({ treatmentType, pet }) {
                 <input placeholder="Adet" name="number" onChange={handleOnChange} />
                 <input placeholder="Tarih" name="date" onChange={handleOnChange} />
 
-                <button>Ekle</button>
+                <button className='btn'>Ekle</button>
             </form>
         </div>
     );

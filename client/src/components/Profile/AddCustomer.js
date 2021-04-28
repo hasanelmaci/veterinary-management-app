@@ -37,7 +37,7 @@ function AddCustomer(props) {
                     <input placeholder="isim" name="username" value={username} onChange={handleOnChange} />
                     <input type="email" placeholder="email" name="email" value={email} onChange={handleOnChange} />
                     <input placeholder="şifre" name="password" value={password} onChange={handleOnChange} />
-                    <button type="submit">Ekle</button>
+                    <button type="submit" className='btn'>Ekle</button>
                 </form>
                 {message && (
                     <p>

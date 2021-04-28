@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import CustomerAuthContext from "../context/customerAuth/customerAuthContext";
 import PetHeader from "../components/Pet/PetHeader";
 import TreatmentList from "../components/CustomerProfile/TreatmentList";
@@ -20,9 +20,17 @@ function CustomerPetProfile() {
     return (
         <>
             {isFetched === id ? (
-                <div>
-                    <PetHeader pet={pet} />
+                <div className="pet-profile">
+                    
+                    
+                     <div className="pet-profile-infos">
+                     <div className='tocustomer-container'>
+                        
+                    </div>
+                    <PetHeader  pet={pet} />
                     <UploadAvatar pet={pet} />
+                    <Link id='tocustomerprofile'to="/customerprofile">Diğer evcil hayvanlarım</Link>
+                     </div>
                     <TreatmentList pet={pet} />
                 </div>
             ) : null}

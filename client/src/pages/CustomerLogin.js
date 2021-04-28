@@ -47,6 +47,7 @@ function CustomerLogin(props) {
         <h1>
           Giriş Yap
         </h1>
+        <p style={{color:'white', fontWeight:'400',fontSize:'14px'}}>Veterinerinizin verdiği bilgileri giriniz.</p>
         <form onSubmit={onSubmit}>
           <div>
 

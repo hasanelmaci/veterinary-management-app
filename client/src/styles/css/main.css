@@ -358,7 +358,7 @@
 
 .search-container input {
   display: block;
-  background-color: #4bc4a7;
+  background-color: #fff;
   width: 250px;
   border: none;
   border-bottom: 1px solid black;
@@ -368,14 +368,13 @@
   display: block;
   text-align: center;
   font-size: 18px;
-  color: #fff;
+  color: #4bc4a7;
   font-weight: 300;
 }
 
 .customer-table-container {
   max-width: 1300px;
   margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
   margin-top: 50px;
 }
 
@@ -435,7 +434,10 @@
   width: 40px;
 }
 
-.addcustomer-container, .update-container, .addpet-container, .update-pet-container {
+.addcustomer-container,
+.update-container,
+.addpet-container,
+.update-pet-container {
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
@@ -444,7 +446,10 @@
   height: 90vh;
 }
 
-.addcustomer, .updatecustomer, .addpet, .updatepet {
+.addcustomer,
+.updatecustomer,
+.addpet,
+.updatepet {
   width: 300px;
   height: auto;
   padding-bottom: 50px;
@@ -456,14 +461,20 @@
   border-radius: 5px;
 }
 
-.addcustomer h1, .updatecustomer h1, .addpet h1, .updatepet h1 {
+.addcustomer h1,
+.updatecustomer h1,
+.addpet h1,
+.updatepet h1 {
   text-align: center;
   margin-bottom: 15px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 20px;
 }
 
-.addcustomer form, .updatecustomer form, .addpet form, .updatepet form {
+.addcustomer form,
+.updatecustomer form,
+.addpet form,
+.updatepet form {
   font-family: Arial, Helvetica, sans-serif;
   width: 80%;
   margin: 0 auto;
@@ -472,40 +483,29 @@
   align-items: center;
 }
 
-.addcustomer input, .updatecustomer input, .addpet input, .updatepet input {
+.addcustomer input,
+.updatecustomer input,
+.addpet input,
+.updatepet input {
   padding: 8px 10px;
   margin-bottom: 7px;
   width: 100%;
 }
 
-.addcustomer button, .updatecustomer button, .addpet button, .updatepet button {
-  padding: 7px 15px;
-  background-color: #03bb03;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-.addcustomer button:hover, .updatecustomer button:hover, .addpet button:hover, .updatepet button:hover {
-  background-color: #fff;
-  color: #03bb03;
-}
-
-.addcustomer button:focus, .updatecustomer button:focus, .addpet button:focus, .updatepet button:focus {
-  background-color: #03bb03;
-  color: #fff;
-}
-
-.addcustomer p, .updatecustomer p, .addpet p, .updatepet p {
+.addcustomer p,
+.updatecustomer p,
+.addpet p,
+.updatepet p {
   text-align: center;
   color: #1a9c00;
   margin-top: 10px;
   font-size: 0.9rem;
 }
 
-.addcustomer a, .updatecustomer a, .addpet a, .updatepet a {
+.addcustomer a,
+.updatecustomer a,
+.addpet a,
+.updatepet a {
   color: #1a9c00;
   text-decoration: underline;
 }
@@ -686,6 +686,11 @@
   margin-top: 50px;
 }
 
+#tocustomerprofile {
+  display: inline-block;
+  margin-top: 15px;
+}
+
 .pet-avatar {
   display: inline-block;
 }
@@ -748,23 +753,11 @@
 
 .addtreatment-container button {
   padding: 5px 15px;
-  background-color: #129e00;
-  color: white;
-  border-radius: 7px;
-  cursor: pointer;
   margin-left: 15px;
 }
 
-.addtreatment-container button:hover {
-  background-color: #29f33a;
-}
-
-.addtreatment-container button:focus {
-  background-color: #b80606;
-}
-
 .treatment-table {
-  background-color: #e7e7e7;
+  color: #000;
   margin: 0 auto;
   width: 100%;
   margin-bottom: 35px;
@@ -775,13 +768,25 @@
   font-weight: 400;
 }
 
+.treatment-table th,
 .treatment-table td {
-  color: #e22545;
+  padding: 10px 25px;
+  color: #000;
+}
+
+.treatment-table th span {
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+}
+
+.treatment-table td {
+  color: #000;
 }
 
 .treatment-table td button {
   padding: 5px 15px;
-  background-color: #b80606;
+  background-color: #df3b3b;
   color: white;
   border-radius: 7px;
   cursor: pointer;
@@ -796,12 +801,78 @@
 }
 
 .treatment-table tr:hover {
-  background-color: #fdf4f4;
+  background-color: #01faf628;
+  color: white;
 }
 
 .treatment-table th {
   text-align: left;
   color: #33b400;
+  color: black;
+  background-color: rgba(109, 193, 231, 0.418);
+}
+
+.treatment-table tr:nth-child(odd) {
+  background-color: #a0ecde56;
+}
+
+.treatment-table tr:nth-child(even) {
+  background-color: #3c948456;
+}
+
+.treatment-table tr:nth-child(even):hover {
+  background-color: #01faf628;
+}
+
+.upload-avatar input[type="file"] {
+  display: none;
+}
+
+.upload-avatar button {
+  padding: 3px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+#avatar-ok-button {
+  border: 1px solid green;
+  background-color: #27925c;
+  color: #fff;
+  padding: 5.5px;
+  position: absolute;
+}
+
+#avatar-ok-button:hover {
+  background-color: #13e213;
+}
+
+#avatar-ok-button:focus {
+  background-color: #27925c;
+}
+
+#avatar-x-button {
+  background-color: red;
+  color: #fff;
+}
+
+.avatar-input {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 3px 5px;
+  cursor: pointer;
+  background-color: #d8d8d8;
+  color: #000;
+}
+
+.avatar-input:hover {
+  background-color: #a5a5a5c2;
 }
 
 * {
@@ -822,5 +893,32 @@ a {
 
 li {
   list-style: none;
+}
+
+.btn {
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #dadada 5%, #f0edf0 100%);
+  background-color: #f3f3f3;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #000;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+}
+
+.btn:hover {
+  background: linear-gradient(to bottom, #f0edf0 5%, #f9f9f9 100%);
+  background-color: #f0edf0;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
 }
 /*# sourceMappingURL=main.css.map */
