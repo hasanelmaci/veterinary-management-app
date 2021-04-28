@@ -545,7 +545,7 @@
 
 .buttons a button:hover {
   background-color: #fff;
-  color: red;
+  color: #000;
 }
 
 .nav {
@@ -704,6 +704,7 @@
 .pet-profile-infos {
   max-width: 260px;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .pet-profile-infos h1 {
@@ -717,6 +718,7 @@
 .pet-profile-infos a {
   color: green;
   font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .pet-profile-infos a:hover {
@@ -887,7 +889,6 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  height: 100vh;
   background-color: #fff;
 }
 

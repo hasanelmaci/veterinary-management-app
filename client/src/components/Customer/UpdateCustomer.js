@@ -41,9 +41,9 @@ function UpdateCustomer() {
                         <p>Müşteri silmek istediğinize emin misiniz?</p>
                         <div className="buttons">
                             <Link to="/profile">
-                                <button onClick={() => handleDelete()}>Evet</button>
+                                <button className='btn' onClick={() => handleDelete()}>Evet</button>
                             </Link>
-                            <button onClick={() => setDeleteInput(false)}>Hayır</button>
+                            <button className='btn' onClick={() => setDeleteInput(false)}>Hayır</button>
                         </div>
                     </div>
                 ) : (

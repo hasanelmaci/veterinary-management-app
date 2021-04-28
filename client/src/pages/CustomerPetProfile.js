@@ -7,7 +7,7 @@ import UploadAvatar from "../components/CustomerProfile/UploadAvatar";
 
 function CustomerPetProfile() {
     let { id } = useParams();
-    const { fetchOnePet, pet, loading, isFetched } = useContext(CustomerAuthContext);
+    const { fetchOnePet, pet, loading, isFetched,logout } = useContext(CustomerAuthContext);
 
     useEffect(() => {
         if (isFetched !== id) {
@@ -24,12 +24,14 @@ function CustomerPetProfile() {
                     
                     
                      <div className="pet-profile-infos">
-                     <div className='tocustomer-container'>
+                     <di className='tocustomer-container'>
                         
-                    </div>
+                    </di>
                     <PetHeader  pet={pet} />
                     <UploadAvatar pet={pet} />
                     <Link id='tocustomerprofile'to="/customerprofile">Diğer evcil hayvanlarım</Link>
+                    <br/>
+                    <Link id='#' onClick={logout}>Çıkış Yap</Link>
                      </div>
                     <TreatmentList pet={pet} />
                 </div>
