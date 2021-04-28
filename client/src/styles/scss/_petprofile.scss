@@ -133,6 +133,9 @@
     tr:nth-child(odd) {
         background-color: #a0ecde56;
     }
+    tr:nth-child(odd):hover {
+        background-color: #01faf628;
+    }
     tr:nth-child(even) {
         background-color: #3c948456;
     }

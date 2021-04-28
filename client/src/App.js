@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import "./styles/css/main.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";

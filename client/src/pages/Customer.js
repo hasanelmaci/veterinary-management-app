@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import {useContext, useEffect } from "react";
+import Loader from "react-loader-spinner";
 import CustomerContext from "../context/customer/customerContext";
 import CustomerHeader from "../components/Customer/CustomerHeader";
 import CustomerSettings from "../components/Customer/CustomerSettings";
@@ -26,7 +27,15 @@ function Customer() {
 
                 </div>
             ) : (
-                "LOADING"
+                <div className='spinner'>
+                <Loader
+                type="Circles"
+                color="#00BFFF"
+                height={100}
+                width={100}
+                timeout={0} //3 secs
+                />
+                </div>
             )}
         </>
     );

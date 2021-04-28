@@ -61,7 +61,7 @@
   }
   .treatment-table th,
   td {
-    font-size: 12px !important;
+    font-size: 14px !important;
     padding: 0px !important;
   }
   .addtreatment-container {
@@ -816,6 +816,10 @@
   background-color: #a0ecde56;
 }
 
+.treatment-table tr:nth-child(odd):hover {
+  background-color: #01faf628;
+}
+
 .treatment-table tr:nth-child(even) {
   background-color: #3c948456;
 }
@@ -893,6 +897,13 @@ a {
 
 li {
   list-style: none;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .btn {

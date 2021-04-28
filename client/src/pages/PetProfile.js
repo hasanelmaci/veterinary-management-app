@@ -1,5 +1,6 @@
 import { useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
+import Loader from "react-loader-spinner";
 import PetHeader from "../components/Pet/PetHeader";
 import TreatmentList from "../components/Pet/TreatmentList";
 import PetContext from "../context/pet/petContext";
@@ -25,7 +26,15 @@ function PetProfile() {
                     </div>
                     <TreatmentList pet={pet} />
                 </div>
-            ) : null}
+            ) :  <div className='spinner'>
+            <Loader
+            type="Circles"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            timeout={0} //3 secs
+            />
+            </div>}
         </>
     );
 }
