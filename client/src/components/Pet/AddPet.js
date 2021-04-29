@@ -30,7 +30,7 @@ function AddPet() {
                     <input placeholder="Tür" name="animal" onChange={handleOnChange} />
                     <input placeholder="Cins" name="type" onChange={handleOnChange} />
                     <input placeholder="Cinsiyet" name="gender" onChange={handleOnChange} />
-                    <button type="submit">Ekle</button>
+                    <button type="submit" className='btn'>Ekle</button>
                 </form>
                 {message && (
                     <p>

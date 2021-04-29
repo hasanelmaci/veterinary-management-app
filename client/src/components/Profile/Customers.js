@@ -6,7 +6,6 @@ function Customers({ searchInput }) {
     const { customerList, fetchCustomers, clearErrors, customer, error } = useContext(CustomerContext);
     useEffect(() => {
         fetchCustomers();
-        console.log('customers')
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [customer]);
 
@@ -14,27 +13,35 @@ function Customers({ searchInput }) {
         if (error?.data === "Invalid updates") {
         }
         clearErrors();
-        console.log('customers')
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [error]);
 
     return (
-        <div className="customer-table-container">
-            <table className="customer-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Müşteri Adı</th>
-                        <th>E-mail</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {customerList.map((item) =>
-                        item.username.toLowerCase().includes(searchInput.toLowerCase()) ? <CustomerItem key={item._id} infos={item} /> : null
-                    )}
-                </tbody>
-            </table>
-        </div>
+<>
+        {customerList.length === 0 ? 
+            <h2 style={{textAlign:'center',marginTop:'30px'}}>Kayıtlı müşteri bulunmamaktadır</h2>
+            
+            :
+            
+            
+            
+            <div className="customer-table-container">
+        <table className="customer-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Müşteri Adı</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                {customerList.map((item) =>
+                    item.username.toLowerCase().includes(searchInput.toLowerCase()) ? <CustomerItem key={item._id} infos={item} /> : null
+                )}
+            </tbody>
+        </table>
+    </div> }
+        </>
     );
 }
 

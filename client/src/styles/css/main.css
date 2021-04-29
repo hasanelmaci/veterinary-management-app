@@ -361,15 +361,16 @@
   background-color: #fff;
   width: 250px;
   border: none;
-  border-bottom: 1px solid black;
   border-radius: 3px;
   padding: 5px 12px;
   margin: 0 auto;
   display: block;
   text-align: center;
   font-size: 18px;
-  color: #4bc4a7;
   font-weight: 300;
+  background-color: var(--color-page-background);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-text);
 }
 
 .customer-table-container {
@@ -381,11 +382,10 @@
 .customer-table-container h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #ec4d68;
 }
 
 .customer-table-container a {
-  color: black;
+  color: var(--color-text);
 }
 
 .customer-table {
@@ -419,11 +419,12 @@
   text-align: left;
   color: #33b400;
   color: black;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(82, 228, 253, 0.3);
+  color: var(--color-text);
 }
 
 .customer-table tr:nth-child(even) {
-  background-color: #3c948456;
+  background-color: #56e4ca93;
 }
 
 .customer-table tr:nth-child(even):hover {
@@ -554,6 +555,9 @@
   width: 100%;
   margin: 0 auto;
   background-color: #faf9f8;
+  background-color: var(--color-page-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .nav div {
@@ -572,7 +576,7 @@
 
 .nav ul {
   display: flex;
-  width: 200px;
+  width: 250px;
   margin-top: 15px;
   padding-right: 15px;
   justify-content: space-between;
@@ -580,6 +584,10 @@
 
 .nav ul a {
   color: #09807e;
+}
+
+.nav ul a:hover {
+  color: red;
 }
 
 .customer-header {
@@ -655,12 +663,12 @@
   background-color: rgba(241, 238, 238, 0.26);
 }
 
-.pet-card-info-bottom span {
-  color: #4c0cc2;
+.pet-card-info-bottom a, .pet-card-info-bottom p, .pet-card-info-bottom span {
+  color: black;
 }
 
 .pet-card-info-bottom p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-top: 2px;
 }
 
@@ -735,12 +743,7 @@
 .treatment-container h2 {
   margin-bottom: 15px;
   text-align: center;
-  cursor: pointer;
-  color: #920303;
-}
-
-.treatment-container h2:hover {
-  color: red;
+  color: #2f7e7cec;
 }
 
 .addtreatment-container {
@@ -783,7 +786,7 @@
 }
 
 .treatment-table td {
-  color: #000;
+  color: var(--color-text);
 }
 
 .treatment-table td button {
@@ -881,6 +884,46 @@
   background-color: #a5a5a5c2;
 }
 
+#darkMode {
+  background: transparent url("../img/sun.png") no-repeat center;
+  background-size: 20px 20px;
+  background-color: #1D1D1D;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#darkMode:hover,
+#darkMode:focus {
+  filter: none;
+  background-color: #1D1D1D;
+  cursor: pointer;
+}
+
+#darkMode.clicked {
+  filter: none !important;
+  background-color: #1D1D1D;
+}
+
+:root {
+  --color-page-background: white;
+  --color-text: #1d1d1d;
+}
+
+.dark {
+  --color-page-background: #1d1d1d;
+  --color-text: white;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.light {
+  --color-page-background: white;
+  --color-text: #1d1d1d;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -888,8 +931,10 @@
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   background-color: #fff;
+  background-color: var(--color-page-background);
+  color: var(--color-text);
 }
 
 a {

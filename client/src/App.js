@@ -21,6 +21,7 @@ import CustomerPrivateRoute from "./routing/CustomerPrivateRoute";
 import CustomerProfile from "./pages/CustomerProfile";
 import CustomerPetProfile from "./pages/CustomerPetProfile";
 
+
 function App() {
     return (
         <UserAuthState>
@@ -29,6 +30,7 @@ function App() {
                     <PetState>
                         <Router>
                             <Navbar />
+                            
                             <Switch>
                                 <Route exact path="/">
                                     <Redirect to="/profile" />

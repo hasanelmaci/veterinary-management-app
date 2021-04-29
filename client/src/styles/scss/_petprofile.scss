@@ -53,11 +53,7 @@
     h2 {
         margin-bottom: 15px;
         text-align: center;
-        cursor: pointer;
-        color: rgb(146, 3, 3);
-    }
-    h2:hover {
-        color: red;
+        color: #2f7e7cec;
     }
 }
 
@@ -105,7 +101,7 @@
     }
 
     td {
-        color: #000;
+        color: var(--color-text);
         button {
             padding: 5px 15px;
             background-color: rgb(223, 59, 59);
@@ -124,6 +120,7 @@
     tr:hover {
         background-color: #01faf628;
         color: white;
+        
     }
 
     th {
@@ -132,6 +129,8 @@
         color: black;
         background-color: rgba(109, 193, 231, 0.418);
     }
+
+    
     tr:nth-child(odd) {
         background-color: #a0ecde56;
     }

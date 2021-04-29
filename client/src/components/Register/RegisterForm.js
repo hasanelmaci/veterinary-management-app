@@ -22,7 +22,6 @@ const RegisterForm = (props) => {
             setIsValid(false);
             clearErrors();
         }
-        console.log('registerform')
         // eslint-disable-next-line 
     }, [isUserAuth, error, props.history]);
 

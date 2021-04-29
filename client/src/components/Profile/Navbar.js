@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import UserAuthContext from "../../context/userAuth/userAuthContext";
-
+import DarkMode from "../../pages/DarkMode"
 function Navbar() {
     const userAuthContext = useContext(UserAuthContext);
 
@@ -20,11 +20,20 @@ function Navbar() {
                         <h1>{user.name}</h1>
                     </Link>
                     <ul>
+                        <li>
+
+                        <DarkMode />
+                        </li>
+    
+    <li>
+
                         <Link to="/profile/addcustomer">Müşteri ekle</Link>
-                       
+    </li>
+        <li>
                         <Link to="#" onClick={handleLogout}>
-                            <li>Çıkış Yap</li>
+                            Çıkış Yap
                         </Link>
+            </li>               
                     </ul>
                     </div>
                 </div>

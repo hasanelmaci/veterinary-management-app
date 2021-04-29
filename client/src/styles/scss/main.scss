@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 
 @import "config";
 @import "responsive";
@@ -9,62 +9,57 @@
 @import "navbar";
 @import "customerprofile";
 @import "petprofile";
+@import "darkmode";
 
-
-
-
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Source Sans Pro', sans-serif;
+body {
+    font-family: "Source Sans Pro", sans-serif;
     background-color: #fff;
-    // background: #50a3a2;
-    // background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-    // background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-    // background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-    // background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+    background-color: var(--color-page-background);
+    color: var(--color-text);
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-li{
+li {
     list-style: none;
 }
 
-.spinner{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	height:100vh
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .btn {
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #dadada 5%, #f0edf0 100%);
-	background-color:#f3f3f3;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#000;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:8px 16px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: linear-gradient(to bottom, #dadada 5%, #f0edf0 100%);
+    background-color: #f3f3f3;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #000;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
 }
 .btn:hover {
-	background:linear-gradient(to bottom, #f0edf0 5%, #f9f9f9 100%);
-	background-color:#f0edf0;
+    background: linear-gradient(to bottom, #f0edf0 5%, #f9f9f9 100%);
+    background-color: #f0edf0;
 }
 .btn:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }

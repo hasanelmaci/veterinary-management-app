@@ -50,6 +50,7 @@
     width: 250px;
     word-wrap: break-word;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  
     &:hover {
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
@@ -63,14 +64,14 @@
 }
 
 .pet-card-info-bottom {
-    //margin-top: 15px;
     width: 250px;
     background-color: rgba(241, 238, 238, 0.26);
-    span {
-        color: rgb(76, 12, 194);
+    a, p, span{
+        color:black;
     }
+   
     p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         margin-top: 2px;
     }
 }

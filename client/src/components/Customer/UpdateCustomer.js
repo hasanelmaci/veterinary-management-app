@@ -14,7 +14,6 @@ function UpdateCustomer() {
 
     useEffect(() => {
         setDeleteInput(false);
-        console.log("SetDEleteinput");
     }, []);
 
     const handleOnSubmit = (e) => {
