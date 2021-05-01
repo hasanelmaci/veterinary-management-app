@@ -20,7 +20,8 @@ import CustomerAuthState from "./context/customerAuth/CustomerAuthState";
 import CustomerPrivateRoute from "./routing/CustomerPrivateRoute";
 import CustomerProfile from "./pages/CustomerProfile";
 import CustomerPetProfile from "./pages/CustomerPetProfile";
-
+import socketService from './socketService'
+import Chat from './pages/Chat'
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                                 <Route exact path="/">
                                     <Redirect to="/profile" />
                                 </Route>
+                                <Route exact path='/chat' component={Chat}/>
                                 <PrivateRoute exact path="/profile" component={Profile} />
                                 <PrivateRoute exact path="/customers/:id" component={Customer} />
                                 <PrivateRoute exact path="/customers/:id/update" component={UpdateCustomer} />

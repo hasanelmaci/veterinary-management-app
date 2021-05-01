@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {useContext} from 'react'
 import PetContext from "../../context/pet/petContext";
 
@@ -24,7 +26,7 @@ function UpcomingTreatments({upcomingtreatments,pet}) {
                 {upcomingtreatments.date}
                 </td>
                 <td>
-                <button onClick={()=>handleDelete()} >X</button>
+                <button onClick={()=>handleDelete()} ><FontAwesomeIcon icon={faTimes} /></button>
                 </td>
             </tr>
         </>
