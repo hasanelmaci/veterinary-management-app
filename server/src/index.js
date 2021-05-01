@@ -10,7 +10,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 const server = http.createServer(app);
-const io = socketio(server)
+const io = socketio(server);
 
 const port = process.env.PORT || 3000;
 
@@ -20,28 +20,23 @@ app.use(userRouter);
 app.use(customerRouter);
 app.use(petRouter);
 
-let count = 0;
+io.on("connection", (socket) => {
+    console.log("New Websocket connection");
 
-io.on("connection",(socket) =>{
-    console.log('New Websocket connection');
+    socket.on("send-message", (message) => {
+        console.log(message);
+        io.emit("receive-message", message);
+    });
 
-    socket.emit('count-updated',count)
-
-    socket.on('increment',()=>{
-        count++
-        socket.emit('count-updated',count)
+    socket.on('join',({username,room}) =>{
+        socket.join(room)
+        socket.emit('welcome-room',console.log('welcome to room'))
     })
 
-    socket.on("disconnect", ()=>{
-        console.log('disconnect')
-    })
-})
-
-
-
-
-
-
+    socket.on("disconnect", () => {
+        console.log("disconnect");
+    });
+});
 
 server.listen(port, () => {
     console.log(`Server is up on port ${port} !`);

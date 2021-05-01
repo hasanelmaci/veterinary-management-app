@@ -36,7 +36,8 @@ function App() {
                                 <Route exact path="/">
                                     <Redirect to="/profile" />
                                 </Route>
-                                <Route exact path='/chat' component={Chat}/>
+                                <PrivateRoute exact path='/chat' component={Chat}/>
+                                <PrivateRoute exact path='/chat/:id' component={Chat}/>
                                 <PrivateRoute exact path="/profile" component={Profile} />
                                 <PrivateRoute exact path="/customers/:id" component={Customer} />
                                 <PrivateRoute exact path="/customers/:id/update" component={UpdateCustomer} />
@@ -48,6 +49,7 @@ function App() {
                                 <Route exact path="/login" component={Login} />
                                 <Route exact path="/customerlogin" component={CustomerLogin} />
                                 <CustomerPrivateRoute exact path="/customerprofile" component={CustomerProfile} />
+                                <CustomerPrivateRoute exact path='/customerchat/:id' component={Chat}/>
                                 <CustomerPrivateRoute
                                     exact
                                     path="/customerprofile/:id"
