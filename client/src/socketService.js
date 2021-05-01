@@ -16,11 +16,11 @@ export const disconnectSocket = () => {
 
 export const joinRoom = (username,room) =>{
     socket.emit('join',{username, room})
+    socket.on('welcome-room',(room)=>console.log('Welcome client',room))
 }
 
-export const sendMessage = (message) =>{
-
-    if(socket) socket.emit('send-message',message)
+export const sendMessage = ([room,message]) =>{
+    if(socket) socket.emit('send-message',[room,message])
 } 
 
 export const receiveMessage = () => {

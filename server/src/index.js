@@ -23,14 +23,16 @@ app.use(petRouter);
 io.on("connection", (socket) => {
     console.log("New Websocket connection");
 
-    socket.on("send-message", (message) => {
+    socket.on("send-message", ([room,message]) => {
         console.log(message);
-        io.emit("receive-message", message);
+        io.to(room).emit("receive-message", message);
     });
 
     socket.on('join',({username,room}) =>{
+      
+        console.log('ROOM SERVER ',username,room)
         socket.join(room)
-        socket.emit('welcome-room',console.log('welcome to room'))
+        socket.emit('welcome-room',room)
     })
 
     socket.on("disconnect", () => {
