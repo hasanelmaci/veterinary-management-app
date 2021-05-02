@@ -16,26 +16,27 @@ function Chat() {
 
   useEffect(() => {
     initSocket();
+    console.log('Joined')
 
     joinRoom(user, id);
-    receiveMessage((msg) => {
-      setNewMsg({user:user.name,msg});
+    receiveMessage((user,msg) => {
+      setNewMsg({user,msg});
     });
     return () => disconnectSocket();
   }, [receiveMessage, id]);
 
-  useEffect(() => {
-    console.log('ASD')
-    fetchOneCustomer(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+  // useEffect(() => {
+  //   console.log('ASD')
+  //   fetchOneCustomer(id);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [id]);
 
   return (
     <div>
       <FetchCustomers />
 
-      <ChatInput />
-      <ChatBox newMsg={newMsg} />
+      <ChatInput user={user.name} />
+      <ChatBox newMsg={newMsg} id={id} />
     </div>
   );
 }

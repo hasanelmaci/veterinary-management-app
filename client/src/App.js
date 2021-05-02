@@ -22,6 +22,7 @@ import CustomerProfile from "./pages/CustomerProfile";
 import CustomerPetProfile from "./pages/CustomerPetProfile";
 import socketService from "./socketService";
 import Chat from "./pages/Chat";
+import CustomerChat from './pages/CustomerChat'
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/customerlogin" component={CustomerLogin} />
                 <CustomerPrivateRoute exact path="/customerprofile" component={CustomerProfile} />
-                <CustomerPrivateRoute exact path="/customerchat/:id" component={Chat} />
+                <CustomerPrivateRoute exact path="/customerchat/:id" component={CustomerChat} />
                 <CustomerPrivateRoute exact path="/customerprofile/:id" component={CustomerPetProfile} />
               </Switch>
             </Router>

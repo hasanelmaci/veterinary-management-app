@@ -23,9 +23,9 @@ app.use(petRouter);
 io.on("connection", (socket) => {
     console.log("New Websocket connection");
 
-    socket.on("send-message", ([room,message]) => {
+    socket.on("send-message", ([room,user,message]) => {
         console.log(message);
-        io.to(room).emit("receive-message", message);
+        io.to(room).emit("receive-message", {user,message});
     });
 
     socket.on('join',({username,room}) =>{

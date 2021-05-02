@@ -3,7 +3,7 @@ import CustomerContext from "../../context/customer/customerContext";
 import { useContext, useEffect, useState } from "react";
 import { sendMessage, receiveMessage, initSocket, disconnectSocket, joinRoom } from "../../socketService";
 
-function ChatInput() {
+function ChatInput({user}) {
     let { id } = useParams();
   const { fetchOneCustomer, customer, loading } = useContext(CustomerContext);
 
@@ -11,7 +11,7 @@ function ChatInput() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendMessage([id, input]);
+    sendMessage([id,user, input]);
   };
     return (
         <div>

@@ -19,12 +19,12 @@ export const joinRoom = (username,room) =>{
     socket.on('welcome-room',(room)=>console.log('Welcome client',room))
 }
 
-export const sendMessage = ([room,message]) =>{
-    if(socket) socket.emit('send-message',[room,message])
+export const sendMessage = ([room,user,message]) =>{
+    if(socket) socket.emit('send-message',[room,user,message])
 } 
 
 export const receiveMessage = (cb) => {
-    if(socket) socket.on('receive-message',(message)=>{
-    console.log(message)
-    cb(message)
+    if(socket) socket.on('receive-message',({user,message})=>{
+    console.log(user,message)
+    cb(user,message)
 })}
