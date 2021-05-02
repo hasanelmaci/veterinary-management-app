@@ -5,6 +5,7 @@ require("./db/mongoose");
 const userRouter = require("./routers/user");
 const customerRouter = require("./routers/customer");
 const petRouter = require("./routers/pet");
+const chatRouter = require('./routers/chat')
 const cors = require("cors");
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(userRouter);
 app.use(customerRouter);
 app.use(petRouter);
+app.use(chatRouter);
 
 io.on("connection", (socket) => {
     console.log("New Websocket connection");

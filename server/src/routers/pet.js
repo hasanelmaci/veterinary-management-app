@@ -158,7 +158,7 @@ router.patch("/upcomingtreatments/:petid/:id", auth, async (req, res) => {
         res.status(400).send();
     }
 });
-module.exports = router;
+
 
 //delete past treatment
 router.delete("/pastreatments/:petid/:id", auth, async (req, res) => {
@@ -189,3 +189,4 @@ router.delete("/upcomingtreatments/:petid/:id", auth, async (req, res) => {
         res.status(400).send();
     }
 });
+module.exports = router;
