@@ -1,31 +1,43 @@
-import { useState,useEffect } from "react";
-import { sendMessage,receiveMessage,initSocket,disconnectSocket,joinRoom } from "../socketService";
-import FetchCustomers from '../components/Chat/FetchCustomers'
-import ChatContainer from '../components/Chat/ChatContainer'
+import { useState, useEffect, useContext } from "react";
+import { sendMessage, receiveMessage, initSocket, disconnectSocket, joinRoom } from "../socketService";
+import FetchCustomers from "../components/Chat/FetchCustomers";
+import ChatContainer from "../components/Chat/ChatContainer";
+import ChatInput from "../components/Chat/ChatInput";
+import { Link, useParams } from "react-router-dom";
+import CustomerContext from "../context/customer/customerContext";
+import UserContext from "../context/userAuth/userAuthContext";
+import ChatBox from "../components/Chat/ChatBox";
 
 function Chat() {
-    // const [input, setInput] = useState("");
+  let { id } = useParams();
+  const { fetchOneCustomer, customer, loading } = useContext(CustomerContext);
+  const { user } = useContext(UserContext);
+  const [newMsg, setNewMsg] = useState({});
 
-    
+  useEffect(() => {
+    initSocket();
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     sendMessage(['aa',input]);
-    // };
+    joinRoom(user, id);
+    receiveMessage((msg) => {
+      setNewMsg({user:user.name,msg});
+    });
+    return () => disconnectSocket();
+  }, [receiveMessage, id]);
 
-    // useEffect(()=>{
-    //     receiveMessage()
-    // },[])
+  useEffect(() => {
+    console.log('ASD')
+    fetchOneCustomer(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
-    return (
-        <div>
-            <FetchCustomers />
-            {/* <form onSubmit={handleSubmit}>
-                <input value={input} onChange={(e) => setInput(e.target.value)} />
-                <button>Gönder</button>
-            </form> */}
-        </div>
-    );
+  return (
+    <div>
+      <FetchCustomers />
+
+      <ChatInput />
+      <ChatBox newMsg={newMsg} />
+    </div>
+  );
 }
 
 export default Chat;

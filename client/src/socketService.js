@@ -23,7 +23,8 @@ export const sendMessage = ([room,message]) =>{
     if(socket) socket.emit('send-message',[room,message])
 } 
 
-export const receiveMessage = () => {
+export const receiveMessage = (cb) => {
     if(socket) socket.on('receive-message',(message)=>{
     console.log(message)
+    cb(message)
 })}
