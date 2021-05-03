@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { receiveMessage } from "../../socketService";
+import axios from 'axios'
 
 function ChatBox({ newMsg,id }) {
   const [newMessage, setNewMessage] = useState([]);
 
-  useEffect(()=>{
+  useEffect( async ()=>{
+    const data = await axios.get(`/chat/${id}`)  
+    console.log(data.data)
     setNewMessage([])
   },[id])
 

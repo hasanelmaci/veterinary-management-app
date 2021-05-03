@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Link, useParams } from "react-router-dom";
 import CustomerContext from "../../context/customer/customerContext";
 import { useContext, useEffect, useState } from "react";
@@ -9,7 +10,12 @@ function ChatInput({user}) {
 
   const [input, setInput] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    
+    //Bu kısım customer ve user olarak iki farklı componente ayrılcak
+    await axios.post(`/chat/${id}`,{message:input,author:user})
+
+
     e.preventDefault();
     sendMessage([id,user, input]);
   };

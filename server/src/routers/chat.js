@@ -14,8 +14,12 @@ router.post("/chat/:id", auth, async (req, res) => {
     ...req.body,
     room: _id,
   });
-
   try {
+    const room = await Room.findOne({room:_id})
+    //if()
+
+    console.log(room)
+
     await message.save();
     res.status(201).send(message);
   } catch (e) {
@@ -25,7 +29,7 @@ router.post("/chat/:id", auth, async (req, res) => {
 
 //Add message as customer
 router.post("/customerchat/:id", customerAuth, async (req, res) => {
-  const _id = req.params.id;
+  const _id = req.customer._id
 
   const message = new Message({
     ...req.body,
@@ -58,9 +62,10 @@ router.get("/chat/:id", auth, async (req, res) => {
 });
 
 //Read messages as customer
-router.get("/customerchat/:id", customerAuth, async (req, res) => {
+router.get("/chat/:id", customerAuth, async (req, res) => {
+  console.log(req)
   try {
-    const _id = req.params.id;
+    const _id = req.customer._id;
     const room = await Room.findOne({ room: _id });
 
     await room

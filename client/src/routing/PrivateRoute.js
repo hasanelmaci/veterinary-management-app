@@ -8,7 +8,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     const { isUserAuth, loading, loadUser } = userAuthContext;
 
     useEffect(() => {
-        loadUser();
+        if(!isUserAuth && loading){
+            loadUser();
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

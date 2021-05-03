@@ -7,7 +7,9 @@ const CustomerPrivateRoute = ({ component: Component, ...rest }) => {
     const { isCustomerAuth, loading, loadCustomer } = customerAuthContext;
 
     useEffect(() => {
-        loadCustomer();
+        if(!isCustomerAuth && loading){
+            loadCustomer();
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

@@ -6,7 +6,16 @@ const roomSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    user: {
+      type: String,
+      trim: true,
+    },
+    customer: {
+      type: String,
+      trim: true,
+    },
   },
+
   {
     timestamps: true,
   }
