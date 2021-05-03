@@ -12,15 +12,14 @@ function CustomerChat() {
 
     joinRoom(customer, customer._id);
     receiveMessage((user, msg) => {
-      console.log(user, msg);
       setNewMsg({ user, msg });
     });
     return () => disconnectSocket();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [receiveMessage, customer._id]);
   return (
     <div>
       <ChatCustomerInput customer={customer.username} customerid={customer._id} />
-      {/* <ChatBox newMsg={newMsg} /> */}
       <CustomerChatBoxContainer newMsg={{ author: newMsg.user, message: newMsg.msg }} />
     </div>
   );

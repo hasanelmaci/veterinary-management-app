@@ -74,7 +74,7 @@ router.post("/user/addcustomer", auth, async (req, res) => {
   });
   try {
     await customer.save();
-    const room = new Room({ room: customer._id,user:req.user._id,customer:customer._id});
+    const room = new Room({ room: customer._id, user: req.user._id, customer: customer._id });
     await room.save();
     const token = await customer.generateAuthToken();
     res.status(201).send({ customer, token });

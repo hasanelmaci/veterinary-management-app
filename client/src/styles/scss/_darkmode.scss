@@ -1,24 +1,24 @@
 #darkMode {
-    background: transparent url("../img/sun.png") no-repeat center;
-    background-size: 20px 20px;
-    background-color: #1D1D1D;
-    width: 25px;
-    height: 25px;
-    border: none;
-    border-radius: 50%;
-    transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+  background: transparent url("../img/sun.png") no-repeat center;
+  background-size: 20px 20px;
+  background-color: #1d1d1d;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 #darkMode:hover,
 #darkMode:focus {
-    filter: none;
-    background-color: #1D1D1D;
-    cursor: pointer;
+  filter: none;
+  background-color: #1d1d1d;
+  cursor: pointer;
 }
 
 #darkMode.clicked {
-    filter: none !important;
-    background-color: #1D1D1D;
+  filter: none !important;
+  background-color: #1d1d1d;
 }
 
 $color-black: #1d1d1d;
@@ -27,18 +27,18 @@ $color-gray-light: rgba($color-white, 0.15);
 $color-gray-dark: rgba($color-black, 0.15);
 
 :root {
-    --color-page-background: #{$color-white};
-    --color-text: #{$color-black};
+  --color-page-background: #{$color-white};
+  --color-text: #{$color-black};
 }
 
 .dark {
-    --color-page-background: #{$color-black};
-    --color-text: #{$color-white};
-    transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+  --color-page-background: #{$color-black};
+  --color-text: #{$color-white};
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .light {
-    --color-page-background: #{$color-white};
-    --color-text: #{$color-black};
-    transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+  --color-page-background: #{$color-white};
+  --color-text: #{$color-black};
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }

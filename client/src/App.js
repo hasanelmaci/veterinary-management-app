@@ -1,28 +1,27 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import "./styles/css/main.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import UserAuthState from "./context/userAuth/UserAuthState";
+import CustomerAuthState from "./context/customerAuth/CustomerAuthState";
+import CustomerState from "./context/customer/CustomerState";
+import PetState from "./context/pet/PetState";
+import PrivateRoute from "./routing/PrivateRoute";
+import CustomerPrivateRoute from "./routing/CustomerPrivateRoute";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-import PrivateRoute from "./routing/PrivateRoute";
-import UserAuthState from "./context/userAuth/UserAuthState";
-import CustomerState from "./context/customer/CustomerState";
-import Navbar from "./components/Profile/Navbar";
+import PetProfile from "./pages/PetProfile";
 import Customer from "./pages/Customer";
-import PetState from "./context/pet/PetState";
+import CustomerChat from "./pages/CustomerChat";
+import CustomerLogin from "./pages/CustomerLogin";
+import CustomerProfile from "./pages/CustomerProfile";
+import CustomerPetProfile from "./pages/CustomerPetProfile";
+import Chat from "./pages/Chat";
+import Navbar from "./components/Profile/Navbar";
 import AddCustomer from "./components/Profile/AddCustomer";
 import UpdateCustomer from "./components/Customer/UpdateCustomer";
 import AddPet from "./components/Pet/AddPet";
-import PetProfile from "./pages/PetProfile";
 import UpdatePet from "./components/Pet/UpdatePet";
-import CustomerLogin from "./pages/CustomerLogin";
-import CustomerAuthState from "./context/customerAuth/CustomerAuthState";
-import CustomerPrivateRoute from "./routing/CustomerPrivateRoute";
-import CustomerProfile from "./pages/CustomerProfile";
-import CustomerPetProfile from "./pages/CustomerPetProfile";
-import socketService from "./socketService";
-import Chat from "./pages/Chat";
-import CustomerChat from './pages/CustomerChat'
 
 function App() {
   return (

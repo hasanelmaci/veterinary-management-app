@@ -1,6 +1,4 @@
-import React from "react";
-
-function InputForm({handleSubmit,setInput,input}) {
+function InputForm({ handleSubmit, setInput, input }) {
   return (
     <div>
       <form onSubmit={(e) => handleSubmit(e)}>

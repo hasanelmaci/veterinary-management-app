@@ -1,156 +1,150 @@
 //mobile
 @media only screen and (max-width: 500px) {
-    .nav {
-        margin: 0 auto;
-        width: 100%;
-        h1 {
-            font-size: 26px;
-        }
+  .nav {
+    margin: 0 auto;
+    width: 100%;
+    h1 {
+      font-size: 26px;
     }
+  }
 
-    .nav-container {
-        display: flex;
-        margin: 0 auto;
-        flex-direction: column;
-        text-align: center;
-    }
+  .nav-container {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+  }
 
-    ul {
-        width: 200px;
-        padding: 0 !important;
-        margin: 0 auto;
-    }
+  ul {
+    width: 200px;
+    padding: 0 !important;
+    margin: 0 auto;
+  }
 
-    .customer-table {
-        width: 100% !important;
-        th,
-        td {
-            font-size: 12px !important;
-            padding: 5px !important;
-        }
-    }
-
-    .search-container {
-        input {
-            width: 100px;
-        }
-    }
-    .avatar {
-        width: 30px !important;
-    }
-
-    .pet-profile {
-        flex-direction: column;
-    }
-
-    .pet-profile-infos {
-        margin: 0 auto;
-    }
-
-    .treatment-container {
-        margin: 0 auto !important;
-    }
-
-    .pet-header {
-        margin-top: 10px !important;
-    }
-
-    .pet-avatar {
-        display: inline-block;
-
-        img {
-            width: 200px !important;
-            border: 1px solid gray;
-            border-radius: 50%;
-        }
-    }
-
-    .treatment-table th,
+  .customer-table {
+    width: 100% !important;
+    th,
     td {
-        font-size: 14px !important;
-        padding: 0px !important;
+      font-size: 12px !important;
+      padding: 5px !important;
     }
+  }
 
-    .addtreatment-container{
-
-        display: flex !important;
-        flex-direction: column !important;
-        width: 50%;
-        margin:0 auto;
-        margin-left: 0 i !important;
-        form{
-
-            display: flex;
-            flex-direction: column;
-            margin:0 auto;
-
-            padding:0 !important;
-        
-            input{
-                width: 100% !important;
-                margin:0 !important;
-            }
-            button{
-                width: 100%;
-                margin:0 !important;
-
-            }
-
-        }
-        
+  .search-container {
+    input {
+      width: 100px;
     }
+  }
+  .avatar {
+    width: 30px !important;
+  }
+
+  .pet-profile {
+    flex-direction: column;
+  }
+
+  .pet-profile-infos {
+    margin: 0 auto;
+  }
+
+  .treatment-container {
+    margin: 0 auto !important;
+  }
+
+  .pet-header {
+    margin-top: 10px !important;
+  }
+
+  .pet-avatar {
+    display: inline-block;
+
+    img {
+      width: 200px !important;
+      border: 1px solid gray;
+      border-radius: 50%;
+    }
+  }
+
+  .treatment-table th,
+  td {
+    font-size: 14px !important;
+    padding: 0px !important;
+  }
+
+  .addtreatment-container {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 50%;
+    margin: 0 auto;
+    margin-left: 0 i !important;
+    form {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+
+      padding: 0 !important;
+
+      input {
+        width: 100% !important;
+        margin: 0 !important;
+      }
+      button {
+        width: 100%;
+        margin: 0 !important;
+      }
+    }
+  }
 }
 
 //tablet
 @media only screen and (min-width: 500px) and (max-width: 768px) {
-    .nav {
-        margin: 0 auto;
+  .nav {
+    margin: 0 auto;
+  }
+
+  .nav-container {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  ul {
+    margin: 0 auto;
+  }
+
+  .pet-profile {
+    flex-direction: column;
+  }
+
+  .pet-profile-infos {
+    margin: 0 auto;
+  }
+
+  .treatment-container {
+    margin: 0 auto !important;
+  }
+
+  .pet-header {
+    margin-top: 10px !important;
+  }
+
+  .pet-avatar {
+    display: inline-block;
+
+    img {
+      width: 200px !important;
+      border: 1px solid gray;
+      border-radius: 50%;
     }
+  }
 
-    .nav-container {
-        display: flex;
-        margin: 0 auto;
-        flex-direction: column;
-        text-align: center;
+  .addtreatment-container {
+    display: flex !important;
+    flex-direction: column !important;
+
+    input {
+      width: 100px !important;
     }
-
-    ul {
-        margin: 0 auto;
-    }
-
-    .pet-profile {
-        flex-direction: column;
-    }
-
-    .pet-profile-infos {
-        margin: 0 auto;
-    }
-
-    .treatment-container {
-        margin: 0 auto !important;
-    }
-
-    .pet-header {
-        margin-top: 10px !important;
-    }
-
-    .pet-avatar {
-        display: inline-block;
-
-        img {
-            width: 200px !important;
-            border: 1px solid gray;
-            border-radius: 50%;
-        }
-    }
-
-    .addtreatment-container{
-
-        display: flex !important;
-        flex-direction: column !important;
-       
-     input{
-         width: 100px !important;
-     }   
-    }
+  }
 }

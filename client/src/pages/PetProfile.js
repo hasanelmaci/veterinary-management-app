@@ -6,36 +6,38 @@ import TreatmentList from "../components/Pet/TreatmentList";
 import PetContext from "../context/pet/petContext";
 
 function PetProfile() {
-    let { id, petid } = useParams();
+  let { id, petid } = useParams();
 
-    const { loading, fetchOnePet, pet } = useContext(PetContext);
+  const { loading, fetchOnePet, pet } = useContext(PetContext);
 
-    useEffect(() => {
-        fetchOnePet(id, petid);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [loading]);
+  useEffect(() => {
+    fetchOnePet(id, petid);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
 
-    return (
-        <>
-            {loading === petid ? (
-                <div className="pet-profile">
-                    <div className="pet-profile-infos">
-                        <PetHeader pet={pet} />
-                        <Link to={`/customers/${pet.owner}/${pet._id}/updatepet`}>Bilgileri güncelle</Link>
-                    </div>
-                    <TreatmentList pet={pet} />
-                </div>
-            ) :  <div className='spinner'>
-            <Loader
+  return (
+    <>
+      {loading === petid ? (
+        <div className="pet-profile">
+          <div className="pet-profile-infos">
+            <PetHeader pet={pet} />
+            <Link to={`/customers/${pet.owner}/${pet._id}/updatepet`}>Bilgileri güncelle</Link>
+          </div>
+          <TreatmentList pet={pet} />
+        </div>
+      ) : (
+        <div className="spinner">
+          <Loader
             type="Circles"
             color="#00BFFF"
             height={100}
             width={100}
             timeout={0} //3 secs
-            />
-            </div>}
-        </>
-    );
+          />
+        </div>
+      )}
+    </>
+  );
 }
 
 export default PetProfile;

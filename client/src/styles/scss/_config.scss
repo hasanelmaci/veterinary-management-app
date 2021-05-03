@@ -1,24 +1,21 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-
 
 @mixin media-md {
-    @media only screen and (max-width: 500px) {
-        @content;
-    }
+  @media only screen and (max-width: 500px) {
+    @content;
+  }
 }
 @mixin media-lg {
-    @media only screen and (min-width: 500px) and (max-width: 768px) {
-        @content;
-    }
+  @media only screen and (min-width: 500px) and (max-width: 768px) {
+    @content;
+  }
 }
 @mixin media-xl {
-    @media screen and (max-width: 1600px) {
-        @content;
-    }
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
 }
-

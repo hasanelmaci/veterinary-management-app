@@ -1,12 +1,12 @@
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
+const cors = require("cors");
 require("./db/mongoose");
 const userRouter = require("./routers/user");
 const customerRouter = require("./routers/customer");
 const petRouter = require("./routers/pet");
-const chatRouter = require('./routers/chat')
-const cors = require("cors");
+const chatRouter = require("./routers/chat");
 
 const app = express();
 app.use(cors());
@@ -23,26 +23,25 @@ app.use(petRouter);
 app.use(chatRouter);
 
 io.on("connection", (socket) => {
-    console.log("New Websocket connection");
+  console.log("New Websocket connection");
 
-    socket.on("send-message", ([room,user,message]) => {
-        console.log(message);
-        io.to(room).emit("receive-message", {user,message});
-    });
+  socket.on("send-message", ([room, user, message]) => {
+    console.log(message);
+    io.to(room).emit("receive-message", { user, message });
+  });
 
-    socket.on('join',({username,room}) =>{
-      
-        console.log('ROOM SERVER ',username,room)
-        socket.join(room)
-        socket.emit('welcome-room',room)
-    })
+  socket.on("join", ({ username, room }) => {
+    console.log("ROOM SERVER ", username, room);
+    socket.join(room);
+    socket.emit("welcome-room", room);
+  });
 
-    socket.on("disconnect", () => {
-        console.log("disconnect");
-    });
+  socket.on("disconnect", () => {
+    console.log("disconnect");
+  });
 });
 
 server.listen(port, () => {
-    console.log(`Server is up on port ${port} !`);
-    app.listen();
+  console.log(`Server is up on port ${port} !`);
+  app.listen();
 });

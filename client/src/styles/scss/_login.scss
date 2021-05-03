@@ -1,111 +1,111 @@
 .login-container {
-    background: #50a3a2;
-    background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-    background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-    background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
 
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 80px 0;
-    height: 500px;
-    text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px 0;
+  height: 500px;
+  text-align: center;
 
-    font-family: "Open Sans", sans-serif;
-    color: white;
-    font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-weight: 300;
 
-    h1 {
-        font-size: 40px;
-        transition-duration: 1s;
-        transition-timing-function: ease-in-put;
-        font-weight: 200;
-    }
-    form {
-        padding: 20px 0;
-        // position: relative;
-        // z-index: 2;
+  h1 {
+    font-size: 40px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-put;
+    font-weight: 200;
+  }
+  form {
+    padding: 20px 0;
+    // position: relative;
+    // z-index: 2;
 
-        input {
-            display: block;
-            appearance: none;
-            border: 1px solid #fff;
-            background-color: #fff;
-            width: 250px;
+    input {
+      display: block;
+      appearance: none;
+      border: 1px solid #fff;
+      background-color: #fff;
+      width: 250px;
 
-            border-radius: 3px;
-            padding: 10px 15px;
-            margin: 0 auto 10px auto;
-            display: block;
-            text-align: center;
-            font-size: 18px;
+      border-radius: 3px;
+      padding: 10px 15px;
+      margin: 0 auto 10px auto;
+      display: block;
+      text-align: center;
+      font-size: 18px;
 
-            color: black;
+      color: black;
 
-            transition-duration: 0.25s;
-            font-weight: 300;
+      transition-duration: 0.25s;
+      font-weight: 300;
 
-            &:hover {
-                background-color: #fff;
-            }
+      &:hover {
+        background-color: #fff;
+      }
 
-            &:focus {
-                background-color: #fff;
-                width: 300px;
+      &:focus {
+        background-color: #fff;
+        width: 300px;
 
-                color: #09c074;
-            }
-        }
-
-        button {
-            background-color: #50a3a28e;
-            border: 1px solid #09807e;
-            padding: 10px 15px;
-            color: #fff;
-            border-radius: 3px;
-            width: 250px;
-            cursor: pointer;
-            font-size: 18px;
-            transition-duration: 0.25s;
-
-            &:hover {
-                background-color: #fff;
-                color:#1a7c7b;
-            }
-            &:focus {
-                color: #fff;
-                background-color:#50a3a2;
-            }
-        }
+        color: #09c074;
+      }
     }
 
-    p {
-        color: red;
-        font-weight: 600;
+    button {
+      background-color: #50a3a28e;
+      border: 1px solid #09807e;
+      padding: 10px 15px;
+      color: #fff;
+      border-radius: 3px;
+      width: 250px;
+      cursor: pointer;
+      font-size: 18px;
+      transition-duration: 0.25s;
+
+      &:hover {
+        background-color: #fff;
+        color: #1a7c7b;
+      }
+      &:focus {
+        color: #fff;
+        background-color: #50a3a2;
+      }
     }
+  }
+
+  p {
+    color: red;
+    font-weight: 600;
+  }
 }
 
 .login__bottom {
-    max-width: 250px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  max-width: 250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 
-    a {
-        color: white;
-        font-weight: 600;
-        font-family: "Open Sans", sans-serif;
-        padding-top: 15px;
-        text-decoration: underline;
+  a {
+    color: white;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    padding-top: 15px;
+    text-decoration: underline;
 
-        color: rgb(78, 65, 201);
-    }
+    color: rgb(78, 65, 201);
+  }
 }

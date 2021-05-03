@@ -36,8 +36,8 @@ router.post("/customerchat", customerAuth, async (req, res) => {
   });
 
   try {
-    const room = await Room.findOne({room:_id});
-    if(room.customer != req.customer._id) throw new Error();
+    const room = await Room.findOne({ room: _id });
+    if (room.customer != req.customer._id) throw new Error();
 
     await message.save();
     res.status(201).send(message);
@@ -50,7 +50,7 @@ router.post("/customerchat", customerAuth, async (req, res) => {
 router.get("/chat/:id", auth, async (req, res) => {
   try {
     const _id = req.params.id;
-    const room = await Room.findOne({ room: _id,user:req.user._id });
+    const room = await Room.findOne({ room: _id, user: req.user._id });
 
     await room
       .populate({
@@ -63,13 +63,11 @@ router.get("/chat/:id", auth, async (req, res) => {
   }
 });
 
-
-
 //Read messages as customer
 router.get("/customerchat", customerAuth, async (req, res) => {
   try {
     const _id = req.customer._id;
-    const room = await Room.findOne({ room: _id,customer:_id });
+    const room = await Room.findOne({ room: _id, customer: _id });
 
     await room
       .populate({

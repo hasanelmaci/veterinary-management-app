@@ -1,98 +1,98 @@
 .profile-top {
-    max-width: 1300px;
-    flex-direction: column;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+  max-width: 1300px;
+  flex-direction: column;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 
-    h1 {
-        text-align: center;
-        margin-top: 15px;
-        letter-spacing: 3px;
-        font-weight: 600;
-    }
+  h1 {
+    text-align: center;
+    margin-top: 15px;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
 }
 
 .search-container {
-    max-width: 1300px;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  input {
+    display: block;
+    background-color: #fff;
+    width: 250px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 12px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    input {
-        display: block;
-        background-color: #fff;
-        width: 250px;
-        border: none;
-        border-radius: 3px;
-        padding: 5px 12px;
-        margin: 0 auto;
-        display: block;
-        text-align: center;
-        font-size: 18px;
-        font-weight: 300;
-        background-color: var(--color-page-background);
-        color: var(--color-text);
-        border-bottom: 1px solid var(--color-text);
-    }
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    background-color: var(--color-page-background);
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-text);
+  }
 }
 
 .customer-table-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    margin-top: 50px;
-    h1 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-    a {
-        color: var(--color-text);
-    }
+  a {
+    color: var(--color-text);
+  }
 }
 
 .customer-table {
-    width: 70%;
-    margin: 0 auto;
-    th,
-    td {
-        padding: 10px 25px;
-        color: white;
-    }
+  width: 70%;
+  margin: 0 auto;
+  th,
+  td {
+    padding: 10px 25px;
+    color: white;
+  }
 
-    th span {
-        font-size: 12px;
-        font-weight: 400;
-        color: white;
-    }
+  th span {
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+  }
 
-    td {
-        color: rgb(226, 37, 69);
-        color: white;
-    }
+  td {
+    color: rgb(226, 37, 69);
+    color: white;
+  }
 
-    tr:hover {
-        background-color: #01faf628;
-        color: white;
-    }
+  tr:hover {
+    background-color: #01faf628;
+    color: white;
+  }
 
-    th {
-        text-align: left;
-        color: rgb(51, 180, 0);
-        color: black;
-        background-color: rgba(82, 228, 253, 0.3);
-        color: var(--color-text);
-    }
-    tr:nth-child(even) {
-        background-color: #56e4ca93;
-    }
-    tr:nth-child(even):hover {
-        background-color: #01faf628;
-    }
+  th {
+    text-align: left;
+    color: rgb(51, 180, 0);
+    color: black;
+    background-color: rgba(82, 228, 253, 0.3);
+    color: var(--color-text);
+  }
+  tr:nth-child(even) {
+    background-color: #56e4ca93;
+  }
+  tr:nth-child(even):hover {
+    background-color: #01faf628;
+  }
 }
 
 .avatar {
-    width: 40px;
+  width: 40px;
 }
 
 //AddCustomer
@@ -101,94 +101,94 @@
 .update-container,
 .addpet-container,
 .update-pet-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
 }
 
 .addcustomer,
 .updatecustomer,
 .addpet,
 .updatepet {
-    width: 300px;
-    height: auto;
-    padding-bottom: 50px;
+  width: 300px;
+  height: auto;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-self: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+  }
+
+  form {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    align-self: center;
-    border: 1px solid gray;
-    border-radius: 5px;
+    align-items: center;
+  }
 
-    h1 {
-        text-align: center;
-        margin-bottom: 15px;
-        font-family: Arial, Helvetica, sans-serif;
-        margin-top: 20px;
-    }
+  input {
+    padding: 8px 10px;
+    margin-bottom: 7px;
+    width: 100%;
+  }
 
-    form {
-        font-family: Arial, Helvetica, sans-serif;
-        width: 80%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    input {
-        padding: 8px 10px;
-        margin-bottom: 7px;
-        width: 100%;
-    }
-
-    p {
-        text-align: center;
-        color: rgb(26, 156, 0);
-        margin-top: 10px;
-        font-size: 0.9rem;
-    }
-    a {
-        color: rgb(26, 156, 0);
-        text-decoration: underline;
-    }
+  p {
+    text-align: center;
+    color: rgb(26, 156, 0);
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  a {
+    color: rgb(26, 156, 0);
+    text-decoration: underline;
+  }
 }
 
 .register__bottom {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 
-    a {
-        margin-top: 5px;
-        font-size: 0.9rem;
-    }
+  a {
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
 }
 
 .delete-customer p {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .buttons {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 
-    button {
-        margin-top: 35px;
-        display: inline;
-    }
-    button:nth-child(1) {
-        background-color: red;
-    }
-    a {
-        text-decoration: none;
-    }
+  button {
+    margin-top: 35px;
+    display: inline;
+  }
+  button:nth-child(1) {
+    background-color: red;
+  }
+  a {
+    text-decoration: none;
+  }
 
-    a button:hover {
-        background-color: #fff;
-        color: #000;
-    }
+  a button:hover {
+    background-color: #fff;
+    color: #000;
+  }
 }

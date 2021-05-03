@@ -1,40 +1,38 @@
 .nav {
-    font-family: "Open Sans", sans-serif;
-    border-bottom: 1px solid #50a3a2a6;
-    width: 100%;
-    margin: 0 auto;
-    background-color: #faf9f8;
-    background-color: var(--color-page-background);
-    color: var(--color-text);
-    transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
-    
-    div {
-        max-width: 1300px;
-        padding: 12px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        
-    }
-    
-    a h1 {
-        color: #09807e;
-        flex-grow: 1;
-        letter-spacing: 5px;
-    }
-    ul {
-        display: flex;
-        width: 250px;
-        margin-top: 15px;
-        padding-right: 15px;
-        justify-content: space-between;
-       
+  font-family: "Open Sans", sans-serif;
+  border-bottom: 1px solid #50a3a2a6;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #faf9f8;
+  background-color: var(--color-page-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 
-        a {
-            color: #09807e;
-            &:hover{
-                color:red;
-            }
-        }
+  div {
+    max-width: 1300px;
+    padding: 12px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a h1 {
+    color: #09807e;
+    flex-grow: 1;
+    letter-spacing: 5px;
+  }
+  ul {
+    display: flex;
+    width: 250px;
+    margin-top: 15px;
+    padding-right: 15px;
+    justify-content: space-between;
+
+    a {
+      color: #09807e;
+      &:hover {
+        color: red;
+      }
     }
+  }
 }

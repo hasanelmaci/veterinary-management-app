@@ -1,23 +1,23 @@
 import { Link } from "react-router-dom";
 
 function PetCard({ pet }) {
-    return (
-        <div className="card">
-            <Link to={`/customers/${pet.owner}/${pet._id}`}>
+  return (
+    <div className="card">
+      <Link to={`/customers/${pet.owner}/${pet._id}`}>
         <div className="pet-card">
-                <div className="pet-avatar-container">
-                    <img src={pet.avatarPath} alt="avatar" />
-                </div>
-                <div className="pet-card-info-bottom">
-                    <p>{pet.name}</p>
-                    <p>
-                        <span>{pet.type}</span>
-                    </p>
-                </div>
+          <div className="pet-avatar-container">
+            <img src={pet.avatarPath} alt="avatar" />
+          </div>
+          <div className="pet-card-info-bottom">
+            <p>{pet.name}</p>
+            <p>
+              <span>{pet.type}</span>
+            </p>
+          </div>
         </div>
-            </Link>
-        </div>
-    );
+      </Link>
+    </div>
+  );
 }
 
 export default PetCard;

@@ -1,32 +1,30 @@
 import { useState, useEffect } from "react";
-import { receiveMessage } from "../../socketService";
-import axios from 'axios'
+import axios from "axios";
 import ChatBox from "./ChatBox";
 
-function ChatBoxContainer({newMsg,id}) {
+function ChatBoxContainer({ newMsg, id }) {
+  const [newMessage, setNewMessage] = useState([]);
 
+  useEffect(() => {
+    async function getMessages() {
+      const { data } = await axios.get(`/chat/${id}`);
+      setNewMessage(data);
+    }
+    getMessages();
+  }, [id]);
 
-    const [newMessage, setNewMessage] = useState([]);
+  useEffect(() => {
+    if (newMsg.message !== undefined) {
+      setNewMessage([...newMessage, newMsg]);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [newMsg]);
 
-    useEffect( async ()=>{
-  
-      const data = await axios.get(`/chat/${id}`)  
-      console.log(data.data)
-      setNewMessage(data.data)
-      
-    },[id])
-  
-    useEffect(() => {
-      if(newMsg.message !== undefined){
-        setNewMessage([...newMessage, newMsg]);
-      }
-    }, [newMsg]);
-
-    return (
-        <div>
-        <ChatBox newMessage={newMessage}/>
-      </div>
-    )
+  return (
+    <div>
+      <ChatBox newMessage={newMessage} />
+    </div>
+  );
 }
 
-export default ChatBoxContainer
+export default ChatBoxContainer;
