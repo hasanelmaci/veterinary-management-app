@@ -25,11 +25,6 @@ function Chat() {
     return () => disconnectSocket();
   }, [receiveMessage, id]);
 
-  // useEffect(() => {
-  //   console.log('ASD')
-  //   fetchOneCustomer(id);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [id]);
 
   return (
     <div>
