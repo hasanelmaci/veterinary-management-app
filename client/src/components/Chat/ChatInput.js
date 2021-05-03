@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import CustomerContext from "../../context/customer/customerContext";
 import { useContext, useEffect, useState } from "react";
 import { sendMessage, receiveMessage, initSocket, disconnectSocket, joinRoom } from "../../socketService";
+import InputForm from "./InputForm";
 
 function ChatInput({ user }) {
   let { id } = useParams();
@@ -11,7 +12,6 @@ function ChatInput({ user }) {
   const [input, setInput] = useState("");
 
   const handleSubmit = (e) => {
-    //Bu kısım customer ve user olarak iki farklı componente ayrılcak
     axios.post(`/chat/${id}`, { message: input, author: user });
 
     e.preventDefault();
@@ -19,10 +19,8 @@ function ChatInput({ user }) {
   };
   return (
     <div>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input value={input} onChange={(e) => setInput(e.target.value)} />
-        <button>Gönder</button>
-      </form>
+
+      <InputForm handleSubmit={handleSubmit} setInput={setInput} input={input}/>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import {useContext,useEffect} from 'react';
 import CustomerContext from '../../context/customer/customerContext'
-import ChatContainer from './ChatContainer'
 import ChatCustomerList from './ChatCustomerList';
 
 function FetchCustomers() {
@@ -20,7 +19,6 @@ function FetchCustomers() {
 
     return (
         <div>
-            {/* <ChatContainer customers={customerList} /> */}
             <ChatCustomerList customers={customerList} />
                 
         </div>
