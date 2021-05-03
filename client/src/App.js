@@ -49,7 +49,7 @@ function App() {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/customerlogin" component={CustomerLogin} />
                 <CustomerPrivateRoute exact path="/customerprofile" component={CustomerProfile} />
-                <CustomerPrivateRoute exact path="/customerchat/:id" component={CustomerChat} />
+                <CustomerPrivateRoute exact path="/customerchat" component={CustomerChat} />
                 <CustomerPrivateRoute exact path="/customerprofile/:id" component={CustomerPetProfile} />
               </Switch>
             </Router>

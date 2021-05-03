@@ -2,24 +2,29 @@ import { useState, useEffect } from "react";
 import { receiveMessage } from "../../socketService";
 import axios from 'axios'
 
-function ChatBox({ newMsg,id }) {
-  const [newMessage, setNewMessage] = useState([]);
+function ChatBox({ newMessage }) {
+  // const [newMessage, setNewMessage] = useState([]);
 
-  useEffect( async ()=>{
-    const data = await axios.get(`/chat/${id}`)  
-    console.log(data.data)
-    setNewMessage([])
-  },[id])
+  // useEffect( async ()=>{
 
-  useEffect(() => {
-    setNewMessage([...newMessage, newMsg]);
-  }, [newMsg]);
-  {console.log(newMsg)}
+  //   const data = await axios.get(`/chat/${id}`)  
+  //   console.log(data.data)
+  //   setNewMessage(data.data)
+    
+  // },[id])
+
+  // useEffect(() => {
+  //   if(newMsg.message !== undefined){
+  //     setNewMessage([...newMessage, newMsg]);
+  //   }
+  // }, [newMsg]);
+  
+  // {console.log(newMsg)}
   return (
     <div>
-      {newMessage.map((msg) => (
+      {newMessage?.map((msg) => (
         <p>
-          {msg.user} - {msg.msg}
+          {msg.author} - {msg.message}
         </p>
       ))}
     </div>

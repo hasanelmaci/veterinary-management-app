@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import CustomerContext from "../context/customer/customerContext";
 import UserContext from "../context/userAuth/userAuthContext";
 import ChatBox from "../components/Chat/ChatBox";
+import ChatBoxContainer from "../components/Chat/ChatBoxContainer";
 
 function Chat() {
   let { id } = useParams();
@@ -31,7 +32,8 @@ function Chat() {
       <FetchCustomers />
 
       <ChatInput user={user.name} />
-      <ChatBox newMsg={newMsg} id={id} />
+      <ChatBoxContainer  newMsg={{author:newMsg.user,message:newMsg.msg}} id={id}/>
+      {/* <ChatBox newMsg={{author:newMsg.user,message:newMsg.msg}} id={id} /> */}
     </div>
   );
 }

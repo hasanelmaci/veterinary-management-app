@@ -4,25 +4,27 @@ import { Link, useParams } from "react-router-dom";
 import ChatBox from '../components/Chat/ChatBox'
 import ChatInput from '../components/Chat/ChatInput'
 import CustomerAuthContext from "../context/customerAuth/customerAuthContext";
+import ChatCustomerInput from "../components/Chat/ChatCustomerInput";
+import CustomerChatBoxContainer from "../components/Chat/CustomerChatBoxContainer";
 
 function CustomerChat() {
-    let { id } = useParams();
     const {customer} = useContext(CustomerAuthContext)
     const [newMsg, setNewMsg] = useState({});
     useEffect(() => {
         initSocket();
     
-        joinRoom(customer, id);
+        joinRoom(customer, customer._id);
         receiveMessage((user,msg) => {
         console.log(user,msg)
           setNewMsg({user,msg});
         });
         return () => disconnectSocket();
-      }, [receiveMessage, id]);
+      }, [receiveMessage, customer._id]);
     return (
         <div>
-            <ChatInput user={customer.username}/>
-            <ChatBox newMsg={newMsg} />
+            <ChatCustomerInput customer={customer.username} customerid={customer._id}/>
+            {/* <ChatBox newMsg={newMsg} /> */}
+            <CustomerChatBoxContainer newMsg={{author:newMsg.user,message:newMsg.msg}} />
         </div>
     )
 }
