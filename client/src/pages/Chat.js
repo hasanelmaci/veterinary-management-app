@@ -13,7 +13,7 @@ function Chat() {
 
   useEffect(() => {
     initSocket();
-
+ 
     joinRoom(user, id);
     receiveMessage((user, msg) => {
       setNewMsg({ user, msg });
@@ -21,6 +21,9 @@ function Chat() {
     return () => disconnectSocket();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [receiveMessage, id]);
+
+  
+
 
   return (
     <div className='chat'>

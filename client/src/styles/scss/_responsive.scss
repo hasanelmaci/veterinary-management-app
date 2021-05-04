@@ -14,9 +14,12 @@
     flex-direction: column;
     text-align: center;
     ul {
-      width: 200px;
+      width: 250px !important;
       padding: 0 !important;
       margin: 0 auto;
+      li{
+        font-size: 0.8rem;
+      }
     }
   }
 

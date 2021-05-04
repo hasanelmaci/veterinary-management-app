@@ -18,9 +18,12 @@ function CustomerChat() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [receiveMessage, customer._id]);
   return (
-    <div>
-      <ChatCustomerInput customer={customer.username} customerid={customer._id} />
+    <div className='chat'>
+      <div className='chat-container'>
+
       <CustomerChatBoxContainer newMsg={{ author: newMsg.user, message: newMsg.msg }} />
+      <ChatCustomerInput customer={customer.username} customerid={customer._id} />
+      </div>
     </div>
   );
 }

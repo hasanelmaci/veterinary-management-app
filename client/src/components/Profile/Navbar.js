@@ -28,6 +28,9 @@ function Navbar() {
                 <Link to="/profile/addcustomer">Müşteri ekle</Link>
               </li>
               <li>
+                <Link to="/chat">Mesajlar</Link>
+              </li>
+              <li>
                 <Link to="#" onClick={handleLogout}>
                   Çıkış Yap
                 </Link>
