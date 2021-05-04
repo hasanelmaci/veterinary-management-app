@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import CustomerContext from "../../context/customer/customerContext";
 import ChatCustomerList from "./ChatCustomerList";
 
-function FetchCustomers() {
+function FetchCustomers({isVisible}) {
   const { customerList, fetchCustomers, clearErrors, customer, error } = useContext(CustomerContext);
 
   useEffect(() => {
@@ -17,9 +17,10 @@ function FetchCustomers() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
+
   return (
-    <div>
-      <ChatCustomerList customers={customerList} />
+    <div className={isVisible ? `relativelist` : null} >
+      <ChatCustomerList customers={customerList} isVisible={isVisible} />
     </div>
   );
 }

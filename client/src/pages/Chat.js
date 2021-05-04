@@ -10,6 +10,7 @@ function Chat() {
   let { id } = useParams();
   const { user } = useContext(UserContext);
   const [newMsg, setNewMsg] = useState({});
+  const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
     initSocket();
@@ -23,13 +24,19 @@ function Chat() {
   }, [receiveMessage, id]);
 
   
+  const handleToggle = () =>{
+    setIsVisible(!isVisible)
+  }
 
 
-  return (
+  return (<div>
+
+      <div className='customer-list-toggle' onClick={handleToggle}>ASDA</div>
     <div className='chat'>
+  
       <div className='chat-container'>
         <div className='chat-list-content'>
-      <FetchCustomers />
+      <FetchCustomers isVisible={isVisible} />
       <div className='chat-input-content'>
 
       <ChatBoxContainer newMsg={{ author: newMsg.user, message: newMsg.msg }} id={id} />
@@ -37,8 +44,10 @@ function Chat() {
       </div>
         </div>
 
+
       </div>
     </div>
+  </div>
   );
 }
 

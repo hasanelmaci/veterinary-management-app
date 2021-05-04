@@ -97,6 +97,30 @@
       }
     }
   }
+
+
+  .customer-list-toggle{
+    display: flex !important;
+    width: 50px;
+    position: relative;
+    right: 0;
+    border:1px solid red;
+  }
+
+  .customer-list.visible{
+    display:block;
+    position:absolute;
+  }
+
+  .customer-list.hidden{
+    display:none;
+    position:static
+  }
+
+  .relativelist{
+    position: relative;
+  }
+
 }
 
 //tablet
