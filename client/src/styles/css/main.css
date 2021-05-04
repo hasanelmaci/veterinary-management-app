@@ -20,7 +20,7 @@
     flex-direction: column;
     text-align: center;
   }
-  ul {
+  .nav-container ul {
     width: 200px;
     padding: 0 !important;
     margin: 0 auto;
@@ -97,7 +97,7 @@
     flex-direction: column;
     text-align: center;
   }
-  ul {
+  .nav-container ul {
     margin: 0 auto;
   }
   .pet-profile {
@@ -663,7 +663,9 @@
   background-color: rgba(241, 238, 238, 0.26);
 }
 
-.pet-card-info-bottom a, .pet-card-info-bottom p, .pet-card-info-bottom span {
+.pet-card-info-bottom a,
+.pet-card-info-bottom p,
+.pet-card-info-bottom span {
   color: black;
 }
 
@@ -884,10 +886,113 @@
   background-color: #a5a5a5c2;
 }
 
+.chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  height: 90vh;
+  margin: 0 auto;
+}
+
+.chat-container {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 1100px;
+}
+
+.chat-list-content {
+  display: flex;
+}
+
+.chat-input-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.chatbox {
+  width: 100%;
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+.chatbox li {
+  display: flex;
+}
+
+.chatbox li.right {
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.chatbox li.right .message {
+  background-color: rgba(72, 17, 109, 0.479);
+}
+
+.message {
+  display: inline-block;
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 1.1rem;
+}
+
+.customer-list {
+  width: 150px;
+  height: 100%;
+  text-overflow: ellipsis;
+  border-right: 1px solid black;
+}
+
+.customer-item-content {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.customer-item {
+  padding: 20px 0 5px 5px;
+  border-bottom: 1px solid black;
+  text-overflow: ellipsis;
+  font-size: 1.1rem;
+}
+
+.chat-input {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-input form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-input input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.chat-input button {
+  font-weight: 800;
+  font-size: 1.5rem;
+  padding: 0px 5px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 #darkMode {
   background: transparent url("../img/sun.png") no-repeat center;
   background-size: 20px 20px;
-  background-color: #1D1D1D;
+  background-color: #1d1d1d;
   width: 25px;
   height: 25px;
   border: none;
@@ -898,13 +1003,13 @@
 #darkMode:hover,
 #darkMode:focus {
   filter: none;
-  background-color: #1D1D1D;
+  background-color: #1d1d1d;
   cursor: pointer;
 }
 
 #darkMode.clicked {
   filter: none !important;
-  background-color: #1D1D1D;
+  background-color: #1d1d1d;
 }
 
 :root {

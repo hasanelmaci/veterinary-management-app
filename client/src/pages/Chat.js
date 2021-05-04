@@ -23,11 +23,18 @@ function Chat() {
   }, [receiveMessage, id]);
 
   return (
-    <div>
+    <div className='chat'>
+      <div className='chat-container'>
+        <div className='chat-list-content'>
       <FetchCustomers />
+      <div className='chat-input-content'>
 
-      <ChatInput user={user.name} />
       <ChatBoxContainer newMsg={{ author: newMsg.user, message: newMsg.msg }} id={id} />
+      <ChatInput user={user.name} />
+      </div>
+        </div>
+
+      </div>
     </div>
   );
 }

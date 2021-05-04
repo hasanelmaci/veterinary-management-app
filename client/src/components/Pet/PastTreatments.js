@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import PetContext from "../../context/pet/petContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function PastTreatments({ pasttreatments, pet }) {
   const { deletePastTreatment } = useContext(PetContext);

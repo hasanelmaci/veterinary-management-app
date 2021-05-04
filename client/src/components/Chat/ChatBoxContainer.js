@@ -21,9 +21,9 @@ function ChatBoxContainer({ newMsg, id }) {
   }, [newMsg]);
 
   return (
-    <div>
+    <>
       <ChatBox newMessage={newMessage} />
-    </div>
+    </>
   );
 }
 
