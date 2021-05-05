@@ -19,6 +19,7 @@ import {
   DELETE_PAST_TREATMENT_SUCCESS,
   DELETE_UPCOMING_TREATMENT_FAIL,
   DELETE_UPCOMING_TREATMENT_SUCCESS,
+  PET_CLEAR_ERRORS
 } from "./petActions";
 
 function PetState(props) {
@@ -160,6 +161,10 @@ function PetState(props) {
     }
   };
 
+  const clearErrors = () =>{
+    dispatch({ type: PET_CLEAR_ERRORS });
+  }
+
   return (
     <PetContext.Provider
       value={{
@@ -175,6 +180,7 @@ function PetState(props) {
         addPastTreatment,
         deletePastTreatment,
         deleteUpcomingTreatment,
+        clearErrors
       }}
     >
       {props.children}

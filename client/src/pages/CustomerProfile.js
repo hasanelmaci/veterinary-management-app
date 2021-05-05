@@ -15,7 +15,10 @@ function CustomerProfile() {
     <div className="customer-profile">
       <CustomerHeader customer={customer} />
       <div className="customer-settings">
-        <Link id="#" onClick={logout}>
+      <Link to="/customerchat" >
+          Mesajlar
+        </Link>
+        <Link to="#" onClick={logout}>
           Çıkış Yap
         </Link>
       </div>

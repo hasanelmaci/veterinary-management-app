@@ -5,8 +5,8 @@ import CustomerContext from "../context/customer/customerContext";
 import CustomerHeader from "../components/Customer/CustomerHeader";
 import CustomerSettings from "../components/Customer/CustomerSettings";
 import FetchPets from "../components/Pet/FetchPets";
-function Customer() {
-  const { fetchOneCustomer, customer, loading } = useContext(CustomerContext);
+function Customer(props) {
+  const { fetchOneCustomer, customer, loading, error, clearErrors } = useContext(CustomerContext);
 
   let { id } = useParams();
 
@@ -14,6 +14,13 @@ function Customer() {
     fetchOneCustomer(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
+
+  useEffect(() => {
+    if (error) {
+      props.history.push("/");
+      clearErrors();
+    }
+  }, [fetchOneCustomer]);
 
   return (
     <>

@@ -7,9 +7,12 @@ function ChatCustomerInput({ customer, customerid }) {
   const [input, setInput] = useState("");
 
   const handleSubmit = (e) => {
-    axios.post(`/customerchat`, { message: input, author: customer });
     e.preventDefault();
-    sendMessage([customerid, customer, input]);
+    if(input != ""){
+      axios.post(`/customerchat`, { message: input, author: customer });
+      sendMessage([customerid, customer, input]);
+      setInput("")
+    }
   };
   return (
     <div>

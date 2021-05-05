@@ -10,13 +10,19 @@ const router = new express.Router();
 router.post("/customers/:id/pets", auth, async (req, res) => {
   const _id = req.params.id;
 
-  const pet = new Pet({
-    ...req.body,
-    owner: _id,
-  });
   try {
-    await pet.save();
-    res.status(201).send(pet);
+    const pet = new Pet({
+      ...req.body,
+      owner: _id,
+    });
+    const customer = await Customer.findOne({_id, vet:req.user._id})
+    if (!customer) {
+      return res.status(500).send();
+    }
+      await pet.save();
+      res.status(201).send(pet);
+    
+ 
   } catch (e) {
     res.status(500).send(e);
   }
@@ -72,10 +78,11 @@ router.get("/customers/:customerid/:id", auth, async (req, res) => {
     const customerid = req.params.customerid;
 
     const pet = await Pet.findOne({ _id, owner: customerid });
+    const owner = await Customer.findOne({_id:customerid, vet:req.user._id})
 
     //Degistir!
     if (!pet) res.status(404).send();
-
+    if(!owner) res.status(404).send();
     res.send(pet);
   } catch (e) {
     res.status(500).send();
@@ -92,15 +99,15 @@ router.patch("/customers/:customerid/:id", auth, async (req, res) => {
   });
 
   if (!isValidOperation) res.status(400).send({ error: "Invalid updates" });
-
   try {
     const _id = req.params.id;
     const customerid = req.params.customerid;
 
     const pet = await Pet.findOne({ _id, owner: customerid });
+    const owner = await Customer.findOne({_id:customerid, vet:req.user._id})
 
     if (!pet) res.status(404).send();
-
+    if(!owner) res.status(404).send();
     updates.forEach((update) => {
       pet[update] = req.body[update];
     });

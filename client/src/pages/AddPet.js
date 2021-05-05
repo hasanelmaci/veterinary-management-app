@@ -1,14 +1,28 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import PetContext from "../../context/pet/petContext";
+import CustomerContext from "../context/customer/customerContext";
+import PetContext from "../context/pet/petContext";
 
-function AddPet() {
-  const { addPet } = useContext(PetContext);
+function AddPet(props) {
+  const { addPet, error, clearErrors } = useContext(PetContext);
+  const customer = useContext(CustomerContext);
 
   const [pet, setPet] = useState({});
   const [message, setMessage] = useState(false);
 
   let { id } = useParams();
+
+  useEffect(() => {
+    customer.fetchOneCustomer(id);
+  }, []);
+
+  useEffect(() => {
+    if (error || customer.error) {
+      props.history.push("/");
+      clearErrors();
+      customer.clearErrors();
+    }
+  }, [addPet, customer.fetchOneCustomer]);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();

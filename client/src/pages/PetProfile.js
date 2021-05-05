@@ -5,15 +5,22 @@ import PetHeader from "../components/Pet/PetHeader";
 import TreatmentList from "../components/Pet/TreatmentList";
 import PetContext from "../context/pet/petContext";
 
-function PetProfile() {
+function PetProfile(props) {
   let { id, petid } = useParams();
 
-  const { loading, fetchOnePet, pet } = useContext(PetContext);
+  const { loading, fetchOnePet, pet, error, clearErrors } = useContext(PetContext);
 
   useEffect(() => {
     fetchOnePet(id, petid);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
+
+  useEffect(() => {
+    if (error) {
+      props.history.push("/login");
+      clearErrors();
+    }
+  }, [fetchOnePet, props.history, error]);
 
   return (
     <>

@@ -25,7 +25,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
               color="#00BFFF"
               height={100}
               width={100}
-              timeout={0} //3 secs
+              timeout={0} 
             />
           </div>
         ) : isUserAuth ? (

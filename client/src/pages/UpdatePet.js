@@ -1,14 +1,19 @@
 import { useParams, Link } from "react-router-dom";
-import { useContext, useState } from "react";
-import PetContext from "../../context/pet/petContext";
+import { useContext, useState,useEffect } from "react";
+import PetContext from "../context/pet/petContext";
 
-function UpdatePet() {
+function UpdatePet(props) {
   let { id, petid } = useParams();
 
-  const { updatePet } = useContext(PetContext);
+  const { updatePet,error,clearErrors,fetchOnePet } = useContext(PetContext);
 
   const [updatedPet, setUpdatedPet] = useState({});
   const [message, setMessage] = useState(false);
+
+  useEffect(()=>{
+    fetchOnePet(id,petid)
+  },[])
+
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +25,15 @@ function UpdatePet() {
     const inputObject = { [e.target.name]: e.target.value };
     setUpdatedPet({ ...updatedPet, ...inputObject });
   };
+
+  useEffect(()=>{
+    if(error){
+      props.history.push('/')
+      clearErrors()
+    }
+    
+  },[updatePet,fetchOnePet])
+
 
   return (
     <div className="update-pet-container">

@@ -20,8 +20,8 @@ import Chat from "./pages/Chat";
 import Navbar from "./components/Profile/Navbar";
 import AddCustomer from "./components/Profile/AddCustomer";
 import UpdateCustomer from "./components/Customer/UpdateCustomer";
-import AddPet from "./components/Pet/AddPet";
-import UpdatePet from "./components/Pet/UpdatePet";
+import AddPet from "./pages/AddPet";
+import UpdatePet from "./pages/UpdatePet";
 
 function App() {
   return (

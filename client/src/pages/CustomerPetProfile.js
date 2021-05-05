@@ -5,9 +5,9 @@ import PetHeader from "../components/Pet/PetHeader";
 import TreatmentList from "../components/CustomerProfile/TreatmentList";
 import UploadAvatar from "../components/CustomerProfile/UploadAvatar";
 
-function CustomerPetProfile() {
+function CustomerPetProfile(props) {
   let { id } = useParams();
-  const { fetchOnePet, pet, loading, isFetched, logout } = useContext(CustomerAuthContext);
+  const { fetchOnePet, pet, loading, isFetched, logout, error, clearErrors } = useContext(CustomerAuthContext);
 
   useEffect(() => {
     if (isFetched !== id) {
@@ -15,6 +15,13 @@ function CustomerPetProfile() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading, isFetched]);
+
+  useEffect(() => {
+    if (error) {
+      props.history.push("/customerprofile");
+      clearErrors();
+    }
+  }, [fetchOnePet, isFetched]);
 
   return (
     <>
@@ -34,7 +41,9 @@ function CustomerPetProfile() {
           </div>
           <TreatmentList pet={pet} />
         </div>
-      ) : null}
+      ) : (
+        props.history.push("/customerprofile")
+      )}
     </>
   );
 }

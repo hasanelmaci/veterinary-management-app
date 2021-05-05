@@ -16,7 +16,7 @@ function MessageItem({ msg }) {
   return (
     <li className={user?.name === msg.author || customer?.username === msg.author ? "right" : "left"}>
       <div className="message">
-        {msg.author} - {msg.message}
+        {msg.message}
       </div>
     </li>
   );

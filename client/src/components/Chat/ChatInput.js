@@ -10,10 +10,13 @@ function ChatInput({ user }) {
   const [input, setInput] = useState("");
 
   const handleSubmit = (e) => {
-    axios.post(`/chat/${id}`, { message: input, author: user });
-
     e.preventDefault();
-    sendMessage([id, user, input]);
+    if(input !== ""){
+      axios.post(`/chat/${id}`, { message: input, author: user });
+      
+      sendMessage([id, user, input]);
+      setInput("")
+    }
   };
   return (
     <div>
