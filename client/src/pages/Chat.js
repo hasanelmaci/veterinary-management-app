@@ -22,6 +22,7 @@ function Chat(props) {
     if (error) {
       return props.history.push("/login");
     }
+    setNewMsg({}); //prevent to sending previous message when change customer on list
     initSocket();
 
     joinRoom(user, id);
@@ -30,7 +31,7 @@ function Chat(props) {
     });
     return () => disconnectSocket();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [receiveMessage, id]);
+  }, [id]);
 
   useEffect(() => {
     if (id) {
