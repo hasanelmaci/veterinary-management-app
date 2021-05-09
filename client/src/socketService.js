@@ -26,7 +26,6 @@ export const sendMessage = ([room, user, message]) => {
 export const receiveMessage = (cb) => {
   if (socket)
     socket.on("receive-message", ({ user, message }) => {
-      console.log(user, message);
       cb(user, message);
     });
 };

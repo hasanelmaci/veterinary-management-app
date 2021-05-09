@@ -26,12 +26,10 @@ io.on("connection", (socket) => {
   console.log("New Websocket connection");
 
   socket.on("send-message", ([room, user, message]) => {
-    console.log(message);
     io.to(room).emit("receive-message", { user, message });
   });
 
   socket.on("join", ({ username, room }) => {
-    console.log("ROOM SERVER ", username, room);
     socket.join(room);
     socket.emit("welcome-room", room);
   });
