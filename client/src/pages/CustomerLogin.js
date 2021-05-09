@@ -42,7 +42,7 @@ function CustomerLogin(props) {
   return (
     <div className="login-container">
       <div className="login">
-        <h1>Giriş Yap</h1>
+        <h1>Kullanıcı Girişi</h1>
         <p style={{ color: "white", fontWeight: "400", fontSize: "14px" }}>
           Veterinerinizin verdiği bilgileri giriniz.
         </p>

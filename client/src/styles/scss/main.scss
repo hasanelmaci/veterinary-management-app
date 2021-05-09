@@ -45,7 +45,6 @@ li {
   background: linear-gradient(to bottom, #dadada 5%, #f0edf0 100%);
   background-color: #f3f3f3;
   border-radius: 6px;
-  border: 1px solid #dcdcdc;
   display: inline-block;
   cursor: pointer;
   color: #000;
@@ -55,6 +54,7 @@ li {
   padding: 8px 16px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
+  border:1px solid black;
 }
 .btn:hover {
   background: linear-gradient(to bottom, #f0edf0 5%, #f9f9f9 100%);

@@ -1,3 +1,4 @@
+import {memo} from 'react'
 function PetHeader({ pet }) {
   return (
     <div className="pet-header">
@@ -17,4 +18,4 @@ function PetHeader({ pet }) {
   );
 }
 
-export default PetHeader;
+export default memo(PetHeader);

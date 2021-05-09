@@ -20,7 +20,7 @@ function TreatmentList({ pet }) {
         </thead>
         <tbody>
           {pet.upcomingtreatments.length === 0 ? (
-            <>Kayıtlı muayene bulunmamaktadır</>
+            <td>Kayıtlı muayene bulunmamaktadır</td>
           ) : (
             pet.upcomingtreatments.map((item) => (
               <UpcomingTreatments key={item._id} upcomingtreatments={item} pet={pet} />
@@ -42,7 +42,7 @@ function TreatmentList({ pet }) {
         </thead>
         <tbody>
           {pet.pasttreatments.length === 0 ? (
-            <>Kayıtlı muayene bulunmamaktadır</>
+            <td>Kayıtlı muayene bulunmamaktadır</td>
           ) : (
             pet.pasttreatments.map((item) => <PastTreatments key={item._id} pasttreatments={item} pet={pet} />)
           )}

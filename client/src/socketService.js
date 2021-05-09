@@ -6,17 +6,16 @@ export const initSocket = () => {
   socket = io("http://127.0.0.1:3000/", {
     transports: ["websocket"],
   });
-  socket.on("connect", () => console.log("Connected"));
+  socket.on("connect", () => console.log());
 };
 
 export const disconnectSocket = () => {
-  console.log("Disconnecting...");
   if (socket) socket.disconnect();
 };
 
 export const joinRoom = (username, room) => {
   socket.emit("join", { username, room });
-  socket.on("welcome-room", () => console.log("Joined to chat"));
+  socket.on("welcome-room", () => console.log());
 };
 
 export const sendMessage = ([room, user, message]) => {

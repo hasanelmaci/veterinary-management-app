@@ -1,3 +1,4 @@
+import {memo} from 'react'
 import ChatCustomerItem from "./ChatCustomerItem";
 
 function ChatCustomerList({ customers, isVisible,id }) {
@@ -12,4 +13,4 @@ function ChatCustomerList({ customers, isVisible,id }) {
   );
 }
 
-export default ChatCustomerList;
+export default memo(ChatCustomerList);

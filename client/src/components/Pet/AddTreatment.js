@@ -22,7 +22,7 @@ function AddTreatment({ treatmentType, pet }) {
 
   return (
     <div className="addtreatment-container">
-      <form onSubmit={handleOnSubmit} autocomplete="off">
+      <form onSubmit={handleOnSubmit} autoComplete="off">
         <input placeholder="Tedavi Türü" name="type" onChange={handleOnChange} required />
         <input placeholder="Kullanılan İlaç" name="medicine" onChange={handleOnChange} />
         <input placeholder="Adet" name="number" onChange={handleOnChange} />

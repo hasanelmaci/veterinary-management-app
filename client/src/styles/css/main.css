@@ -100,7 +100,7 @@
   }
   .customer-list-toggle p:nth-child(1) {
     margin-left: 15px;
-    padding: 5px 5px;
+    padding: 5px 9px;
     border: 1px solid gray;
     border-radius: 50%;
     background-color: #0084ff;
@@ -412,7 +412,7 @@
   text-align: center;
   font-size: 18px;
   font-weight: 300;
-  background-color: var(--color-page-background);
+  background-color: var(--color-second-background);
   color: var(--color-text);
   border-bottom: 1px solid var(--color-text);
 }
@@ -841,8 +841,6 @@
 }
 
 .treatment-table th span {
-  font-size: 12px;
-  font-weight: 400;
   color: white;
 }
 
@@ -1022,12 +1020,10 @@
   overflow-y: scroll;
   border-radius: 10px;
   background-color: var(--color-chat-background);
-  color: var(--color-text);
 }
 
 .customer-list a {
   color: black;
-  color: var(--color-text);
 }
 
 .customer-list-toggle {
@@ -1093,18 +1089,25 @@
 }
 
 .chat-input button {
-  font-weight: 800;
+  font-weight: 600;
   font-size: 1.5rem;
-  padding: 0px 5px;
+  padding: 6px 7px;
   border-radius: 50%;
   margin-right: 10px;
   cursor: pointer;
+  border: none;
+  background-color: #004fb6;
+  color: white;
+}
+
+.chat-input button:hover {
+  background-color: #0e6eeb;
 }
 
 #darkMode {
-  background: transparent url("../img/sun.png") no-repeat center;
-  background-size: 20px 20px;
-  background-color: #1d1d1d;
+  background: transparent url("../img/sun2.png") no-repeat center;
+  background-size: 25px 25px;
+  background-color: #fff;
   width: 25px;
   height: 25px;
   border: none;
@@ -1112,16 +1115,15 @@
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-#darkMode:hover,
-#darkMode:focus {
+#darkMode:hover {
   filter: none;
-  background-color: #1d1d1d;
+  background-color: yellow;
   cursor: pointer;
 }
 
 #darkMode.clicked {
   filter: none !important;
-  background-color: #1d1d1d;
+  background-color: #fff;
 }
 
 :root {
@@ -1177,7 +1179,6 @@ li {
   background: linear-gradient(to bottom, #dadada 5%, #f0edf0 100%);
   background-color: #f3f3f3;
   border-radius: 6px;
-  border: 1px solid #dcdcdc;
   display: inline-block;
   cursor: pointer;
   color: #000;
@@ -1187,6 +1188,7 @@ li {
   padding: 8px 16px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
+  border: 1px solid black;
 }
 
 .btn:hover {

@@ -42,7 +42,7 @@ const LoginForm = (props) => {
   return (
     <div className="login-container">
       <div className="login">
-        <h1>Giriş Yap</h1>
+        <h1>Klinik Girişi</h1>
 
         <form onSubmit={onSubmit}>
           <div>

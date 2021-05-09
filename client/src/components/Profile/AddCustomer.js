@@ -33,7 +33,7 @@ function AddCustomer(props) {
     <div className="addcustomer-container">
       <div className="addcustomer">
         <h1>Müşteri Ekle</h1>
-        <form onSubmit={handleOnSubmit} autocomplete="off">
+        <form onSubmit={handleOnSubmit} autoComplete="off">
           <input placeholder="isim" name="username" value={username} onChange={handleOnChange} />
           <input type="email" placeholder="email" name="email" value={email} onChange={handleOnChange} />
           <input placeholder="şifre" name="password" value={password} onChange={handleOnChange} />
