@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState,useContext,useEffect } from "react";
+import PetContext from '../context/pet/petContext'
 import Customers from "../components/Profile/Customers";
 import SearchBar from "../components/Profile/SearchBar";
 
 const Profile = () => {
+  const {clearPetList} = useContext(PetContext)
+  
   const [searchInput, setSearchInput] = useState("");
+
+  useEffect(()=>{
+    clearPetList()
+  },[])
 
   const search = (e) => {
     setSearchInput(e.target.value);

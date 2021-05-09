@@ -19,6 +19,7 @@ import {
   DELETE_PAST_TREATMENT_SUCCESS,
   DELETE_UPCOMING_TREATMENT_FAIL,
   DELETE_UPCOMING_TREATMENT_SUCCESS,
+  CLEAR_PETLIST,
   PET_CLEAR_ERRORS
 } from "./petActions";
 
@@ -161,6 +162,10 @@ function PetState(props) {
     }
   };
 
+  const clearPetList = () =>{
+    dispatch({type:CLEAR_PETLIST})
+  }
+
   const clearErrors = () =>{
     dispatch({ type: PET_CLEAR_ERRORS });
   }
@@ -180,6 +185,7 @@ function PetState(props) {
         addPastTreatment,
         deletePastTreatment,
         deleteUpcomingTreatment,
+        clearPetList,
         clearErrors
       }}
     >
