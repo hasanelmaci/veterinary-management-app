@@ -9,13 +9,11 @@
 
 .chat-container {
   border-radius: 5px;
-  border: 1px solid black;
   border-radius: 10px;
   width: 1100px;
-  background-color: #ffffff;
-  background-color: var(--color-page-background);
+  background-color: var(--color-chat-background);
   color: var(--color-text);
-  border:1px solid var(--color-text);
+  border:1px solid #6d9ffc;
 }
 
 .chat-list-content {
@@ -24,7 +22,9 @@
   overflow-y: hidden;
   
 }
-
+.selected-chat-customer{
+  background-color: #a8c6ff;
+}
 .chat-input-content {
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@
 
 .message {
   display: inline-block;
-  background-color: #e4e6eb;
+  background-color: #e3c5fc;
   border-radius: 17px;
   padding: 6px 12px;
   margin-top: 5px;
@@ -70,13 +70,19 @@
   background-color: rgb(245, 243, 243);
   overflow-y: scroll;
   border-radius: 10px;
-  background-color: var(--color-page-background);
+  background-color: var(--color-chat-background);
+  color: var(--color-text);
   
+ 
   a {
     color: black;
     color: var(--color-text);
   }
+  
+  
 }
+
+
 
 .customer-list-toggle{
   display:none;
@@ -106,15 +112,21 @@
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
+  p{
+    padding-top: 10px;
+    padding-left: 5px;
+  }
 }
 
 .customer-item {
   padding: 20px 0 5px 5px;
-  border-bottom: 1px solid black;
   text-overflow: ellipsis;
   font-size: 1.1rem;
-  border-bottom:1px solid var(--color-text);
+  border-bottom:1px solid #004cda;
+  
 }
+
 
 .chat-input {
   display: flex;

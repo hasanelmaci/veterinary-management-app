@@ -1,12 +1,12 @@
 .nav {
   font-family: "Open Sans", sans-serif;
-  border-bottom: 1px solid #50a3a2a6;
+  border-bottom: 2px solid #50a3a2a6;
   width: 100%;
   margin: 0 auto;
-  background-color: #faf9f8;
   background-color: var(--color-page-background);
   color: var(--color-text);
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+  
 
   div {
     max-width: 1300px;

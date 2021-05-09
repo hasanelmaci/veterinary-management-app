@@ -1,8 +1,10 @@
+import {Link} from 'react-router-dom'
+
 function CustomerHeader({ customer }) {
   return (
     <div className="customer-header">
       <div className="customer-title">
-        <h1>{customer.username}</h1>
+        <h1><Link to='/customerprofile'>{customer.username}</Link></h1>
         <h3>{customer.email}</h3>
       </div>
     </div>

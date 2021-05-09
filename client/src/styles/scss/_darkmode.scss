@@ -22,9 +22,11 @@
 }
 
 $color-black: #1d1d1d;
-$color-white: rgb(255, 255, 255);
+$color-white: #fff;
+$color-second-white: #e9e9e9;
 $color-gray-light: rgba($color-white, 0.15);
 $color-gray-dark: rgba($color-black, 0.15);
+$color-blue-background: #e2ecff;
 
 :root {
   --color-page-background: #{$color-white};
@@ -34,11 +36,14 @@ $color-gray-dark: rgba($color-black, 0.15);
 .dark {
   --color-page-background: #{$color-black};
   --color-text: #{$color-white};
+  --color-second-background:#{$color-black};
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-.light {
+body{
   --color-page-background: #{$color-white};
   --color-text: #{$color-black};
+  --color-chat-background:#{$color-blue-background};
+  --color-second-background:#{$color-second-white};
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }

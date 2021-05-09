@@ -4,10 +4,12 @@ import CustomerAuthContext from "../context/customerAuth/customerAuthContext";
 import PetHeader from "../components/Pet/PetHeader";
 import TreatmentList from "../components/CustomerProfile/TreatmentList";
 import UploadAvatar from "../components/CustomerProfile/UploadAvatar";
+import CustomerHeader from "../components/Customer/CustomerHeader";
+import CustomerMenu from "../components/CustomerProfile/CustomerMenu";
 
 function CustomerPetProfile(props) {
   let { id } = useParams();
-  const { fetchOnePet, pet, loading, isFetched, logout, error, clearErrors } = useContext(CustomerAuthContext);
+  const { fetchOnePet, pet, loading, isFetched, logout, error, clearErrors,customer } = useContext(CustomerAuthContext);
 
   useEffect(() => {
     if (isFetched !== id) {
@@ -24,27 +26,30 @@ function CustomerPetProfile(props) {
   }, [fetchOnePet, isFetched]);
 
   return (
-    <>
+    <div>
+            <CustomerHeader customer={customer} />
+      <CustomerMenu />
       {isFetched === id ? (
         <div className="pet-profile">
+    
           <div className="pet-profile-infos">
-            <di className="tocustomer-container"></di>
+            <div className="tocustomer-container"></div>
             <PetHeader pet={pet} />
             <UploadAvatar pet={pet} />
-            <Link id="tocustomerprofile" to="/customerprofile">
+            {/* <Link id="tocustomerprofile" to="/customerprofile">
               Diğer evcil hayvanlarım
             </Link>
             <br />
-            <Link id="#" onClick={logout}>
+            <Link to="#" onClick={logout}>
               Çıkış Yap
-            </Link>
+            </Link> */}
           </div>
           <TreatmentList pet={pet} />
         </div>
       ) : (
-        props.history.push("/customerprofile")
+        null
       )}
-    </>
+    </div>
   );
 }
 

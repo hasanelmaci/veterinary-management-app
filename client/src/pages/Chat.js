@@ -61,7 +61,7 @@ function Chat(props) {
       <div className="chat userchat">
         <div className="chat-container">
           <div className="chat-list-content">
-            <FetchCustomers isVisible={isVisible} />
+            <FetchCustomers isVisible={isVisible} id={id} />
             <div className="chat-input-content">
               <ChatBoxContainer newMsg={{ author: newMsg.user, message: newMsg.msg }} id={id} />
               <ChatInput user={user.name} />

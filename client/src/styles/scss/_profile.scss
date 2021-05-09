@@ -67,27 +67,25 @@
   }
 
   td {
-    color: rgb(226, 37, 69);
     color: white;
   }
 
   tr:hover {
-    background-color: #01faf628;
+    background-color: #5aa9e6ea;
     color: white;
   }
 
   th {
     text-align: left;
-    color: rgb(51, 180, 0);
     color: black;
-    background-color: rgba(82, 228, 253, 0.3);
+    background-color: #5aa9e6ce;
     color: var(--color-text);
   }
   tr:nth-child(even) {
-    background-color: #56e4ca93;
+    background-color: #5aa9e680;
   }
   tr:nth-child(even):hover {
-    background-color: #01faf628;
+    background-color: #5aa9e6ea;
   }
 }
 

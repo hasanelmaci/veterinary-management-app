@@ -22,7 +22,7 @@ function UploadAvatar({ pet }) {
   };
   return (
     <div className="upload-avatar">
-      <label className="avatar-input" for="file-upload">
+      <label className="avatar-input" htmlFor="file-upload">
         {selectedFile ? selectedFile.name : "Resim seç"}
         <input id="file-upload" className="btn" type="file" name="avatar" onChange={changeHandler} />
       </label>
