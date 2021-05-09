@@ -56,10 +56,13 @@
   background-color: #e3c5fc;
   border-radius: 17px;
   padding: 6px 12px;
-  margin-top: 5px;
+  margin-top: 2px;
+  margin-bottom: 3px;
   margin-left: 5px;
   font-size: 1rem;
   color:#000;
+  max-width: 500px;
+  word-wrap: break-word;
 }
 
 .customer-list {

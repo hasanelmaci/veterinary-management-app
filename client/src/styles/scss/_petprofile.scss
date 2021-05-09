@@ -20,7 +20,7 @@
 
   img {
     width: 250px;
-    border: 1px solid gray;
+    border: 1px solid black;
     border-radius: 50%;
   }
 }
@@ -30,7 +30,11 @@
   text-align: center;
   margin-bottom: 15px;
   h1 {
+    display: inline-block;
+    width: 100%;
     margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   p {
     margin-bottom: 10px;

@@ -11,7 +11,6 @@ function ChatBoxContainer({ newMsg, id }) {
       setNewMessage(data);
     }
     getMessages();
-
     //prevent rendering same message when id change
     newMsg.message = undefined;
   }, [id]);

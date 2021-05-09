@@ -44,6 +44,7 @@ function AddPet(props) {
           <input placeholder="Tür" name="animal" onChange={handleOnChange} />
           <input placeholder="Cins" name="type" onChange={handleOnChange} />
           <input placeholder="Cinsiyet" name="gender" onChange={handleOnChange} />
+          <input placeholder="Doğum Tarihi" name="birthdate" onChange={handleOnChange} />
           <button type="submit" className="btn">
             Ekle
           </button>

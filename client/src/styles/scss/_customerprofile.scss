@@ -2,13 +2,19 @@
   text-align: center;
   height: auto;
   color: #0d4c6e;
+  overflow: hidden;
+  word-wrap: break-word;
   h1 {
+    max-width:500px;
+    overflow: hidden;
+    word-wrap: break-word;
     margin-bottom: 5px;
     font-size: 2.8rem;
     letter-spacing: 3px;
     margin-top: 15px;
     margin-bottom: 5px;
     color: #1590d3;
+    margin:0 auto;
   }
 }
 

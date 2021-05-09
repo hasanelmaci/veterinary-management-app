@@ -126,6 +126,9 @@
   .userchat {
     margin-top: 0 !important;
   }
+  .message {
+    max-width: 200px !important;
+  }
 }
 
 @media only screen and (min-width: 500px) and (max-width: 768px) {
@@ -440,6 +443,10 @@
   color: white;
 }
 
+.customer-table td > a {
+  display: block;
+}
+
 .customer-table th span {
   font-size: 12px;
   font-weight: 400;
@@ -632,15 +639,21 @@
   text-align: center;
   height: auto;
   color: #0d4c6e;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .customer-header h1 {
+  max-width: 500px;
+  overflow: hidden;
+  word-wrap: break-word;
   margin-bottom: 5px;
   font-size: 2.8rem;
   letter-spacing: 3px;
   margin-top: 15px;
   margin-bottom: 5px;
   color: #1590d3;
+  margin: 0 auto;
 }
 
 .customer-settings {
@@ -749,7 +762,7 @@
 
 .pet-avatar img {
   width: 250px;
-  border: 1px solid gray;
+  border: 1px solid black;
   border-radius: 50%;
 }
 
@@ -760,7 +773,11 @@
 }
 
 .pet-profile-infos h1 {
+  display: inline-block;
+  width: 100%;
   margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pet-profile-infos p {
@@ -987,10 +1004,13 @@
   background-color: #e3c5fc;
   border-radius: 17px;
   padding: 6px 12px;
-  margin-top: 5px;
+  margin-top: 2px;
+  margin-bottom: 3px;
   margin-left: 5px;
   font-size: 1rem;
   color: #000;
+  max-width: 500px;
+  word-wrap: break-word;
 }
 
 .customer-list {

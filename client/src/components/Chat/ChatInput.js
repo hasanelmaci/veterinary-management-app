@@ -13,7 +13,6 @@ function ChatInput({ user }) {
     e.preventDefault();
     if(input !== ""){
       axios.post(`/chat/${id}`, { message: input, author: user });
-      
       sendMessage([id, user, input]);
       setInput("")
     }

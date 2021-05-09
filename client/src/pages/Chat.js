@@ -41,6 +41,7 @@ function Chat(props) {
 
   const handleToggle = () => {
     setIsVisible(!isVisible);
+    setNewMsg({})
   };
 
   useEffect(() => {
@@ -49,7 +50,6 @@ function Chat(props) {
       clearErrors();
     }
   }, [fetchOneCustomer]);
-
   return (
     <div>
       <div className="customer-list-toggle" onClick={handleToggle}>

@@ -16,7 +16,7 @@ export const disconnectSocket = () => {
 
 export const joinRoom = (username, room) => {
   socket.emit("join", { username, room });
-  socket.on("welcome-room", (room) => console.log("Welcome client", room));
+  socket.on("welcome-room", () => console.log("Joined to chat"));
 };
 
 export const sendMessage = ([room, user, message]) => {
