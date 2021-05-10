@@ -129,6 +129,12 @@
   .message {
     max-width: 200px !important;
   }
+  .page404 h1 {
+    font-size: 6rem !important;
+  }
+  .page404 img {
+    width: 100% !important;
+  }
 }
 
 @media only screen and (min-width: 500px) and (max-width: 768px) {
@@ -1102,6 +1108,29 @@
 
 .chat-input button:hover {
   background-color: #0e6eeb;
+}
+
+.page404 {
+  max-width: 1300px;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.page404 h1 {
+  text-align: center;
+  font-size: 12rem;
+}
+
+.page404 p {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.page404 img {
+  width: 650px;
 }
 
 #darkMode {
