@@ -22,6 +22,11 @@ app.use(customerRouter);
 app.use(petRouter);
 app.use(chatRouter);
 
+app.use(express.statac("client/build"));
+app.get("*", (req,res)=>{
+  res.sendFile(path.resolve(__dirname,"client","build","index.html"))
+})
+
 io.on("connection", (socket) => {
   console.log("New Websocket connection");
 
