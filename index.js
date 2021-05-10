@@ -2,11 +2,11 @@ const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 const cors = require("cors");
-require("./db/mongoose");
-const userRouter = require("./routers/user");
-const customerRouter = require("./routers/customer");
-const petRouter = require("./routers/pet");
-const chatRouter = require("./routers/chat");
+require("./src/db/mongoose");
+const userRouter = require("./src/routers/user");
+const customerRouter = require("./src/routers/customer");
+const petRouter = require("./src/routers/pet");
+const chatRouter = require("./src/routers/chat");
 
 const app = express();
 app.use(cors());
