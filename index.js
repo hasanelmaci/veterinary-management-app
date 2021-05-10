@@ -22,14 +22,11 @@ app.use(customerRouter);
 app.use(petRouter);
 app.use(chatRouter);
 
-app.use(express.statac("client/build"));
-app.get("*", (req,res)=>{
-  res.sendFile(path.resolve(__dirname,"client","build","index.html"))
-})
 
 io.on("connection", (socket) => {
   console.log("New Websocket connection");
 
+  
   socket.on("send-message", ([room, user, message]) => {
     io.to(room).emit("receive-message", { user, message });
   });
@@ -43,6 +40,11 @@ io.on("connection", (socket) => {
     console.log("disconnect");
   });
 });
+
+app.use(express.static("client/build"));
+app.get("*", (req,res)=>{
+  res.sendFile(path.resolve(__dirname,"client","build","index.html"))
+})
 
 server.listen(port, () => {
   console.log(`Server is up on port ${port} !`);
