@@ -20,7 +20,6 @@ import CustomerPetProfile from "./pages/CustomerPetProfile";
 import Chat from "./pages/Chat";
 import AddPet from "./pages/AddPet";
 import UpdatePet from "./pages/UpdatePet";
-import Page404 from "./pages/Page404";
 import Navbar from "./components/Profile/Navbar";
 import AddCustomer from "./components/Profile/AddCustomer";
 import UpdateCustomer from "./components/Customer/UpdateCustomer";
@@ -51,7 +50,6 @@ function App() {
                   <PrivateRoute exact path="/customers/:id/addpet" component={AddPet} />
                   <PrivateRoute exact path="/customers/:id/:petid" component={PetProfile} />
                   <PrivateRoute exact path="/customers/:id/:petid/updatepet" component={UpdatePet} />
-                  <Route path="*" exact={true} component={Page404} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/customerlogin" component={CustomerLogin} />
