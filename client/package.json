@@ -42,6 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  }, 
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
   },
   "proxy": "http://localhost:3000/"
 }

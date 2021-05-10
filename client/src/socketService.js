@@ -3,7 +3,7 @@ import io from "socket.io-client";
 let socket;
 
 export const initSocket = () => {
-  socket = io("http://127.0.0.1:3000/", {
+  socket = io("https://veterinary-app7.herokuapp.com/", {
     transports: ["websocket"],
   });
   socket.on("connect", () => console.log());
