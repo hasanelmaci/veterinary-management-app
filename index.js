@@ -2,6 +2,7 @@ const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 const cors = require("cors");
+const path = require("path")
 require("./src/db/mongoose");
 const userRouter = require("./src/routers/user");
 const customerRouter = require("./src/routers/customer");
