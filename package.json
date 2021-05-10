@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "env-cmd ./config/dev.env nodemon index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "cd client && NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "keywords": [],
   "author": "",
