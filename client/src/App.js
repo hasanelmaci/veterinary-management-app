@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import "./styles/css/main.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import UserAuthState from "./context/userAuth/UserAuthState";
@@ -26,38 +27,44 @@ import UpdateCustomer from "./components/Customer/UpdateCustomer";
 
 function App() {
   return (
-    <UserAuthState>
-      <CustomerAuthState>
-        <CustomerState>
-          <PetState>
-            <Router>
-              <Navbar />
-              <Switch>
-                <Route exact path="/">
-                  <Redirect to="/profile" />
-                </Route>
-                <PrivateRoute exact path="/chat" component={Chat} />
-                <PrivateRoute exact path="/chat/:id" component={Chat} />
-                <PrivateRoute exact path="/profile" component={Profile} />
-                <PrivateRoute exact path="/customers/:id" component={Customer} />
-                <PrivateRoute exact path="/customers/:id/update" component={UpdateCustomer} />
-                <PrivateRoute exact path="/profile/addcustomer" component={AddCustomer} />
-                <PrivateRoute exact path="/customers/:id/addpet" component={AddPet} />
-                <PrivateRoute exact path="/customers/:id/:petid" component={PetProfile} />
-                <PrivateRoute exact path="/customers/:id/:petid/updatepet" component={UpdatePet} />
-                <Route path="*" exact={true} component={Page404} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/customerlogin" component={CustomerLogin} />
-                <CustomerPrivateRoute exact path="/customerprofile" component={CustomerProfile} />
-                <CustomerPrivateRoute exact path="/customerchat" component={CustomerChat} />
-                <CustomerPrivateRoute exact path="/customerprofile/:id" component={CustomerPetProfile} />
-              </Switch>
-            </Router>
-          </PetState>
-        </CustomerState>
-      </CustomerAuthState>
-    </UserAuthState>
+    <>
+      <Helmet>
+        <title>Veterinary App</title>
+        <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
+      </Helmet>
+      <UserAuthState>
+        <CustomerAuthState>
+          <CustomerState>
+            <PetState>
+              <Router>
+                <Navbar />
+                <Switch>
+                  <Route exact path="/">
+                    <Redirect to="/profile" />
+                  </Route>
+                  <PrivateRoute exact path="/chat" component={Chat} />
+                  <PrivateRoute exact path="/chat/:id" component={Chat} />
+                  <PrivateRoute exact path="/profile" component={Profile} />
+                  <PrivateRoute exact path="/customers/:id" component={Customer} />
+                  <PrivateRoute exact path="/customers/:id/update" component={UpdateCustomer} />
+                  <PrivateRoute exact path="/profile/addcustomer" component={AddCustomer} />
+                  <PrivateRoute exact path="/customers/:id/addpet" component={AddPet} />
+                  <PrivateRoute exact path="/customers/:id/:petid" component={PetProfile} />
+                  <PrivateRoute exact path="/customers/:id/:petid/updatepet" component={UpdatePet} />
+                  <Route path="*" exact={true} component={Page404} />
+                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/customerlogin" component={CustomerLogin} />
+                  <CustomerPrivateRoute exact path="/customerprofile" component={CustomerProfile} />
+                  <CustomerPrivateRoute exact path="/customerchat" component={CustomerChat} />
+                  <CustomerPrivateRoute exact path="/customerprofile/:id" component={CustomerPetProfile} />
+                </Switch>
+              </Router>
+            </PetState>
+          </CustomerState>
+        </CustomerAuthState>
+      </UserAuthState>
+    </>
   );
 }
 
