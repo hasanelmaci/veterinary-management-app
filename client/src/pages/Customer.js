@@ -20,6 +20,7 @@ function Customer(props) {
       props.history.push("/");
       clearErrors();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchOneCustomer]);
 
   return (

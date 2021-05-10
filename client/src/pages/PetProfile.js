@@ -20,6 +20,7 @@ function PetProfile(props) {
       props.history.push("/login");
       clearErrors();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchOnePet, props.history, error]);
 
   return (

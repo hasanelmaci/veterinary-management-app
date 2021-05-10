@@ -1,19 +1,19 @@
 import { useParams, Link } from "react-router-dom";
-import { useContext, useState,useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import PetContext from "../context/pet/petContext";
 
 function UpdatePet(props) {
   let { id, petid } = useParams();
 
-  const { updatePet,error,clearErrors,fetchOnePet } = useContext(PetContext);
+  const { updatePet, error, clearErrors, fetchOnePet } = useContext(PetContext);
 
   const [updatedPet, setUpdatedPet] = useState({});
   const [message, setMessage] = useState(false);
 
-  useEffect(()=>{
-    fetchOnePet(id,petid)
-  },[])
-
+  useEffect(() => {
+    fetchOnePet(id, petid);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -26,14 +26,13 @@ function UpdatePet(props) {
     setUpdatedPet({ ...updatedPet, ...inputObject });
   };
 
-  useEffect(()=>{
-    if(error){
-      props.history.push('/')
-      clearErrors()
+  useEffect(() => {
+    if (error) {
+      props.history.push("/");
+      clearErrors();
     }
-    
-  },[updatePet,fetchOnePet])
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [updatePet, fetchOnePet]);
 
   return (
     <div className="update-pet-container">

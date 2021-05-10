@@ -20,13 +20,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
       render={(props) =>
         loading ? (
           <div className="spinner">
-            <Loader
-              type="Circles"
-              color="#00BFFF"
-              height={100}
-              width={100}
-              timeout={0} 
-            />
+            <Loader type="Circles" color="#00BFFF" height={100} width={100} timeout={0} />
           </div>
         ) : isUserAuth ? (
           <Component {...props} />

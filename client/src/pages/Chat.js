@@ -8,10 +8,9 @@ import ChatInput from "../components/Chat/ChatInput";
 import UserContext from "../context/userAuth/userAuthContext";
 import CustomerContext from "../context/customer/customerContext";
 import ChatBoxContainer from "../components/Chat/ChatBoxContainer";
-import UserAuthContext from "../context/userAuth/userAuthContext";
 
 function Chat(props) {
-  const { fetchOneCustomer, customer, loading, error, clearErrors } = useContext(CustomerContext);
+  const { fetchOneCustomer, customer, error, clearErrors } = useContext(CustomerContext);
 
   let { id } = useParams();
   const { user } = useContext(UserContext);
@@ -37,11 +36,12 @@ function Chat(props) {
     if (id) {
       fetchOneCustomer(id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const handleToggle = () => {
     setIsVisible(!isVisible);
-    setNewMsg({})
+    setNewMsg({});
   };
 
   useEffect(() => {
@@ -49,6 +49,7 @@ function Chat(props) {
       props.history.push("/");
       clearErrors();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchOneCustomer]);
   return (
     <div>

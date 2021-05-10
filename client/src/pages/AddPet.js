@@ -14,6 +14,7 @@ function AddPet(props) {
 
   useEffect(() => {
     customer.fetchOneCustomer(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -22,6 +23,7 @@ function AddPet(props) {
       clearErrors();
       customer.clearErrors();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addPet, customer.fetchOneCustomer]);
 
   const handleOnSubmit = (e) => {

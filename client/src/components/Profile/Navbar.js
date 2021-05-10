@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext,memo } from "react";
+import { useContext, memo } from "react";
 import UserAuthContext from "../../context/userAuth/userAuthContext";
 import DarkMode from "../../pages/DarkMode";
 function Navbar() {

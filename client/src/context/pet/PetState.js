@@ -20,7 +20,7 @@ import {
   DELETE_UPCOMING_TREATMENT_FAIL,
   DELETE_UPCOMING_TREATMENT_SUCCESS,
   CLEAR_PETLIST,
-  PET_CLEAR_ERRORS
+  PET_CLEAR_ERRORS,
 } from "./petActions";
 
 function PetState(props) {
@@ -162,13 +162,13 @@ function PetState(props) {
     }
   };
 
-  const clearPetList = () =>{
-    dispatch({type:CLEAR_PETLIST})
-  }
+  const clearPetList = () => {
+    dispatch({ type: CLEAR_PETLIST });
+  };
 
-  const clearErrors = () =>{
+  const clearErrors = () => {
     dispatch({ type: PET_CLEAR_ERRORS });
-  }
+  };
 
   return (
     <PetContext.Provider
@@ -186,7 +186,7 @@ function PetState(props) {
         deletePastTreatment,
         deleteUpcomingTreatment,
         clearPetList,
-        clearErrors
+        clearErrors,
       }}
     >
       {props.children}

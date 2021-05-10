@@ -8,10 +8,10 @@ function ChatCustomerInput({ customer, customerid }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(input != ""){
+    if (input !== "") {
       axios.post(`/customerchat`, { message: input, author: customer });
       sendMessage([customerid, customer, input]);
-      setInput("")
+      setInput("");
     }
   };
   return (

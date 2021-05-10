@@ -1,7 +1,7 @@
-import {memo} from 'react'
+import { memo } from "react";
 import ChatCustomerItem from "./ChatCustomerItem";
 
-function ChatCustomerList({ customers, isVisible,id }) {
+function ChatCustomerList({ customers, isVisible, id }) {
   return (
     <div className={`customer-list ${isVisible ? "visible" : "hidden"}`}>
       <ul>

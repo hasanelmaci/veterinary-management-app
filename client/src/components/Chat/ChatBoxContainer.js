@@ -13,6 +13,7 @@ function ChatBoxContainer({ newMsg, id }) {
     getMessages();
     //prevent rendering same message when id change
     newMsg.message = undefined;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   useEffect(() => {

@@ -5,7 +5,7 @@ import FetchPets from "../components/CustomerProfile/FetchPets";
 import CustomerMenu from "../components/CustomerProfile/CustomerMenu";
 
 function CustomerProfile() {
-  const { fetchAllPets, customer, logout } = useContext(CustomerAuthContext);
+  const { fetchAllPets, customer } = useContext(CustomerAuthContext);
   useEffect(() => {
     fetchAllPets();
     // eslint-disable-next-line react-hooks/exhaustive-deps

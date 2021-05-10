@@ -35,14 +35,14 @@ $color-blue-background: #e2ecff;
 .dark {
   --color-page-background: #{$color-black};
   --color-text: #{$color-white};
-  --color-second-background:#{$color-black};
+  --color-second-background: #{$color-black};
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-body{
+body {
   --color-page-background: #{$color-white};
   --color-text: #{$color-black};
-  --color-chat-background:#{$color-blue-background};
-  --color-second-background:#{$color-second-white};
+  --color-chat-background: #{$color-blue-background};
+  --color-second-background: #{$color-second-white};
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }

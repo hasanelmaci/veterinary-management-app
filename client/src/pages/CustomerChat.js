@@ -21,14 +21,14 @@ function CustomerChat() {
   }, [receiveMessage, customer._id]);
   return (
     <div>
-<CustomerHeader customer={customer}/>
-<CustomerMenu />
-    <div className='chat'>
-      <div className='chat-container'>
-      <CustomerChatBoxContainer newMsg={{ author: newMsg.user, message: newMsg.msg }} />
-      <ChatCustomerInput customer={customer.username} customerid={customer._id} />
+      <CustomerHeader customer={customer} />
+      <CustomerMenu />
+      <div className="chat">
+        <div className="chat-container">
+          <CustomerChatBoxContainer newMsg={{ author: newMsg.user, message: newMsg.msg }} />
+          <ChatCustomerInput customer={customer.username} customerid={customer._id} />
+        </div>
       </div>
-    </div>
     </div>
   );
 }
