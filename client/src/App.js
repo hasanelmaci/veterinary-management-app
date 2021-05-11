@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import { Helmet } from "react-helmet";
 import "./styles/css/main.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import UserAuthState from "./context/userAuth/UserAuthState";
 import CustomerAuthState from "./context/customerAuth/CustomerAuthState";
+import UserAuthState from "./context/userAuth/UserAuthState";
 import CustomerState from "./context/customer/CustomerState";
 import PetState from "./context/pet/PetState";
 import PrivateRoute from "./routing/PrivateRoute";
