@@ -36,7 +36,7 @@ function PetState(props) {
 
   const addPet = async (id, pet) => {
     try {
-      const res = await axios.post(`/customers/${id}/pets`, pet);
+      const res = await axios.post(`/api/customers/${id}/pets`, pet);
       dispatch({
         type: ADD_PET_SUCCESS,
         payload: res.data,
@@ -51,7 +51,7 @@ function PetState(props) {
 
   const fetchPets = async (id) => {
     try {
-      const res = await axios.get(`/customers/${id}/pets`);
+      const res = await axios.get(`/api/customers/${id}/pets`);
       dispatch({
         type: FETCH_PETS_SUCCESS,
         payload: res.data,
@@ -66,7 +66,7 @@ function PetState(props) {
 
   const fetchOnePet = async (id, petid) => {
     try {
-      const res = await axios.get(`/customers/${id}/${petid}`);
+      const res = await axios.get(`/api/customers/${id}/${petid}`);
       dispatch({
         type: FETCH_ONE_PET_SUCCESS,
         payload: res.data,
@@ -89,7 +89,7 @@ function PetState(props) {
     }
 
     try {
-      const res = await axios.patch(`/customers/${id}/${petid}`, picks);
+      const res = await axios.patch(`/api/customers/${id}/${petid}`, picks);
       dispatch({
         type: UPDATE_PET_SUCCESS,
         payload: res.data,
@@ -104,7 +104,7 @@ function PetState(props) {
 
   const addUpcomingTreatment = async (petid, formData) => {
     try {
-      const res = await axios.post(`/upcomingtreatments/${petid}`, formData);
+      const res = await axios.post(`/api/upcomingtreatments/${petid}`, formData);
       dispatch({
         type: ADD_UPCOMING_TREATMENT_SUCCESS,
         payload: res.data,
@@ -119,7 +119,7 @@ function PetState(props) {
 
   const addPastTreatment = async (petid, formData) => {
     try {
-      const res = await axios.post(`/pasttreatments/${petid}`, formData);
+      const res = await axios.post(`/api/pasttreatments/${petid}`, formData);
       dispatch({
         type: ADD_PAST_TREATMENT_SUCCESS,
         payload: res.data,
@@ -134,7 +134,7 @@ function PetState(props) {
 
   const deletePastTreatment = async (petid, treatmentid) => {
     try {
-      const res = await axios.delete(`/pastreatments/${petid}/${treatmentid}`);
+      const res = await axios.delete(`/api/pastreatments/${petid}/${treatmentid}`);
       dispatch({
         type: DELETE_PAST_TREATMENT_SUCCESS,
         payload: res.data,
@@ -149,7 +149,7 @@ function PetState(props) {
 
   const deleteUpcomingTreatment = async (petid, treatmentid) => {
     try {
-      const res = await axios.delete(`/upcomingtreatments/${petid}/${treatmentid}`);
+      const res = await axios.delete(`/api/upcomingtreatments/${petid}/${treatmentid}`);
       dispatch({
         type: DELETE_UPCOMING_TREATMENT_SUCCESS,
         payload: res.data,

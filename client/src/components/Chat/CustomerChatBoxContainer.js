@@ -7,7 +7,7 @@ function CustomerChatBoxContainer({ newMsg }) {
 
   useEffect(() => {
     async function getMessages() {
-      const { data } = await axios.get(`/customerchat`);
+      const { data } = await axios.get(`/api/customerchat`);
       setNewMessage(data);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }

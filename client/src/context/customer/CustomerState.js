@@ -27,7 +27,7 @@ function CustomerState(props) {
 
   const addCustomer = async (formData) => {
     try {
-      const res = await axios.post("/user/addcustomer", formData);
+      const res = await axios.post("/api/user/addcustomer", formData);
       dispatch({
         type: ADD_CUSTOMER_SUCCESS,
         payload: res.data,
@@ -42,7 +42,7 @@ function CustomerState(props) {
 
   const fetchCustomers = async () => {
     try {
-      const res = await axios.get("/customers");
+      const res = await axios.get("/api/customers");
       dispatch({
         type: FETCH_CUSTOMERS_SUCCESS,
         payload: res.data,
@@ -66,7 +66,7 @@ function CustomerState(props) {
     }
 
     try {
-      const res = await axios.patch(`/customers/${id}`, picks);
+      const res = await axios.patch(`/api/customers/${id}`, picks);
       dispatch({
         type: UPDATE_CUSTOMER_SUCCESS,
         payload: res.data,
@@ -81,7 +81,7 @@ function CustomerState(props) {
 
   const deleteCustomer = async (id) => {
     try {
-      await axios.delete(`/customers/${id}`);
+      await axios.delete(`/api/customers/${id}`);
       dispatch({
         type: DELETE_CUSTOMER_SUCCESS,
         payload: id,
@@ -97,7 +97,7 @@ function CustomerState(props) {
   const fetchOneCustomer = async (id) => {
     ///customers/:id
     try {
-      const res = await axios.get(`/customers/${id}`);
+      const res = await axios.get(`/api/customers/${id}`);
       dispatch({
         type: FETCH_ONE_CUSTOMER_SUCCESS,
         payload: res.data,

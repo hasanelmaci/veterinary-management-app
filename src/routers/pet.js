@@ -7,7 +7,7 @@ const customerAuth = require("../middleware/customerAuth");
 const router = new express.Router();
 
 //add pet
-router.post("/customers/:id/pets", auth, async (req, res) => {
+router.post("/api/customers/:id/pets", auth, async (req, res) => {
   const _id = req.params.id;
 
   try {
@@ -27,7 +27,7 @@ router.post("/customers/:id/pets", auth, async (req, res) => {
 });
 
 //add a past treatment
-router.post("/pasttreatments/:id", auth, async (req, res) => {
+router.post("/api/pasttreatments/:id", auth, async (req, res) => {
   try {
     const pet = await Pet.findById(req.params.id);
     pet.pasttreatments.push(req.body);
@@ -39,7 +39,7 @@ router.post("/pasttreatments/:id", auth, async (req, res) => {
 });
 
 //add a upcoming treatment
-router.post("/upcomingtreatments/:id", auth, async (req, res) => {
+router.post("/api/upcomingtreatments/:id", auth, async (req, res) => {
   try {
     const pet = await Pet.findById(req.params.id);
     pet.upcomingtreatments.push(req.body);
@@ -51,7 +51,7 @@ router.post("/upcomingtreatments/:id", auth, async (req, res) => {
 });
 
 //Read pets
-router.get("/customers/:id/pets", auth, async (req, res) => {
+router.get("/api/customers/:id/pets", auth, async (req, res) => {
   try {
     const _id = req.params.id;
     const customer = await Customer.findById(_id);
@@ -70,7 +70,7 @@ router.get("/customers/:id/pets", auth, async (req, res) => {
 });
 
 //Read a single pet of a customer
-router.get("/customers/:customerid/:id", auth, async (req, res) => {
+router.get("/api/customers/:customerid/:id", auth, async (req, res) => {
   try {
     const _id = req.params.id;
     const customerid = req.params.customerid;
@@ -88,7 +88,7 @@ router.get("/customers/:customerid/:id", auth, async (req, res) => {
 });
 
 //update pet
-router.patch("/customers/:customerid/:id", auth, async (req, res) => {
+router.patch("/api/customers/:customerid/:id", auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ["name", "animal", "type", "gender", "birthdate", "pasttreatments", "upcomingtreatments"];
 
@@ -117,7 +117,7 @@ router.patch("/customers/:customerid/:id", auth, async (req, res) => {
 });
 
 //update pet past treatments
-router.patch("/pasttreatments/:petid/:id", auth, async (req, res) => {
+router.patch("/api/pasttreatments/:petid/:id", auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ["type", "medicine", "number", "date"];
 
@@ -141,7 +141,7 @@ router.patch("/pasttreatments/:petid/:id", auth, async (req, res) => {
 });
 
 //update pet upcoming treatments
-router.patch("/upcomingtreatments/:petid/:id", auth, async (req, res) => {
+router.patch("/api/upcomingtreatments/:petid/:id", auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ["type", "medicine", "number", "date"];
 
@@ -165,7 +165,7 @@ router.patch("/upcomingtreatments/:petid/:id", auth, async (req, res) => {
 });
 
 //delete past treatment
-router.delete("/pastreatments/:petid/:id", auth, async (req, res) => {
+router.delete("/api/pastreatments/:petid/:id", auth, async (req, res) => {
   try {
     Pet.findById(req.params.petid, async (err, post) => {
       const treatment = post.pasttreatments.id(req.params.id);
@@ -180,7 +180,7 @@ router.delete("/pastreatments/:petid/:id", auth, async (req, res) => {
 });
 
 //delete upcoming treatment
-router.delete("/upcomingtreatments/:petid/:id", auth, async (req, res) => {
+router.delete("/api/upcomingtreatments/:petid/:id", auth, async (req, res) => {
   try {
     Pet.findById(req.params.petid, async (err, post) => {
       const treatment = post.upcomingtreatments.id(req.params.id);

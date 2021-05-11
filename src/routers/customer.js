@@ -10,7 +10,7 @@ const customerAuth = require("../middleware/customerAuth");
 const router = express.Router();
 
 //login as customer
-router.post("/asCustomer/login", async (req, res) => {
+router.post("/api/asCustomer/login", async (req, res) => {
   try {
     const customer = await Customer.findByCredentials(req.body.email, req.body.password);
     const token = await customer.generateAuthToken();
@@ -21,12 +21,12 @@ router.post("/asCustomer/login", async (req, res) => {
 });
 
 //get profile as customer
-router.get("/asCustomers/me", customerAuth, async (req, res) => {
+router.get("/api/asCustomers/me", customerAuth, async (req, res) => {
   res.send(req.customer);
 });
 
 //get all pets as customer
-router.get("/asCustomer/pets", customerAuth, async (req, res) => {
+router.get("/api/asCustomer/pets", customerAuth, async (req, res) => {
   try {
     await req.customer
       .populate({
@@ -40,7 +40,7 @@ router.get("/asCustomer/pets", customerAuth, async (req, res) => {
 });
 
 //Read single pet as customer
-router.get("/asCustomer/pet/:id", customerAuth, async (req, res) => {
+router.get("/api/asCustomer/pet/:id", customerAuth, async (req, res) => {
   const _id = req.params.id;
 
   try {
@@ -56,7 +56,7 @@ router.get("/asCustomer/pet/:id", customerAuth, async (req, res) => {
 });
 
 //logout as customer
-router.post("/asCustomers/logout", customerAuth, async (req, res) => {
+router.post("/api/asCustomers/logout", customerAuth, async (req, res) => {
   try {
     req.customer.tokens = req.customer.tokens.filter((token) => token.token != req.token);
     await req.customer.save();
@@ -67,7 +67,7 @@ router.post("/asCustomers/logout", customerAuth, async (req, res) => {
 });
 
 //Add a new customer
-router.post("/user/addcustomer", auth, async (req, res) => {
+router.post("/api/user/addcustomer", auth, async (req, res) => {
   const customer = new Customer({
     ...req.body,
     vet: req.user._id,
@@ -84,7 +84,7 @@ router.post("/user/addcustomer", auth, async (req, res) => {
 });
 
 //logout from everywhere as customer
-router.post("/asCustomer/logoutAll", customerAuth, async (req, res) => {
+router.post("/api/asCustomer/logoutAll", customerAuth, async (req, res) => {
   try {
     req.customer.tokens = [];
     await req.customer.save();
@@ -95,7 +95,7 @@ router.post("/asCustomer/logoutAll", customerAuth, async (req, res) => {
 });
 
 //Get all customers
-router.get("/customers", auth, async (req, res) => {
+router.get("/api/customers", auth, async (req, res) => {
   try {
     await req.user
       .populate({
@@ -109,7 +109,7 @@ router.get("/customers", auth, async (req, res) => {
 });
 
 //Read a customer
-router.get("/customers/:id", auth, async (req, res) => {
+router.get("/api/customers/:id", auth, async (req, res) => {
   const _id = req.params.id;
   try {
     const customer = await Customer.findOne({ _id, vet: req.user._id });
@@ -120,7 +120,7 @@ router.get("/customers/:id", auth, async (req, res) => {
   }
 });
 
-router.patch("/customers/:id", auth, async (req, res) => {
+router.patch("/api/customers/:id", auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ["username", "email", "password"];
 
@@ -142,7 +142,7 @@ router.patch("/customers/:id", auth, async (req, res) => {
   }
 });
 
-router.delete("/customers/:id", auth, async (req, res) => {
+router.delete("/api/customers/:id", auth, async (req, res) => {
   try {
     const customer = await Customer.findOneAndDelete({ _id: req.params.id, vet: req.user._id });
     if (!customer) res.status(400).send();
@@ -165,7 +165,7 @@ const upload = multer({
 });
 
 router.post(
-  "/pets/:id/avatar",
+  "/api/pets/:id/avatar",
   customerAuth,
   upload.single("avatar"),
   async (req, res) => {
@@ -185,18 +185,18 @@ router.post(
   }
 );
 
-router.get("pets/defaultavatar", async (req, res) => {
+router.get("/api/pets/defaultavatar", async (req, res) => {
   res.set({ "Content-Type": "avatar/png" });
 });
 
-router.delete("/pets/:id/avatar", customerAuth, async (req, res) => {
+router.delete("/api/pets/:id/avatar", customerAuth, async (req, res) => {
   const pet = await Pet.findById(req.params.id);
   pet.avatar = undefined;
   await pet.save();
   res.send();
 });
 
-router.get("/pets/:id/avatar", async (req, res) => {
+router.get("/api/pets/:id/avatar", async (req, res) => {
   try {
     const pet = await Pet.findById(req.params.id);
     if (!pet || !pet.avatar) {

@@ -9,7 +9,7 @@ function ChatCustomerInput({ customer, customerid }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input !== "") {
-      axios.post(`/customerchat`, { message: input, author: customer });
+      axios.post(`/api/customerchat`, { message: input, author: customer });
       sendMessage([customerid, customer, input]);
       setInput("");
     }

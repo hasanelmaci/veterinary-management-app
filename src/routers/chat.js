@@ -7,7 +7,7 @@ const Room = require("../models/room");
 const router = new express.Router();
 
 //Add message as user
-router.post("/chat/:id", auth, async (req, res) => {
+router.post("/api/chat/:id", auth, async (req, res) => {
   const _id = req.params.id;
 
   const message = new Message({
@@ -27,7 +27,7 @@ router.post("/chat/:id", auth, async (req, res) => {
 });
 
 //Add message as customer
-router.post("/customerchat", customerAuth, async (req, res) => {
+router.post("/api/customerchat", customerAuth, async (req, res) => {
   const _id = req.customer._id;
 
   const message = new Message({
@@ -47,7 +47,7 @@ router.post("/customerchat", customerAuth, async (req, res) => {
 });
 
 //Read messages as user
-router.get("/chat/:id", auth, async (req, res) => {
+router.get("/api/chat/:id", auth, async (req, res) => {
   try {
     const _id = req.params.id;
     const room = await Room.findOne({ room: _id, user: req.user._id });
@@ -64,7 +64,7 @@ router.get("/chat/:id", auth, async (req, res) => {
 });
 
 //Read messages as customer
-router.get("/customerchat", customerAuth, async (req, res) => {
+router.get("/api/customerchat", customerAuth, async (req, res) => {
   try {
     const _id = req.customer._id;
     const room = await Room.findOne({ room: _id, customer: _id });

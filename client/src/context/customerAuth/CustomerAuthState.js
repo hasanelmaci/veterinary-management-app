@@ -35,7 +35,7 @@ function CustomerAuthState(props) {
   const loadCustomer = async () => {
     setUserAuthToken(localStorage.getItem("ctoken"));
     try {
-      const res = await axios.get("/asCustomers/me");
+      const res = await axios.get("/api/asCustomers/me");
 
       dispatch({
         type: CUSTOMER_LOADED,
@@ -50,7 +50,7 @@ function CustomerAuthState(props) {
 
   const login = async (formData) => {
     try {
-      const res = await axios.post("/asCustomer/login", formData);
+      const res = await axios.post("/api/asCustomer/login", formData);
       dispatch({
         type: CUSTOMER_LOGIN_SUCCESS,
         payload: res.data,
@@ -66,7 +66,7 @@ function CustomerAuthState(props) {
 
   const fetchAllPets = async () => {
     try {
-      const res = await axios.get("/asCustomer/pets");
+      const res = await axios.get("/api/asCustomer/pets");
       dispatch({
         type: FETCH_ALL_PETS_SUCCESS,
         payload: res.data,
@@ -81,7 +81,7 @@ function CustomerAuthState(props) {
 
   const fetchOnePet = async (id) => {
     try {
-      const res = await axios.get(`/asCustomer/pet/${id}`);
+      const res = await axios.get(`/api/asCustomer/pet/${id}`);
       dispatch({
         type: FETCH_ONE_PET_SUCCESS,
         payload: res.data,
@@ -96,7 +96,7 @@ function CustomerAuthState(props) {
 
   const uploadAvatar = async (id, formData) => {
     try {
-      const res = await axios.post(`/pets/${id}/avatar`, formData, {
+      const res = await axios.post(`/api/pets/${id}/avatar`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

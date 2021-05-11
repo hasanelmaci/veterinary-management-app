@@ -7,7 +7,7 @@ function ChatBoxContainer({ newMsg, id }) {
 
   useEffect(() => {
     async function getMessages() {
-      const { data } = await axios.get(`/chat/${id}`);
+      const { data } = await axios.get(`/api/chat/${id}`);
       setNewMessage(data);
     }
     getMessages();

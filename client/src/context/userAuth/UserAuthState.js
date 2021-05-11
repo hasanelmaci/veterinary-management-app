@@ -28,7 +28,7 @@ const UserAuthState = (props) => {
   const loadUser = async () => {
     setUserAuthToken(localStorage.getItem("token"));
     try {
-      const res = await axios.get("/users/me");
+      const res = await axios.get("/api/users/me");
       dispatch({
         type: USER_LOADED,
         payload: res.data,
@@ -47,7 +47,7 @@ const UserAuthState = (props) => {
       },
     };
     try {
-      const res = await axios.post("/users/register", formData, config);
+      const res = await axios.post("/api/users/register", formData, config);
       dispatch({
         type: USER_REGISTER_SUCCESS,
         payload: res.data,
@@ -69,7 +69,7 @@ const UserAuthState = (props) => {
       },
     };
     try {
-      const res = await axios.post("/users/login", formData, config);
+      const res = await axios.post("/api/users/login", formData, config);
       dispatch({
         type: USER_LOGIN_SUCCESS,
         payload: res.data,
@@ -85,7 +85,7 @@ const UserAuthState = (props) => {
   };
 
   const logout = async () => {
-    await axios.post("/users/logout");
+    await axios.post("/api/users/logout");
     dispatch({ type: USER_LOGOUT });
   };
 
