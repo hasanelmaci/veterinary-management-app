@@ -1,13 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import CustomerAuthContext from "../../context/customerAuth/customerAuthContext";
 
 function UploadAvatar({ pet }) {
-  const { uploadAvatar } = useContext(CustomerAuthContext);
+  const { uploadAvatar, error, clearErrors } = useContext(CustomerAuthContext);
 
   const [selectedFile, setSelectedFile] = useState();
   const [checkFile, setCheckFile] = useState(false);
+  const [avatarError, setAvatarError] = useState(null);
 
   const changeHandler = (event) => {
     if (event.target.files[0]) setCheckFile(true);
@@ -20,6 +21,15 @@ function UploadAvatar({ pet }) {
     formData.append("avatar", selectedFile);
     uploadAvatar(pet._id, formData);
   };
+
+  useEffect(() => {
+    if (error?.data === "Please upload a image under 200KB") {
+      console.log(error);
+      setAvatarError("200KB'ın altında resim yükleyiniz.");
+      clearErrors();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uploadAvatar]);
   return (
     <div className="upload-avatar">
       <label className="avatar-input" htmlFor="file-upload">
@@ -31,6 +41,7 @@ function UploadAvatar({ pet }) {
           <FontAwesomeIcon icon={faCheck} />
         </button>
       ) : null}
+      <p>{avatarError}</p>
     </div>
   );
 }

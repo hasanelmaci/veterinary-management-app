@@ -19,7 +19,7 @@ function CustomerPetProfile(props) {
   }, [loading, isFetched]);
 
   useEffect(() => {
-    if (error) {
+    if (error && error.data !=="Please upload a image under 200KB") {
       props.history.push("/customerprofile");
       clearErrors();
     }

@@ -154,7 +154,7 @@ router.delete("/api/customers/:id", auth, async (req, res) => {
 
 const upload = multer({
   limits: {
-    fileSize: 1000000,
+    fileSize: 200000,
   },
   fileFilter(req, file, cb) {
     if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
@@ -181,7 +181,7 @@ router.post(
     res.send();
   },
   (error, req, res, next) => {
-    res.status(400).send("Please upload a image under 3MB");
+    res.status(400).send("Please upload a image under 200KB");
   }
 );
 
