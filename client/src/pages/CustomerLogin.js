@@ -42,9 +42,8 @@ function CustomerLogin(props) {
   return (
     <div className="login-container">
       <div className="login">
-        <h1>Kullanıcı Girişi</h1>
+        <h1>Customer Login</h1>
         <p style={{ color: "white", fontWeight: "400", fontSize: "14px" }}>
-          Veterinerinizin verdiği bilgileri giriniz.
         </p>
         <form onSubmit={onSubmit}>
           <div>
@@ -54,12 +53,12 @@ function CustomerLogin(props) {
             <input type="password" name="password" value={password} placeholder="Parola" onChange={onChange} />
           </div>
           <div className="login__bottom">
-            <button>Giriş Yap</button>
-            <Link to="/register">Kayıt ol</Link>
-            <Link to="/login">Klinik olarak giriş yap</Link>
+            <button>Login as customer</button>
+            <Link to="/register">Sign up</Link>
+            <Link to="/login">Login as veterinarian</Link>
           </div>
         </form>
-        {isValid === false && <p>Geçersiz kullanıcı adı veya parola.</p>}
+        {isValid === false && <p>Invalid username or password.</p>}
       </div>
     </div>
   );

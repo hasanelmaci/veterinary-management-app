@@ -25,14 +25,14 @@ function Navbar() {
               </li>
 
               <li>
-                <Link to="/profile/addcustomer">Müşteri ekle</Link>
+                <Link to="/profile/addcustomer">Add Customer</Link>
               </li>
               <li>
-                <Link to="/chat">Mesajlar</Link>
+                <Link to="/chat">Chat</Link>
               </li>
               <li>
                 <Link to="#" onClick={handleLogout}>
-                  Çıkış Yap
+                  Logout
                 </Link>
               </li>
             </ul>

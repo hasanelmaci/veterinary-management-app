@@ -29,7 +29,7 @@ function PetProfile(props) {
         <div className="pet-profile">
           <div className="pet-profile-infos">
             <PetHeader pet={pet} />
-            <Link to={`/customers/${pet.owner}/${pet._id}/updatepet`}>Bilgileri güncelle</Link>
+            <Link to={`/customers/${pet.owner}/${pet._id}/updatepet`}>Edit informations</Link>
           </div>
           <TreatmentList pet={pet} />
         </div>

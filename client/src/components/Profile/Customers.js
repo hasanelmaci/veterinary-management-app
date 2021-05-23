@@ -19,14 +19,14 @@ function Customers({ searchInput }) {
   return (
     <>
       {customerList.length === 0 ? (
-        <h2 style={{ textAlign: "center", marginTop: "30px" }}>Kayıtlı müşteri bulunmamaktadır</h2>
+        <h2 style={{ textAlign: "center", marginTop: "30px" }}>Customers are not found</h2>
       ) : (
         <div className="customer-table-container">
           <table className="customer-table">
             <thead>
               <tr>
                 <th></th>
-                <th>Müşteri Adı</th>
+                <th>Name</th>
                 <th>E-mail</th>
               </tr>
             </thead>

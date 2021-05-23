@@ -6,9 +6,9 @@ function CustomerMenu() {
   const { logout } = useContext(CustomerAuthContext);
   return (
     <div className="customer-settings">
-      <Link to="/customerchat">Mesajlar</Link>
+      <Link to="/customerchat">Chat</Link>
       <Link to="#" onClick={logout}>
-        Çıkış Yap
+        Logout
       </Link>
     </div>
   );

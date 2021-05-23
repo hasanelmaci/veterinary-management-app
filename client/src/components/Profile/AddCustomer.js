@@ -32,21 +32,21 @@ function AddCustomer(props) {
   return (
     <div className="addcustomer-container">
       <div className="addcustomer">
-        <h1>Müşteri Ekle</h1>
+        <h1>Add Customer</h1>
         <form onSubmit={handleOnSubmit} autoComplete="off">
-          <input placeholder="isim" name="username" value={username} onChange={handleOnChange} />
-          <input type="email" placeholder="email" name="email" value={email} onChange={handleOnChange} />
-          <input placeholder="şifre" name="password" value={password} onChange={handleOnChange} />
+          <input placeholder="Name" name="username" value={username} onChange={handleOnChange} />
+          <input type="email" placeholder="E-mail" name="email" value={email} onChange={handleOnChange} />
+          <input placeholder="Password" name="password" value={password} onChange={handleOnChange} />
           <button type="submit" className="btn">
-            Ekle
+            Add
           </button>
         </form>
         {message && (
           <p>
-            Müşteri eklendi.{" "}
+            Customer has been added.{" "}
             <Link to="/profile" onClick={toHomePage}>
               {" "}
-              Anasayfaya dön
+              Return to homepage.
             </Link>
           </p>
         )}

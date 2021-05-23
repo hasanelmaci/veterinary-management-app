@@ -1,7 +1,7 @@
 function SearchBar({ search }) {
   return (
     <div className="search-container">
-      <input className="searchbar" placeholder="Ara" onChange={(e) => search(e)} />
+      <input className="searchbar" placeholder="Search" onChange={(e) => search(e)} />
     </div>
   );
 }

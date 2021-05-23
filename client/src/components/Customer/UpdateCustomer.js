@@ -36,37 +36,37 @@ function UpdateCustomer() {
       <div className="updatecustomer">
         {deleteInput ? (
           <div className="delete-customer">
-            <h1>Müşteriyi Sil</h1>
-            <p>Müşteri silmek istediğinize emin misiniz?</p>
+            <h1>Delete Customer</h1>
+            <p>Are you sure?</p>
             <div className="buttons">
               <Link to="/profile">
                 <button className="btn" onClick={() => handleDelete()}>
-                  Evet
+                  Yes
                 </button>
               </Link>
               <button className="btn" onClick={() => setDeleteInput(false)}>
-                Hayır
+                No
               </button>
             </div>
           </div>
         ) : (
           <>
-            <h1>Müşteri Güncelle</h1>
+            <h1>Edit Customer</h1>
             <form onSubmit={handleOnSubmit}>
-              <input placeholder="İsim" name="username" onChange={handleOnChange} />
+              <input placeholder="Name" name="username" onChange={handleOnChange} />
               <input type="email" placeholder="Email" name="email" onChange={handleOnChange} />
-              <input placeholder="Parola" name="password" onChange={handleOnChange} />
+              <input placeholder="Password" name="password" onChange={handleOnChange} />
               <button type="submit" className="btn">
-                Güncelle
+                Edit
               </button>
               <p style={{ color: "red", cursor: "pointer" }} onClick={() => setDeleteInput(true)}>
-                Müşteriyi Sil
+                Delete Customer
               </p>
             </form>
 
             {message && (
               <p>
-                Müşteri güncellendi. <Link to={`/customers/${id}`}> Profile dön.</Link>
+               Customer has been edited. <Link to={`/customers/${id}`}> Profile dön.</Link>
               </p>
             )}
           </>

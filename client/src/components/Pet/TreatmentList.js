@@ -6,21 +6,21 @@ function TreatmentList({ pet }) {
   return (
     <div className="treatment-container">
       <div className="treatment-header "></div>
-      <h2>Gelecek Tedaviler</h2>
+      <h2>Future Treatments</h2>
       <AddTreatment treatmentType="upcoming" pet={pet} />
       <table className="treatment-table">
         <thead>
           <tr>
-            <th>Tedavi Türü</th>
-            <th>İlaç</th>
-            <th>Adet</th>
-            <th>Tarih</th>
-            <th>Sil</th>
+            <th>Type</th>
+            <th>Medicine</th>
+            <th>Number</th>
+            <th>Date</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {pet.upcomingtreatments.length === 0 ? (
-            <td>Kayıtlı muayene bulunmamaktadır</td>
+            <td>Treatment is not found.</td>
           ) : (
             pet.upcomingtreatments.map((item) => (
               <UpcomingTreatments key={item._id} upcomingtreatments={item} pet={pet} />
@@ -28,21 +28,21 @@ function TreatmentList({ pet }) {
           )}
         </tbody>
       </table>
-      <h2>Geçmiş Tedaviler</h2>
+      <h2>Past Treatments</h2>
       <AddTreatment treatmentType="past" pet={pet} />
       <table className="treatment-table">
         <thead>
           <tr>
-            <th>Tedavi Türü</th>
-            <th>İlaç</th>
-            <th>Adet</th>
-            <th>Tarih</th>
-            <th>Sil</th>
+            <th>Type</th>
+            <th>Medicine</th>
+            <th>Number</th>
+            <th>Date</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {pet.pasttreatments.length === 0 ? (
-            <td>Kayıtlı muayene bulunmamaktadır</td>
+            <td>Treatment is not found.</td>
           ) : (
             pet.pasttreatments.map((item) => <PastTreatments key={item._id} pasttreatments={item} pet={pet} />)
           )}

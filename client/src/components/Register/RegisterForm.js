@@ -44,7 +44,7 @@ const RegisterForm = (props) => {
   return (
     <div className="register-container">
       <div className="register">
-        <h1>Kayıt Ol</h1>
+        <h1>Sign Up</h1>
         <form className="register__form" onSubmit={onSubmit}>
           <div>
             <input
@@ -52,7 +52,7 @@ const RegisterForm = (props) => {
               name="name"
               value={name}
               onChange={onChange}
-              placeholder="Veteriner Klinik Adı"
+              placeholder="Veterinary Name"
               required
             />
           </div>
@@ -60,7 +60,7 @@ const RegisterForm = (props) => {
             <input type="email" name="email" value={email} onChange={onChange} placeholder="E-mail" required />
           </div>
           <div>
-            <input type="password" name="password" value={password} onChange={onChange} placeholder="Parola" required />
+            <input type="password" name="password" value={password} onChange={onChange} placeholder="Password" required />
           </div>
           <div>
             <input
@@ -68,20 +68,20 @@ const RegisterForm = (props) => {
               name="password2"
               value={password2}
               onChange={onChange}
-              placeholder="Aynı parolayı giriniz"
+              placeholder="Re-enter password"
               required
             />
           </div>
-          <button type="submit">Kayıt Ol</button>
+          <button type="submit">Sign Up</button>
           <div className="register__bottom">
-            <Link to="/login">Giriş Yap</Link>
+            <Link to="/login">Login</Link>
           </div>
         </form>
 
         {isMatched === false ? (
-          <p>Aynı parolayı girdiğinize emin olunuz.</p>
+          <p>Passwords do not match. Please again</p>
         ) : (
-          isValid === false && <p>Bu e-mail daha önceden kullanıldı.</p>
+          isValid === false && <p>This e-mail is already used.</p>
         )}
       </div>
     </div>

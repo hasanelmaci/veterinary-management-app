@@ -40,23 +40,23 @@ function AddPet(props) {
   return (
     <div className="addpet-container">
       <div className="addpet">
-        <h1>Evcil Hayvan Ekle</h1>
+        <h1>Add Pet</h1>
         <form onSubmit={handleOnSubmit}>
-          <input placeholder="İsim" name="name" onChange={handleOnChange} />
-          <input placeholder="Tür" name="animal" onChange={handleOnChange} />
-          <input placeholder="Cins" name="type" onChange={handleOnChange} />
-          <input placeholder="Cinsiyet" name="gender" onChange={handleOnChange} />
-          <input placeholder="Doğum Tarihi" name="birthdate" onChange={handleOnChange} />
+          <input placeholder="Name" name="name" onChange={handleOnChange} />
+          <input placeholder="Animal" name="animal" onChange={handleOnChange} />
+          <input placeholder="Type" name="type" onChange={handleOnChange} />
+          <input placeholder="Gender" name="gender" onChange={handleOnChange} />
+          <input placeholder="Birth Date" name="birthdate" onChange={handleOnChange} />
           <button type="submit" className="btn">
-            Ekle
+            Add
           </button>
         </form>
         {message && (
           <p>
-            Yeni evcil hayvan eklendi.{" "}
+            New pet has been added.{" "}
             <Link to={`/customers/${id}`} onClick={() => setMessage(false)}>
               {" "}
-              Profile dön.
+              Turn back to profile.
             </Link>
           </p>
         )}

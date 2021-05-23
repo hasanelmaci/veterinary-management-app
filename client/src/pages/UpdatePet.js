@@ -37,21 +37,21 @@ function UpdatePet(props) {
   return (
     <div className="update-pet-container">
       <div className="updatepet">
-        <h1>Bilgileri Güncelle</h1>
+        <h1>Edit informations</h1>
         <form onSubmit={handleOnSubmit}>
-          <input placeholder="İsim" name="name" onChange={handleOnChange} />
-          <input placeholder="Tür" name="animal" onChange={handleOnChange} />
-          <input placeholder="Cins" name="type" onChange={handleOnChange} />
-          <input placeholder="Cinsiyet" name="gender" onChange={handleOnChange} />
-          <input placeholder="Doğum Yılı" name="birthdate" onChange={handleOnChange} />
+          <input placeholder="Name" name="name" onChange={handleOnChange} />
+          <input placeholder="Animal" name="animal" onChange={handleOnChange} />
+          <input placeholder="Type" name="type" onChange={handleOnChange} />
+          <input placeholder="Gender" name="gender" onChange={handleOnChange} />
+          <input placeholder="Birth Date" name="birthdate" onChange={handleOnChange} />
           <button type="submit" className="btn">
-            Güncelle
+            Edit
           </button>
         </form>
 
         {message && (
           <p>
-            Bilgiler güncellendi. <Link to={`/customers/${id}/${petid}`}> Profile Dön</Link>
+            Informations has been updated. <Link to={`/customers/${id}/${petid}`}> Turn back to profile.</Link>
           </p>
         )}
       </div>

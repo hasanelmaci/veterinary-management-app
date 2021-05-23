@@ -6,15 +6,15 @@ function TreatmentList({ pet }) {
     <div className="treatment-container">
       <div className="treatment-header "></div>
 
-      <h2>Gelecek Tedaviler</h2>
+      <h2>Future Treatments</h2>
 
       <table className="treatment-table">
         <thead>
           <tr>
-            <th>Tedavi Türü</th>
-            <th>İlaç</th>
-            <th>Adet</th>
-            <th>Tarih</th>
+            <th>Type</th>
+            <th>Medicine</th>
+            <th>Number</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>
@@ -23,15 +23,15 @@ function TreatmentList({ pet }) {
           ))}
         </tbody>
       </table>
-      <h2>Geçmiş Tedaviler</h2>
+      <h2>Past Treatments</h2>
 
       <table className="treatment-table">
         <thead>
           <tr>
-            <th>Tedavi Türü</th>
-            <th>İlaç</th>
-            <th>Adet</th>
-            <th>Tarih</th>
+            <th>Type</th>
+            <th>Medicine</th>
+            <th>Number</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>

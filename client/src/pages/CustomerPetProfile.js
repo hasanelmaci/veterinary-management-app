@@ -36,13 +36,6 @@ function CustomerPetProfile(props) {
             <div className="tocustomer-container"></div>
             <PetHeader pet={pet} />
             <UploadAvatar pet={pet} />
-            {/* <Link id="tocustomerprofile" to="/customerprofile">
-              Diğer evcil hayvanlarım
-            </Link>
-            <br />
-            <Link to="#" onClick={logout}>
-              Çıkış Yap
-            </Link> */}
           </div>
           <TreatmentList pet={pet} />
         </div>

@@ -23,12 +23,12 @@ function AddTreatment({ treatmentType, pet }) {
   return (
     <div className="addtreatment-container">
       <form onSubmit={handleOnSubmit} autoComplete="off">
-        <input placeholder="Tedavi Türü" name="type" onChange={handleOnChange} required />
-        <input placeholder="Kullanılan İlaç" name="medicine" onChange={handleOnChange} />
-        <input placeholder="Adet" name="number" onChange={handleOnChange} />
-        <input placeholder="Tarih" name="date" onChange={handleOnChange} />
+        <input placeholder="Type" name="type" onChange={handleOnChange} required />
+        <input placeholder="Medicine" name="medicine" onChange={handleOnChange} />
+        <input placeholder="Number" name="number" onChange={handleOnChange} />
+        <input placeholder="Date" name="date" onChange={handleOnChange} />
 
-        <button className="btn">Ekle</button>
+        <button className="btn">Add</button>
       </form>
     </div>
   );

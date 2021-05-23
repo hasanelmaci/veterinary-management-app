@@ -19,7 +19,7 @@ const Profile = () => {
   return (
     <div className="profile">
       <div className="profile-top">
-        <h1>Müşteriler</h1>
+        <h1>Customers</h1>
         <SearchBar search={search} />
       </div>
       <Customers searchInput={searchInput} />

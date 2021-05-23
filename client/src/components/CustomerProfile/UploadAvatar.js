@@ -25,7 +25,7 @@ function UploadAvatar({ pet }) {
   useEffect(() => {
     if (error?.data === "Please upload a image under 200KB") {
       console.log(error);
-      setAvatarError("200KB'ın altında resim yükleyiniz.");
+      setAvatarError("Please upload an image under 200KB.");
       clearErrors();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -33,7 +33,7 @@ function UploadAvatar({ pet }) {
   return (
     <div className="upload-avatar">
       <label className="avatar-input" htmlFor="file-upload">
-        {selectedFile ? selectedFile.name : "Resim seç"}
+        {selectedFile ? selectedFile.name : "Upload"}
         <input id="file-upload" className="btn" type="file" name="avatar" onChange={changeHandler} />
       </label>
       {checkFile ? (
