@@ -51,7 +51,7 @@ function UpdatePet(props) {
 
         {message && (
           <p>
-            Informations has been updated. <Link to={`/customers/${id}/${petid}`}> Turn back to profile.</Link>
+            Informations have been updated. <Link to={`/customers/${id}/${petid}`}> Turn back to profile.</Link>
           </p>
         )}
       </div>

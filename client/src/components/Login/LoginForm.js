@@ -42,7 +42,7 @@ const LoginForm = (props) => {
   return (
     <div className="login-container">
       <div className="login">
-        <h1>Veterinary Login</h1>
+        <h1>Admin Login</h1>
 
         <form onSubmit={onSubmit}>
           <div>
@@ -54,7 +54,7 @@ const LoginForm = (props) => {
           <div className="login__bottom">
             <button>Login</button>
             <Link to="/register">Sign up</Link>
-            <Link to="/customerlogin">Logis as customer</Link>
+            <Link to="/customerlogin">Login as customer</Link>
           </div>
         </form>
         {isValid === false && <p>Invalid username or password</p>}
