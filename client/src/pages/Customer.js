@@ -2,11 +2,13 @@ import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import Loader from "react-loader-spinner";
 import CustomerContext from "../context/customer/customerContext";
+import UserAuthContext from "../context/userAuth/userAuthContext";
 import CustomerHeader from "../components/Customer/CustomerHeader";
 import CustomerSettings from "../components/Customer/CustomerSettings";
 import FetchPets from "../components/Pet/FetchPets";
 function Customer(props) {
   const { fetchOneCustomer, customer, loading, error, clearErrors } = useContext(CustomerContext);
+  const { user} = useContext(UserAuthContext)
 
   let { id } = useParams();
 
@@ -27,7 +29,7 @@ function Customer(props) {
     <>
       {loading === "fetched" ? (
         <div>
-          <CustomerHeader customer={customer} />
+          <CustomerHeader customer={customer} isAuthUser={user ? true : false}/>
 
           <CustomerSettings customer={customer} />
           <FetchPets customer={customer} />

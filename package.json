@@ -27,7 +27,7 @@
     "env-cmd": "^8.0.2",
     "nodemon": "^2.0.7"
   },
-    "engines": {
+  "engines": {
     "node": "12.x",
     "npm": "6.x"
   }
