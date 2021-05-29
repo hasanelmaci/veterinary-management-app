@@ -1,8 +1,11 @@
+import { useParams } from "react-router-dom";
 import { useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 function InputForm({ handleSubmit, setInput, input }) {
+  let { id } = useParams();
+
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -11,7 +14,8 @@ function InputForm({ handleSubmit, setInput, input }) {
 
   useEffect(() => {
     inputRef.current.value = "";
-  }, [handleSubmit]);
+    setInput("");
+  }, [id]);
 
   return (
     <div className="chat-input">

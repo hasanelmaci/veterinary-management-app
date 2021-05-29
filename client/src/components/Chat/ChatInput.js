@@ -24,4 +24,4 @@ function ChatInput({ user }) {
   );
 }
 
-export default ChatInput;
+export default ChatInput

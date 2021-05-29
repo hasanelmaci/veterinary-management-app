@@ -9,7 +9,7 @@
     <a href="https://github.com/hasanelmaci/veterinary-management-app">Explore the docs »</a>
     <br />
     <br />
-    <a href="https://github.com/hasanelmaci/veterinary-management-app"><strong>View Demo</strong></a>
+    <a href="https://veterinary-app7.herokuapp.com/"><strong>View Demo</strong></a>
   </p>
 
 
