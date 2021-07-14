@@ -64,8 +64,8 @@ In this app:
 3. In `dev.env`
 
    ```JS
-   const MONGODB_URL = 'ENTER YOUR URL';
-   const JWT_SECRET = 'ENTER YOUR JWT SECRET'
+   MONGODB_URL = 'ENTER YOUR URL';
+   JWT_SECRET = 'ENTER YOUR JWT SECRET'
    ```
 
 4. In root directory
