@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -180,30 +181,26 @@
 }
 
 .register-container {
-  background: #50a3a2;
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   height: 100vh;
-  overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .register {
-  max-width: 600px;
+  width: 300px;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 60px 0;
   height: 500px;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
-  color: white;
-  font-weight: 300;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #fff;
 }
 
 .register h1 {
   font-size: 40px;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-put;
   font-weight: 200;
 }
 
@@ -213,9 +210,9 @@
 
 .register form input {
   display: block;
-  appearance: none;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   background-color: #fff;
+  border-radius: 7px;
   width: 250px;
   border-radius: 3px;
   padding: 10px 15px;
@@ -223,24 +220,11 @@
   display: block;
   text-align: center;
   font-size: 18px;
-  color: black;
-  transition-duration: 0.25s;
   font-weight: 300;
 }
 
-.register form input:hover {
-  background-color: #fff;
-}
-
-.register form input:focus {
-  background-color: #fff;
-  width: 300px;
-  color: #09c074;
-}
-
 .register form button {
-  background-color: #50a3a28e;
-  border: 1px solid #09807e;
+  background-color: #3681E2;
   padding: 10px 15px;
   color: #fff;
   border-radius: 3px;
@@ -252,12 +236,12 @@
 
 .register form button:hover {
   background-color: #fff;
-  color: #1a7c7b;
+  color: #3681E2;
 }
 
 .register form button:focus {
   color: #fff;
-  background-color: #50a3a2;
+  background-color: #3681E2;
 }
 
 .register p {
@@ -265,47 +249,34 @@
   font-weight: 600;
 }
 
-.register__bottom {
-  max-width: 250px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
 .register__bottom a {
   color: white;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
-  padding-top: 15px;
-  text-decoration: underline;
-  color: #4e41c9;
+  padding: 15px;
+  color: #3681E2;
 }
 
 .login-container {
-  background: #50a3a2;
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   height: 100vh;
-  overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .login {
-  max-width: 600px;
+  width: 300px;
   margin: 0 auto;
-  padding: 80px 0;
-  height: 500px;
+  padding: 60px 0;
+  height: 400px;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
-  color: white;
-  font-weight: 300;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #fff;
 }
 
 .login h1 {
   font-size: 40px;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-put;
   font-weight: 200;
 }
 
@@ -315,9 +286,9 @@
 
 .login form input {
   display: block;
-  appearance: none;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   background-color: #fff;
+  border-radius: 7px;
   width: 250px;
   border-radius: 3px;
   padding: 10px 15px;
@@ -325,24 +296,11 @@
   display: block;
   text-align: center;
   font-size: 18px;
-  color: black;
-  transition-duration: 0.25s;
   font-weight: 300;
 }
 
-.login form input:hover {
-  background-color: #fff;
-}
-
-.login form input:focus {
-  background-color: #fff;
-  width: 300px;
-  color: #09c074;
-}
-
 .login form button {
-  background-color: #50a3a28e;
-  border: 1px solid #09807e;
+  background-color: #3681E2;
   padding: 10px 15px;
   color: #fff;
   border-radius: 3px;
@@ -354,12 +312,12 @@
 
 .login form button:hover {
   background-color: #fff;
-  color: #1a7c7b;
+  color: #3681E2;
 }
 
 .login form button:focus {
   color: #fff;
-  background-color: #50a3a2;
+  background-color: #3681E2;
 }
 
 .login p {
@@ -377,10 +335,8 @@
 .login__bottom a {
   color: white;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
   padding-top: 15px;
-  text-decoration: underline;
-  color: #4e41c9;
+  color: #3681E2;
 }
 
 .profile-top {
@@ -1182,9 +1138,9 @@ body {
 }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #fff;
-  background-color: var(--color-second-background);
+  background-color: #E5E5E5;
   color: var(--color-text);
 }
 
@@ -1202,31 +1158,3 @@ li {
   align-items: center;
   height: 100vh;
 }
-
-.btn {
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: linear-gradient(to bottom, #dadada 5%, #f0edf0 100%);
-  background-color: #f3f3f3;
-  border-radius: 6px;
-  display: inline-block;
-  cursor: pointer;
-  color: #000;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #ffffff;
-  border: 1px solid black;
-}
-
-.btn:hover {
-  background: linear-gradient(to bottom, #f0edf0 5%, #f9f9f9 100%);
-  background-color: #f0edf0;
-}
-
-.btn:active {
-  position: relative;
-  top: 1px;
-}
-/*# sourceMappingURL=main.css.map */

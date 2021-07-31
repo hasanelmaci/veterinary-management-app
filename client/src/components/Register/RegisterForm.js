@@ -57,7 +57,7 @@ const RegisterForm = (props) => {
             />
           </div>
           <div>
-            <input type="email" name="email" value={email} onChange={onChange} placeholder="E-mail" required />
+            <input  name="email" value={email} onChange={onChange} placeholder="E-mail or Phone" required />
           </div>
           <div>
             <input type="password" name="password" value={password} onChange={onChange} placeholder="Password" required />
@@ -75,6 +75,7 @@ const RegisterForm = (props) => {
           <button type="submit">Sign Up</button>
           <div className="register__bottom">
             <Link to="/login">Login</Link>
+            <Link to="/customerlogin">Login as customer</Link>
           </div>
         </form>
 
