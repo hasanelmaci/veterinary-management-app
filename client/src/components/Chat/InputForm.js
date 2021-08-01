@@ -15,6 +15,7 @@ function InputForm({ handleSubmit, setInput, input }) {
   useEffect(() => {
     inputRef.current.value = "";
     setInput("");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (

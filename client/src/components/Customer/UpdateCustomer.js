@@ -54,7 +54,7 @@ function UpdateCustomer() {
             <h1>Edit Customer</h1>
             <form onSubmit={handleOnSubmit}>
               <input placeholder="Name" name="username" onChange={handleOnChange} />
-              <input type="email" placeholder="Email" name="email" onChange={handleOnChange} />
+              <input  placeholder="Email or Phone" name="email" onChange={handleOnChange} />
               <input placeholder="Password" name="password" onChange={handleOnChange} />
               <button type="submit" className="btn">
                 Edit

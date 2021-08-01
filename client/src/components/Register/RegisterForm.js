@@ -82,7 +82,7 @@ const RegisterForm = (props) => {
         {isMatched === false ? (
           <p>Passwords do not match. Please try again.</p>
         ) : (
-          isValid === false && <p>This e-mail is already used.</p>
+          isValid === false && <p>Invalid e-mail or phone number.</p>
         )}
       </div>
     </div>

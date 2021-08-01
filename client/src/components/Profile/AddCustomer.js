@@ -35,7 +35,7 @@ function AddCustomer(props) {
         <h1>Add Customer</h1>
         <form onSubmit={handleOnSubmit} autoComplete="off">
           <input placeholder="Name" name="username" value={username} onChange={handleOnChange} required/>
-          <input type="email" placeholder="E-mail" name="email" value={email} onChange={handleOnChange} required/>
+          <input  placeholder="E-mail or Phone" name="email" value={email} onChange={handleOnChange} required/>
           <input placeholder="Password" name="password" value={password} onChange={handleOnChange} required />
           <button type="submit" className="btn">
             Add

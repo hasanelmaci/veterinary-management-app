@@ -49,7 +49,7 @@ function CustomerLogin(props) {
             <input name="email" value={email} placeholder="E-mail or Phone" onChange={onChange} />
           </div>
           <div>
-            <input type="password" name="password" value={password} placeholder="Parola" onChange={onChange} />
+            <input type="password" name="password" value={password} placeholder="Password" onChange={onChange} />
           </div>
           <div className="login__bottom">
             <button>Login as customer</button>

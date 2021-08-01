@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import nocustomerpic from "../../styles/img/nocustomerpic.png";
+
 
 function ChatCustomerItem({ customer, id }) {
   return (

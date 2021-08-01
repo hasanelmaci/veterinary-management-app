@@ -26,7 +26,7 @@ function Customers({ searchInput }) {
             <thead>
               <tr>
                 <th>Name</th>
-                <th>E-mail</th>
+                <th>Info</th>
               </tr>
             </thead>
             <tbody>
