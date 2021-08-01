@@ -21,11 +21,11 @@ const customerSchema = new mongoose.Schema(
       required: true,
       trim: true,
       lowercase: true,
-      validate(value) {
-        if (!validator.isEmail(value)) {
-          throw new Error("Email is invalid");
-        }
-      },
+      // validate(value) {
+      //   if (!validator.isEmail(value)) {
+      //     throw new Error("Email is invalid");
+      //   }
+      // },
     },
     vet: {
       type: mongoose.Schema.Types.ObjectId,

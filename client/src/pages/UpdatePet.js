@@ -43,7 +43,7 @@ function UpdatePet(props) {
           <input placeholder="Animal" name="animal" onChange={handleOnChange} />
           <input placeholder="Type" name="type" onChange={handleOnChange} />
           <input placeholder="Gender" name="gender" onChange={handleOnChange} />
-          <input placeholder="Birth Date" name="birthdate" onChange={handleOnChange} />
+          <input placeholder="Birth Date" name="birthdate" type='date' onChange={handleOnChange} />
           <button type="submit" className="btn">
             Edit
           </button>

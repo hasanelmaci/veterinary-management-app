@@ -374,7 +374,7 @@
   text-align: center;
   font-size: 18px;
   font-weight: 300;
-  background-color: var(--color-second-background);
+  background-color: var(--color-page-background);
   color: var(--color-text);
   border-bottom: 1px solid var(--color-text);
 }
@@ -395,13 +395,14 @@
 }
 
 .customer-table {
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
+  text-align: left;
 }
 
 .customer-table th,
 .customer-table td {
-  padding: 10px 25px;
+  padding: 20px 25px;
   color: white;
 }
 
@@ -420,23 +421,14 @@
 }
 
 .customer-table tr:hover {
-  background-color: #5aa9e6ea;
+  background-color: #bebebeea;
   color: white;
 }
 
 .customer-table th {
   text-align: left;
-  color: black;
-  background-color: #5aa9e6ce;
-  color: var(--color-text);
-}
-
-.customer-table tr:nth-child(even) {
-  background-color: #5aa9e680;
-}
-
-.customer-table tr:nth-child(even):hover {
-  background-color: #5aa9e6ea;
+  border-bottom: 1px solid black;
+  color: #3681E2;
 }
 
 .avatar {
@@ -476,7 +468,6 @@
 .updatepet h1 {
   text-align: center;
   margin-bottom: 15px;
-  font-family: Arial, Helvetica, sans-serif;
   margin-top: 20px;
 }
 
@@ -484,7 +475,6 @@
 .updatecustomer form,
 .addpet form,
 .updatepet form {
-  font-family: Arial, Helvetica, sans-serif;
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -558,12 +548,11 @@
 }
 
 .nav {
-  font-family: "Open Sans", sans-serif;
-  border-bottom: 2px solid #50a3a2a6;
+  border-bottom: 1px solid #989494;
   width: 100%;
   margin: 0 auto;
-  background-color: var(--color-page-background);
-  color: var(--color-text);
+  background-color: var(--color-second-background);
+  color: #000;
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
@@ -576,7 +565,7 @@
 }
 
 .nav a h1 {
-  color: #09807e;
+  color: #3681E2;
   flex-grow: 1;
   letter-spacing: 5px;
 }
@@ -590,7 +579,7 @@
 }
 
 .nav ul a {
-  color: #09807e;
+  color: var(--color-text);
 }
 
 .nav ul a:hover {
@@ -744,6 +733,11 @@
 
 .pet-profile-infos p {
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.pet-profile-infos p span {
+  font-weight: 600;
 }
 
 .pet-profile-infos a {
@@ -766,7 +760,7 @@
 .treatment-container h2 {
   margin-bottom: 15px;
   text-align: center;
-  color: #2f7e7cec;
+  color: #3681E2;
 }
 
 .addtreatment-container {
@@ -777,6 +771,10 @@
   padding: 5px 10px;
   margin-left: 10px;
   width: 150px;
+}
+
+.addtreatment-container input[type="date"] {
+  padding: 3px 10px;
 }
 
 .addtreatment-container button {
@@ -836,22 +834,6 @@
   color: #33b400;
   color: black;
   background-color: rgba(109, 193, 231, 0.418);
-}
-
-.treatment-table tr:nth-child(odd) {
-  background-color: #a0ecde56;
-}
-
-.treatment-table tr:nth-child(odd):hover {
-  background-color: #01faf628;
-}
-
-.treatment-table tr:nth-child(even) {
-  background-color: #3c948456;
-}
-
-.treatment-table tr:nth-child(even):hover {
-  background-color: #01faf628;
 }
 
 .upload-avatar input[type="file"] {
@@ -916,11 +898,9 @@
 
 .chat-container {
   border-radius: 5px;
-  border-radius: 10px;
   width: 1100px;
-  background-color: var(--color-chat-background);
-  color: var(--color-text);
-  border: 1px solid #6d9ffc;
+  background-color: #fff;
+  border: 1px solid #3681E2;
 }
 
 .chat-list-content {
@@ -980,8 +960,7 @@
   border-right: 1px solid black;
   background-color: #f5f3f3;
   overflow-y: scroll;
-  border-radius: 10px;
-  background-color: var(--color-chat-background);
+  background-color: #fff;
 }
 
 .customer-list a {
@@ -1124,10 +1103,10 @@
 }
 
 body {
-  --color-page-background: #fff;
+  --color-page-background: #E5E5E5;
+  --color-second-background: #fff;
   --color-text: #1d1d1d;
   --color-chat-background: #e2ecff;
-  --color-second-background: #e9e9e9;
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
@@ -1139,8 +1118,8 @@ body {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #fff;
-  background-color: #E5E5E5;
+  background-color: var(--color-second-background);
+  background-color: var(--color-page-background);
   color: var(--color-text);
 }
 
@@ -1152,9 +1131,40 @@ li {
   list-style: none;
 }
 
+button {
+  border: none;
+}
+
 .spinner {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.btn {
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #dadada 5%, #f0edf0 100%);
+  background-color: #f3f3f3;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  color: #000;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+  border: 1px solid black;
+}
+
+.btn:hover {
+  background: linear-gradient(to bottom, #f0edf0 5%, #f9f9f9 100%);
+  background-color: #f0edf0;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
 }

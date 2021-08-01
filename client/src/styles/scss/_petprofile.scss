@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  
 }
 
 #tocustomerprofile {
@@ -38,6 +39,10 @@
   }
   p {
     margin-bottom: 10px;
+    text-align: center;
+    span{
+      font-weight: 600;
+    }
   }
   a {
     color: green;
@@ -57,7 +62,7 @@
   h2 {
     margin-bottom: 15px;
     text-align: center;
-    color: #2f7e7cec;
+    color: $main-blue;
   }
 }
 
@@ -67,6 +72,9 @@
     padding: 5px 10px;
     margin-left: 10px;
     width: 150px;
+  }
+  input[type="date"]{
+    padding:3px 10px;
   }
   button {
     padding: 5px 15px;
@@ -125,18 +133,19 @@
     background-color: rgba(109, 193, 231, 0.418);
   }
 
-  tr:nth-child(odd) {
-    background-color: #a0ecde56;
-  }
-  tr:nth-child(odd):hover {
-    background-color: #01faf628;
-  }
-  tr:nth-child(even) {
-    background-color: #3c948456;
-  }
-  tr:nth-child(even):hover {
-    background-color: #01faf628;
-  }
+  
+  // tr:nth-child(odd) {
+  //   background-color: #a0ecde56;
+  // }
+  // tr:nth-child(odd):hover {
+  //   background-color: #01faf628;
+  // }
+  // tr:nth-child(even) {
+  //   background-color: #3c948456;
+  // }
+  // tr:nth-child(even):hover {
+  //   background-color: #01faf628;
+  // }
 }
 
 .upload-avatar {

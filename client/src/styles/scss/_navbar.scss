@@ -1,10 +1,9 @@
 .nav {
-  font-family: "Open Sans", sans-serif;
-  border-bottom: 2px solid #50a3a2a6;
+  border-bottom: 1px solid #989494;
   width: 100%;
   margin: 0 auto;
-  background-color: var(--color-page-background);
-  color: var(--color-text);
+  background-color: var(--color-second-background);
+  color: #000;
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 
   div {
@@ -16,7 +15,7 @@
   }
 
   a h1 {
-    color: #09807e;
+    color: $main-blue;
     flex-grow: 1;
     letter-spacing: 5px;
   }
@@ -28,7 +27,7 @@
     justify-content: space-between;
 
     a {
-      color: #09807e;
+      color: var(--color-text);
       &:hover {
         color: red;
       }

@@ -43,8 +43,7 @@ function CustomerLogin(props) {
     <div className="login-container">
       <div className="login">
         <h1>Customer Login</h1>
-        <p style={{ color: "white", fontWeight: "400", fontSize: "14px" }}>
-        </p>
+        <p style={{ color: "white", fontWeight: "400", fontSize: "14px" }}></p>
         <form onSubmit={onSubmit}>
           <div>
             <input name="email" value={email} placeholder="E-mail or Phone" onChange={onChange} />
@@ -55,7 +54,7 @@ function CustomerLogin(props) {
           <div className="login__bottom">
             <button>Login as customer</button>
             <Link to="/register">Sign up</Link>
-            <Link to="/login">Login as veterinarian</Link>
+            <Link to="/login">Login as admin</Link>
           </div>
         </form>
         {isValid === false && <p>Invalid username or password.</p>}

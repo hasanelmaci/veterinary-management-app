@@ -31,7 +31,7 @@
     text-align: center;
     font-size: 18px;
     font-weight: 300;
-    background-color: var(--color-second-background);
+    background-color: var(--color-page-background);
     color: var(--color-text);
     border-bottom: 1px solid var(--color-text);
   }
@@ -52,11 +52,12 @@
 }
 
 .customer-table {
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
+  text-align: left;
   th,
   td {
-    padding: 10px 25px;
+    padding: 20px 25px;
     color: white;
   }
   td > a {
@@ -74,22 +75,17 @@
   }
 
   tr:hover {
-    background-color: #5aa9e6ea;
+    background-color: #bebebeea;
     color: white;
   }
 
   th {
     text-align: left;
-    color: black;
-    background-color: #5aa9e6ce;
-    color: var(--color-text);
+    border-bottom: 1px solid black;
+    // color: var(--color-text);
+    color: $main-blue;
   }
-  tr:nth-child(even) {
-    background-color: #5aa9e680;
-  }
-  tr:nth-child(even):hover {
-    background-color: #5aa9e6ea;
-  }
+ 
 }
 
 .avatar {
@@ -127,12 +123,10 @@
   h1 {
     text-align: center;
     margin-bottom: 15px;
-    font-family: Arial, Helvetica, sans-serif;
     margin-top: 20px;
   }
 
   form {
-    font-family: Arial, Helvetica, sans-serif;
     width: 80%;
     margin: 0 auto;
     display: flex;

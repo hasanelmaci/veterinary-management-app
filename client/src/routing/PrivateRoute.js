@@ -25,7 +25,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         ) : isUserAuth ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/login" />
+          <Redirect to="/register" />
         )
       }
     />

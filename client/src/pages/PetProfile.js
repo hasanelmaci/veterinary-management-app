@@ -29,19 +29,13 @@ function PetProfile(props) {
         <div className="pet-profile">
           <div className="pet-profile-infos">
             <PetHeader pet={pet} />
-            <Link to={`/customers/${pet.owner}/${pet._id}/updatepet`}>Edit informations</Link>
+            <Link to={`/customers/${pet.owner}/${pet._id}/updatepet`}>Edit</Link>
           </div>
           <TreatmentList pet={pet} />
         </div>
       ) : (
         <div className="spinner">
-          <Loader
-            type="Circles"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            timeout={0} //3 secs
-          />
+          <Loader type="Circles" color="#00BFFF" height={100} width={100} timeout={0} />
         </div>
       )}
     </>

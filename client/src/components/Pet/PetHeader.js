@@ -1,4 +1,5 @@
-import {memo} from 'react'
+import { memo } from "react";
+import reformatDate from "../../utils/reformatDate";
 function PetHeader({ pet }) {
   return (
     <div className="pet-header">
@@ -8,10 +9,13 @@ function PetHeader({ pet }) {
       <div className="pet-profile-infos">
         <h1>{pet.name}</h1>
         <p>
-          {pet.animal} {pet.type}
+          <span>Type:</span> {pet.type}
         </p>
         <p>
-          {pet.gender} {pet.birthdate}
+          <span>Gender:</span> {pet.gender}
+        </p>
+        <p>
+          <span>Birthdate:</span> {reformatDate(pet.birthdate)}
         </p>
       </div>
     </div>

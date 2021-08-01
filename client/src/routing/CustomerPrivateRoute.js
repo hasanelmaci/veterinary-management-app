@@ -17,7 +17,7 @@ const CustomerPrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        loading ? <p>Loading...</p> : isCustomerAuth ? <Component {...props} /> : <Redirect to="/customerlogin" />
+        loading ? <p>Loading...</p> : isCustomerAuth ? <Component {...props} /> : <Redirect to="/register" />
       }
     />
   );

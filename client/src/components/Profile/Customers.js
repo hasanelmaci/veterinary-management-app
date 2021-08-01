@@ -25,7 +25,6 @@ function Customers({ searchInput }) {
           <table className="customer-table">
             <thead>
               <tr>
-                <th></th>
                 <th>Name</th>
                 <th>E-mail</th>
               </tr>

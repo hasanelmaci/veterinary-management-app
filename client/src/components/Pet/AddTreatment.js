@@ -26,7 +26,7 @@ function AddTreatment({ treatmentType, pet }) {
         <input placeholder="Type" name="type" onChange={handleOnChange} required />
         <input placeholder="Medicine" name="medicine" onChange={handleOnChange} />
         <input placeholder="Number" name="number" onChange={handleOnChange} />
-        <input placeholder="Date" name="date" onChange={handleOnChange} />
+        <input placeholder="Date" name="date" type='date' onChange={handleOnChange} />
 
         <button className="btn">Add</button>
       </form>

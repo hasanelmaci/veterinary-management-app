@@ -6,7 +6,7 @@ function ChatCustomerItem({ customer, id }) {
     <Link key={customer._id} to={`/chat/${customer._id}`}>
       <li className={`customer-item ${customer._id === id && "selected-chat-customer"} `}>
         <div className="customer-item-content">
-          <img src={nocustomerpic} className="avatar" alt="profile_avatar" /> <p>{customer.username}</p>
+           <p>{customer.username}</p>
         </div>
       </li>
     </Link>

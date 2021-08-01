@@ -23,6 +23,7 @@ import UpdatePet from "./pages/UpdatePet";
 import Navbar from "./components/Profile/Navbar";
 import AddCustomer from "./components/Profile/AddCustomer";
 import UpdateCustomer from "./components/Customer/UpdateCustomer";
+import Page404 from "./pages/Page404";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
                   <CustomerPrivateRoute exact path="/customerprofile" component={CustomerProfile} />
                   <CustomerPrivateRoute exact path="/customerchat" component={CustomerChat} />
                   <CustomerPrivateRoute exact path="/customerprofile/:id" component={CustomerPetProfile} />
+                  <Route path="*" exact={true} component={Page404} />
                 </Switch>
               </Router>
             </PetState>

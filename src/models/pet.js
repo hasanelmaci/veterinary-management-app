@@ -72,7 +72,8 @@ const petSchema = new mongoose.Schema(
     },
     avatarPath: {
       type: String,
-      default: "https://icon-library.com/images/paw-print-icon/paw-print-icon-1.jpg",
+      // default: "https://icon-library.com/images/paw-print-icon/paw-print-icon-1.jpg",
+      default: "https://i.imgur.com/EsQjYL2.jpg",
     },
   },
   {
